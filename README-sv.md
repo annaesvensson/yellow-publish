@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.50
+# Publish 0.8.51
 
 Göra och publicera tillägg.
 
@@ -18,9 +18,9 @@ De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
-## Hur man uppdaterar standardinstallationen
+## Hur man publicerar standardinstallationen
 
-[Standardinstallationen](https://github.com/datenstrom/yellow) är en samling av viktigaste tillägg. Du kan uppdatera standardinstallationen på [kommandoraden](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-sv.md). Vanligtvis tar en underhållare hand om det, dock samma verktyg är tillgängliga för alla. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish yellow-extensions` och `php yellow.php publish yellow`. Detta uppdaterar alla nödvändiga filer. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions` och `datenstrom/yellow`.
+[Standardinstallationen](https://github.com/datenstrom/yellow) är en samling av viktigaste tillägg. Du kan uppdatera standardinstallationen på [kommandoraden](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-sv.md). Vanligtvis tar en underhållare hand om det, dock samma verktyg är tillgängliga för alla. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish yellow`. Detta uppdaterar alla nödvändiga filer. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
@@ -34,11 +34,11 @@ Tilläggsinställningar för en funktion:
 Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-extension-helloworld
-DownloadUrl: https://github.com/annasvensson/yellow-extension-helloworld/archive/master.zip
+DocumentationUrl: https://github.com/annasvensson/yellow-helloworld
+DownloadUrl: https://github.com/annasvensson/yellow-helloworld/archive/main.zip
 Published: 2019-01-24 19:42:13
 Developer: Anna Svensson
-Tag: example, feature
+Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
@@ -50,14 +50,14 @@ Tilläggsinställningar för ett tema:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Basic
+Extension: Helsinki
 Version: 0.8.15
 Description: Example theme for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-extension-basic
-DownloadUrl: https://github.com/annasvensson/yellow-extension-basic/archive/master.zip
+DocumentationUrl: https://github.com/annasvensson/yellow-helsinki
+DownloadUrl: https://github.com/annasvensson/yellow-helsinki/archive/main.zip
 Published: 2019-01-24 19:42:13
 Designer: Anna Svensson
-Tag: example, theme
+Tag: theme
 system/extensions/basic.php: basic.php, create, update
 system/extensions/basic.txt: basic.txt, create, update
 system/themes/basic.css: basic.css, create, update, careful
@@ -72,7 +72,7 @@ Tilläggsinställningar för ett språk:
 Extension: Swedish
 Version: 0.8.24
 Description: Swedish/Svenska with language 'sv'.
-DocumentationUrl: https://github.com/datenstrom/yellow-extensions/tree/master/source/swedish
+DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/master/downloads/swedish.zip
 Published: 2019-01-24 19:42:13
 Translator: Adam Engel
@@ -87,13 +87,12 @@ Visar tillgängliga mappar på kommandoraden:
 
 Publicera tillägg på kommandoraden:
 
-`php yellow.php publish yellow-extension-helloworld`  
-`php yellow.php publish yellow-extension-basic`  
-`php yellow.php publish yellow-extensions/source/swedish`  
+`php yellow.php publish yellow-helloworld`  
+`php yellow.php publish yellow-helsinki`  
+`php yellow.php publish yellow-language/translation/swedish`  
 
-Uppdatera standardinstallationen på kommandoraden:
+Publicera standardinstallationen på kommandoraden:
 
-`php yellow.php publish yellow-extensions`  
 `php yellow.php publish yellow`  
 
 ## Inställningar

@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.50
+# Publish 0.8.51
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -18,9 +18,9 @@ Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-exten
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
-## Wie man die Standardinstallation aktualisiert
+## Wie man die Standardinstallation veröffentlicht
 
-Die [Standardinstallation](https://github.com/datenstrom/yellow) ist eine Sammlung der wichtigsten Erweiterungen. Du kannst die Standardinstallation in der [Befehlszeile](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-de.md) aktualisieren. In der Regel kümmert sich ein Betreuer darum, doch die gleichen Werkzeuge stehen allen zur Verfügung. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish yellow-extensions` und `php yellow.php publish yellow`. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow-extensions` und `datenstrom/yellow`.
+Die [Standardinstallation](https://github.com/datenstrom/yellow) ist eine Sammlung der wichtigsten Erweiterungen. Du kannst die Standardinstallation in der [Befehlszeile](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-de.md) aktualisieren. In der Regel kümmert sich ein Betreuer darum, doch die gleichen Werkzeuge stehen allen zur Verfügung. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish yellow`. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -34,11 +34,11 @@ Erweiterungseinstellungen für eine Funktion:
 Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-extension-helloworld
-DownloadUrl: https://github.com/annasvensson/yellow-extension-helloworld/archive/master.zip
+DocumentationUrl: https://github.com/annasvensson/yellow-helloworld
+DownloadUrl: https://github.com/annasvensson/yellow-helloworld/archive/main.zip
 Published: 2019-01-24 19:42:13
 Developer: Anna Svensson
-Tag: example, feature
+Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
@@ -50,14 +50,14 @@ Erweiterungseinstellungen für ein Thema:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Basic
+Extension: Helsinki
 Version: 0.8.15
 Description: Example theme for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-extension-basic
-DownloadUrl: https://github.com/annasvensson/yellow-extension-basic/archive/master.zip
+DocumentationUrl: https://github.com/annasvensson/yellow-helsinki
+DownloadUrl: https://github.com/annasvensson/yellow-helsinki/archive/main.zip
 Published: 2019-01-24 19:42:13
 Designer: Anna Svensson
-Tag: example, theme
+Tag: theme
 system/extensions/basic.php: basic.php, create, update
 system/extensions/basic.txt: basic.txt, create, update
 system/themes/basic.css: basic.css, create, update, careful
@@ -72,7 +72,7 @@ Erweiterungseinstellungen für eine Sprache:
 Extension: German
 Version: 0.8.24
 Description: German/Deutsch with language 'de'.
-DocumentationUrl: https://github.com/datenstrom/yellow-extensions/tree/master/source/german
+DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/german
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/master/downloads/german.zip
 Published: 2019-01-24 19:42:13
 Translator: David Fehrmann
@@ -87,13 +87,12 @@ Vorhandene Verzeichnisse in der Befehlszeile anzeigen:
 
 Erweiterungen in der Befehlszeile veröffentlichen:
 
-`php yellow.php publish yellow-extension-helloworld`  
-`php yellow.php publish yellow-extension-basic`  
-`php yellow.php publish yellow-extensions/source/german`  
+`php yellow.php publish yellow-helloworld`  
+`php yellow.php publish yellow-helsinki`  
+`php yellow.php publish yellow-language/translation/german`  
 
-Standardinstallation in der Befehlszeile aktualisieren:
+Standardinstallation in der Befehlszeile veröffentlichen:
 
-`php yellow.php publish yellow-extensions`  
 `php yellow.php publish yellow`  
 
 ## Einstellungen
