@@ -1,8 +1,8 @@
 <?php
-// Publish extension, https://github.com/datenstrom/yellow-extensions/tree/master/source/publish
+// Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.51";
+    const VERSION = "0.8.52";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -113,7 +113,7 @@ class YellowPublish {
         if ($version==$versionLatest) $published = $publishedLatest;
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         if (is_file($fileNameExtension) && !empty($extension) && !empty($version)) {
-            $url = $this->yellow->system->get("updateExtensionUrl")."/raw/master/downloads/".strtoloweru("$extension.zip");
+            $url = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
             $fileDataNew = "";

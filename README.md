@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.51
+# Publish 0.8.52
 
 Make and publish extensions.
 
@@ -8,7 +8,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-Start with an [example feature](https://github.com/schulle4u/yellow-extension-helloworld), [example theme](https://github.com/schulle4u/yellow-extension-basic) or [example language](https://github.com/datenstrom/yellow-extensions/tree/master/source/english). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
+Start with an [example feature](https://github.com/schulle4u/yellow-extension-helloworld), [example theme](https://github.com/schulle4u/yellow-extension-basic) or [example language](https://github.com/annaesvensson/yellow-language/tree/main/translation/english). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
 
 If you want others to discover your extension, add [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
@@ -73,7 +73,7 @@ Extension: English
 Version: 0.8.24
 Description: English/English with language 'en'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/english
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/master/downloads/english.zip
+DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/english.zip
 Published: 2019-01-24 19:42:13
 Translator: Mark Seuffert
 Tag: language
@@ -133,7 +133,7 @@ The following settings can be configured in file `extension.ini`:
 
 ## Installation
 
-[Download extension](https://github.com/datenstrom/yellow-extensions/raw/master/downloads/publish.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/annaesvensson/yellow-publish/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ## Developer
 

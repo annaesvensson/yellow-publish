@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.51
+# Publish 0.8.52
 
 Göra och publicera tillägg.
 
@@ -8,7 +8,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-Börja med en [exempel-funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [exempel-tema](https://github.com/schulle4u/yellow-extension-basic) eller ett [exempel-språk](https://github.com/datenstrom/yellow-extensions/tree/master/source/swedish). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
+Börja med en [exempel-funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [exempel-tema](https://github.com/schulle4u/yellow-extension-basic) eller ett [exempel-språk](https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
@@ -73,7 +73,7 @@ Extension: Swedish
 Version: 0.8.24
 Description: Swedish/Svenska with language 'sv'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/master/downloads/swedish.zip
+DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/swedish.zip
 Published: 2019-01-24 19:42:13
 Translator: Adam Engel
 Tag: language
@@ -133,7 +133,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 ## Installation
 
-[Ladda ner tillägg](https://github.com/datenstrom/yellow-extensions/raw/master/downloads/publish.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
+[Ladda ner tillägg](https://github.com/annaesvensson/yellow-publish/archive/main.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
 
 ## Utvecklare
 

@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.51
+# Publish 0.8.52
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -8,7 +8,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-Beginne mit einer [Beispiel-Funktion](https://github.com/schulle4u/yellow-extension-helloworld), einem [Beispiel-Thema](https://github.com/schulle4u/yellow-extension-basic) oder einer [Beispiel-Sprache](https://github.com/datenstrom/yellow-extensions/tree/master/source/german). Das zeigt dir welche Dateien und Einstellungen erforderlich sind. Jede Erweiterung benötigt eine `extension.ini`-Datei mit Erweiterungseinstellungen. Bitte stelle sicher, dass deine Erweiterung unseren Programmierungs- und Dokumentationsstandards entspricht. Es ist nicht wichtig welchen Standard wir verwenden, aber dass wir alle einen gemeinsamen verwenden. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
+Beginne mit einer [Beispiel-Funktion](https://github.com/schulle4u/yellow-extension-helloworld), einem [Beispiel-Thema](https://github.com/schulle4u/yellow-extension-basic) oder einer [Beispiel-Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translation/german). Das zeigt dir welche Dateien und Einstellungen erforderlich sind. Jede Erweiterung benötigt eine `extension.ini`-Datei mit Erweiterungseinstellungen. Bitte stelle sicher, dass deine Erweiterung unseren Programmierungs- und Dokumentationsstandards entspricht. Es ist nicht wichtig welchen Standard wir verwenden, aber dass wir alle einen gemeinsamen verwenden. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
 
 Falls du möchtest dass andere deine Erweiterung entdecken, kannst du [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
 
@@ -73,7 +73,7 @@ Extension: German
 Version: 0.8.24
 Description: German/Deutsch with language 'de'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/german
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/master/downloads/german.zip
+DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/german.zip
 Published: 2019-01-24 19:42:13
 Translator: David Fehrmann
 Tag: language
@@ -133,7 +133,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 
 ## Installation
 
-[Erweiterung herunterladen](https://github.com/datenstrom/yellow-extensions/raw/master/downloads/publish.zip) und die Zip-Datei in dein `system/extensions`-Verzeichnis kopieren. Rechtsklick bei Safari.
+[Erweiterung herunterladen](https://github.com/annaesvensson/yellow-publish/archive/main.zip) und die Zip-Datei in dein `system/extensions`-Verzeichnis kopieren. Rechtsklick bei Safari.
 
 ## Entwickler
 
