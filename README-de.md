@@ -8,9 +8,9 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-Beginne mit einer [Beispiel-Funktion](https://github.com/schulle4u/yellow-extension-helloworld), einem [Beispiel-Thema](https://github.com/schulle4u/yellow-extension-basic) oder einer [Beispiel-Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translation/german). Das zeigt dir welche Dateien und Einstellungen erforderlich sind. Jede Erweiterung benötigt eine `extension.ini`-Datei mit Erweiterungseinstellungen. Bitte stelle sicher, dass deine Erweiterung unseren Programmierungs- und Dokumentationsstandards entspricht. Es ist nicht wichtig welchen Standard wir verwenden, aber dass wir alle einen gemeinsamen verwenden. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
+Beginne mit einer [Beispiel-Funktion](https://github.com/schulle4u/yellow-helloworld) oder einem [Beispiel-Thema](https://github.com/schulle4u/yellow-basic). Das zeigt dir welche Dateien und Einstellungen erforderlich sind. Jede Erweiterung benötigt eine `extension.ini`-Datei mit Erweiterungseinstellungen. Bitte stelle sicher, dass deine Erweiterung unseren Programmierungs- und Dokumentationsstandards entspricht. Es ist nicht wichtig welchen Standard wir verwenden, aber dass wir alle einen gemeinsamen verwenden. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
 
-Falls du möchtest dass andere deine Erweiterung entdecken, kannst du [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
+Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
 
 ## Wie man eine Erweiterung veröffentlicht
 
@@ -34,10 +34,10 @@ Erweiterungseinstellungen für eine Funktion:
 Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-helloworld
-DownloadUrl: https://github.com/annasvensson/yellow-helloworld/archive/main.zip
+DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
+DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
 Published: 2019-01-24 19:42:13
-Developer: Anna Svensson
+Developer: Steffen Schultz
 Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
@@ -85,15 +85,15 @@ Vorhandene Verzeichnisse in der Befehlszeile anzeigen:
 
 `php yellow.php publish`  
 
+Alle Verzeichnisse in der Befehlszeile veröffentlichen:
+
+`php yellow.php publish all`  
+
 Erweiterungen in der Befehlszeile veröffentlichen:
 
 `php yellow.php publish yellow-helloworld`  
 `php yellow.php publish yellow-helsinki`  
-`php yellow.php publish yellow-language/translation/german`  
-
-Standardinstallation in der Befehlszeile veröffentlichen:
-
-`php yellow.php publish yellow`  
+`php yellow.php publish yellow-language`  
 
 ## Einstellungen
 

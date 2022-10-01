@@ -8,9 +8,9 @@ Make and publish extensions.
 
 ## How to make an extension
 
-Start with an [example feature](https://github.com/schulle4u/yellow-extension-helloworld), [example theme](https://github.com/schulle4u/yellow-extension-basic) or [example language](https://github.com/annaesvensson/yellow-language/tree/main/translation/english). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
+Start with an [example feature](https://github.com/schulle4u/yellow-helloworld) or [example theme](https://github.com/schulle4u/yellow-basic). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
 
-If you want others to discover your extension, add [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
+If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
 ## How to publish an extension
 
@@ -34,10 +34,10 @@ Extension settings for a feature:
 Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-helloworld
-DownloadUrl: https://github.com/annasvensson/yellow-helloworld/archive/main.zip
+DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
+DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
 Published: 2019-01-24 19:42:13
-Developer: Anna Svensson
+Developer: Steffen Schultz
 Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
@@ -85,15 +85,15 @@ Showing available folders at the command line:
 
 `php yellow.php publish`  
 
+Publishing all folders at the command line:
+
+`php yellow.php publish all`  
+
 Publishing extensions at the command line:
 
 `php yellow.php publish yellow-helloworld`  
 `php yellow.php publish yellow-helsinki`  
-`php yellow.php publish yellow-language/translation/english`  
-
-Publishing the standard installation at the command line:
-
-`php yellow.php publish yellow`  
+`php yellow.php publish yellow-language`  
 
 ## Settings
 

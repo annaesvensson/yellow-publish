@@ -8,9 +8,9 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-Börja med en [exempel-funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [exempel-tema](https://github.com/schulle4u/yellow-extension-basic) eller ett [exempel-språk](https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
+Börja med en [exempel-funktion](https://github.com/schulle4u/yellow-helloworld) eller ett [exempel-tema](https://github.com/schulle4u/yellow-basic). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
 
-Om du vill att andra upptäcka ditt tillägg, lägg till [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
+Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
 ## Hur man publicerar ett tillägg
 
@@ -34,10 +34,10 @@ Tilläggsinställningar för en funktion:
 Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-helloworld
-DownloadUrl: https://github.com/annasvensson/yellow-helloworld/archive/main.zip
+DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
+DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
 Published: 2019-01-24 19:42:13
-Developer: Anna Svensson
+Developer: Steffen Schultz
 Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
@@ -85,15 +85,15 @@ Visar tillgängliga mappar på kommandoraden:
 
 `php yellow.php publish`  
 
+Publicera alla mappar på kommandoraden:
+
+`php yellow.php publish all`  
+
 Publicera tillägg på kommandoraden:
 
 `php yellow.php publish yellow-helloworld`  
 `php yellow.php publish yellow-helsinki`  
-`php yellow.php publish yellow-language/translation/swedish`  
-
-Publicera standardinstallationen på kommandoraden:
-
-`php yellow.php publish yellow`  
+`php yellow.php publish yellow-language`  
 
 ## Inställningar
 
