@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.52";
+    const VERSION = "0.8.53";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -31,9 +31,69 @@ class YellowPublish {
     
     // Process command to publish extensions
     public function processCommandPublish($command, $text) {
+        if (empty($text)) {
+            $statusCode = $this->showExtension($command);
+        } else {
+            $statusCode = $this->publishExtension($command, $text);
+        }
+        return $statusCode;
+    }
+    
+    // Show available extension folders
+    public function showExtension($command) {
+        $statusCode = 200;
+        if ($this->checkExtensionSettings()) {
+            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
+            $entries = $this->yellow->toolbox->getDirectoryEntries($pathRepositorySource, "/.*/", true, true, false);
+            foreach ($entries as $entry) {
+                if ($entry=="yellow-extensions") continue;
+                $path = $pathRepositorySource.$entry."/";
+                if (is_file($path.$this->yellow->system->get("updateExtensionFile"))) {
+                    list($dummy, $dummy, $dummy, $description) = $this->getExtensionInformationFromSettings($path);
+                } elseif (is_file("$path/yellow.php")) {
+                    $description = "Developed by Datenstrom and contributors.";
+                } else {
+                    $description = "No description available.";
+                }
+                echo "$entry - $description\n";
+            }
+            if (count($entries)==0) echo "Yellow $command: No folders\n";
+        } else {
+            $statusCode = 500;
+            $fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
+            echo "ERROR publishing files: Please configure PublishSourceCodeDirectory in file '$fileName'!\n";
+        }
+        return $statusCode;
+    }
+    
+    // Publish extensions folders
+    public function publishExtension($command, $text) {
         $statusCode = 0;
         if ($this->checkExtensionSettings()) {
-            $statusCode = $this->publishExtensionDirectory($command, $text);
+            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
+            $pathRepositoryOffical = $pathRepositorySource."yellow-extensions/";
+            $pathRepositoryRequested = $pathRepositorySource.($text=="all" ? "" : rtrim($text, "/")."/");
+            if (is_dir($pathRepositoryOffical) && is_dir($pathRepositoryRequested)) {
+                $this->extensions = $this->errors = 0;
+                $this->firstStepPaths = $this->getExtensionPaths($pathRepositoryRequested);
+                $this->secondStepPaths = array();
+                $pathsEstimated = count($this->firstStepPaths);
+                foreach ($this->firstStepPaths as $path) {
+                    echo "\rPublishing extension files ".$this->getProgressPercent($this->extensions, $pathsEstimated, 5, 95)."%... ";
+                    $statusCode = max($statusCode, $this->updateExtensionDirectory($path, $pathRepositorySource, true, $text=="all"));
+                }
+                foreach ($this->secondStepPaths as $path) {
+                    echo "\rPublishing extension files ".$this->getProgressPercent($this->extensions, $pathsEstimated, 5, 95)."%... ";
+                    $statusCode = max($statusCode, $this->updateExtensionDirectory($path, $pathRepositorySource));
+                }
+                echo "\rPublishing extension files 100%... done\n";
+            } else {
+                $statusCode = 500;
+                $this->extensions = 0;
+                $this->errors = 1;
+                $path = !is_dir($pathRepositoryOffical) ? $pathRepositoryOffical : $pathRepositoryRequested;
+                echo "ERROR publishing files: Can't find directory '$path'!\n";
+            }
         } else {
             $statusCode = 500;
             $this->extensions = 0;
@@ -46,60 +106,23 @@ class YellowPublish {
         return $statusCode;
     }
     
-    // Publish extension directory
-    public function publishExtensionDirectory($command, $text) {
-        $statusCode = 0;
-        list($path) = $this->yellow->toolbox->getTextArguments($text);
-        $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
-        $pathRepositoryOffical = $pathRepositorySource."yellow-extensions/";
-        $pathRepositoryRequested = rtrim($pathRepositorySource.$path, "/")."/";
-        if (!empty($path) && is_dir($pathRepositoryOffical) && is_dir($pathRepositoryRequested)) {
-            $this->extensions = $this->errors = 0;
-            $this->firstStepPaths = $this->getExtensionPaths($pathRepositoryRequested);
-            $this->secondStepPaths = array();
-            $pathsEstimated = count($this->firstStepPaths);
-            foreach ($this->firstStepPaths as $path) {
-                echo "\rPublishing extension files ".$this->getProgressPercent($this->extensions, $pathsEstimated, 5, 95)."%... ";
-                $statusCode = max($statusCode, $this->updateExtensionDirectory($path, $pathRepositorySource, true));
-            }
-            foreach ($this->secondStepPaths as $path) {
-                echo "\rPublishing extension files ".$this->getProgressPercent($this->extensions, $pathsEstimated, 5, 95)."%... ";
-                $statusCode = max($statusCode, $this->updateExtensionDirectory($path, $pathRepositorySource));
-            }
-            echo "\rPublishing extension files 100%... done\n";
-        } elseif (!empty($path)) {
-            $statusCode = 500;
-            $this->extensions = 0;
-            $this->errors = 1;
-            $path = !is_dir($pathRepositoryOffical) ? $pathRepositoryOffical : $pathRepositoryRequested;
-            echo "ERROR publishing files: Can't find directory '$path'!\n";
-        } else {
-            $statusCode = 200;
-            $this->extensions = $this->errors = 0;
-            $entries = $this->yellow->toolbox->getDirectoryEntries($pathRepositorySource, "/.*/", true, true, false);
-            foreach ($entries as $entry) echo "$entry\n";
-            if (count($entries)==0) echo "Yellow $command: No folders\n";
-        }
-        return $statusCode;
-    }
-    
     // Update extension directory
-    public function updateExtensionDirectory($path, $pathRepositorySource, $analyse = false) {
+    public function updateExtensionDirectory($path, $pathRepositorySource, $analyse = false, $all = false) {
         $statusCode = 200;
-        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension)) {
+        if (is_file($path.$this->yellow->system->get("updateExtensionFile"))) {
             $statusCode = max($statusCode, $this->updateExtensionSettings($path));
             $statusCode = max($statusCode, $this->updateExtensionDocumentation($path));
             $statusCode = max($statusCode, $this->updateExtensionArchive($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateExtensionLatest($path, $pathRepositorySource));
             ++$this->extensions;
-            if ($statusCode==200 && $analyse) $this->analyseExtensionSettings($path);
+            if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
         } elseif (is_file("$path/yellow.php")) {
             $statusCode = max($statusCode, $this->updateStandardSettings($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardFiles($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardDocumentation($path));
-            $this->extensions += $this->getStandardExtensionsCount($path);
+            if ($analyse && !$all) $this->extensions += $this->getStandardExtensionsCount($path);
+            if ($statusCode==200 && $analyse && $all) array_push($this->secondStepPaths, $path);
             if ($statusCode!=200) ++$this->errors;
         }
         return $statusCode;
@@ -109,10 +132,10 @@ class YellowPublish {
     public function updateExtensionSettings($path) {
         $statusCode = 200;
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
-        list($dummy, $versionLatest, $publishedLatest) = $this->getExtensionInformationFromSettings($path);
+        list($dummy, $versionLatest, $publishedLatest, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         if ($version==$versionLatest) $published = $publishedLatest;
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !empty($extension) && !empty($version)) {
+        if (is_file($fileNameExtension) && !empty($extension) && !empty($version) && $status!="private") {
             $url = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
@@ -123,8 +146,6 @@ class YellowPublish {
                     if (lcfirst($matches[1])=="version") $line = "Version: $version\n";
                     if (lcfirst($matches[1])=="downloadUrl") $line = "DownloadUrl: $url\n";
                     if (lcfirst($matches[1])=="published") $line = "Published: ".date("Y-m-d H:i:s", $published)."\n";
-                    if (lcfirst($matches[1])=="status" && $matches[2]=="unpublished") $line = "";
-                    if (lcfirst($matches[1])=="type") $line = "Tag: $matches[2]\n";
                     if (!empty($matches[1]) && !empty($matches[2]) && strposu($matches[1], "/")) {
                         $matches[2] = preg_replace("/,(\S)/", ", $1", $matches[2]);
                         $line = "$matches[1]: $matches[2]\n";
@@ -165,17 +186,19 @@ class YellowPublish {
     // Update extension documentation files
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
-        list($extension, $version) = $this->getExtensionInformationFromSettings($path);
-        $regex = "/^.*\\".$this->yellow->system->get("coreContentExtension")."$/";
-        foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
-            $fileData = $this->yellow->toolbox->readFile($entry);
-            $fileDataNew = $this->setDocumentationHeading($fileData, ucfirst($extension)." ".$version);
-            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
-                $statusCode = 500;
-                echo "ERROR publishing files: Can't write file '$entry'!\n";
-            }
-            if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateExtensionDocumentation file:$entry<br/>\n";
+        list($extension, $version, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
+        if (!empty($extension) && !empty($version) && $status!="private") {
+            $regex = "/^.*\\".$this->yellow->system->get("coreContentExtension")."$/";
+            foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
+                $fileData = $this->yellow->toolbox->readFile($entry);
+                $fileDataNew = $this->setDocumentationHeading($fileData, ucfirst($extension)." ".$version);
+                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+                    $statusCode = 500;
+                    echo "ERROR publishing files: Can't write file '$entry'!\n";
+                }
+                if ($this->yellow->system->get("coreDebugMode")>=2) {
+                    echo "YellowPublish::updateExtensionDocumentation file:$entry<br/>\n";
+                }
             }
         }
         return $statusCode;
@@ -184,9 +207,9 @@ class YellowPublish {
     // Update extension ZIP archive
     public function updateExtensionArchive($path, $pathRepositorySource) {
         $statusCode = 200;
-        list($extension, $version, $published) = $this->getExtensionInformationFromSettings($path);
+        list($extension, $version, $published, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !empty($extension)) {
+        if (is_file($fileNameExtension) && !empty($extension) && $status!="private") {
             $zip = new ZipArchive();
             $fileNameZipArchive = $pathRepositorySource."yellow-extensions/downloads/".strtoloweru("$extension.zip");
             if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
@@ -219,10 +242,10 @@ class YellowPublish {
     // Update extension latest file
     public function updateExtensionLatest($path, $pathRepositorySource) {
         $statusCode = 200;
-        list($extension, $version, $published, $status) = $this->getExtensionInformationFromSettings($path);
+        list($extension, $version, $published, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         $fileNameLatest = $pathRepositorySource."yellow-extensions/".$this->yellow->system->get("updateLatestFile");
-        if (is_file($fileNameExtension) && is_file($fileNameLatest) && $status!="unlisted") {
+        if (is_file($fileNameExtension) && is_file($fileNameLatest) && $status!="private" && $status!="unlisted") {
             $fileDataExtension = $this->yellow->toolbox->readFile($fileNameExtension);
             $settingsExtension = $this->yellow->toolbox->getTextSettings($fileDataExtension, "");
             $fileData = $this->yellow->toolbox->readFile($fileNameLatest);
@@ -465,7 +488,7 @@ class YellowPublish {
 
     // Return extension information from settings
     public function getExtensionInformationFromSettings($path) {
-        $extension = $version = $published = $status = "";
+        $extension = $version = $published = $description = $status = "";
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
@@ -473,10 +496,13 @@ class YellowPublish {
                 if (lcfirst($matches[1])=="extension") $extension = lcfirst($matches[2]);
                 if (lcfirst($matches[1])=="version") $version = $matches[2];
                 if (lcfirst($matches[1])=="published") $published = strtotime($matches[2]);
+                if (lcfirst($matches[1])=="developer") $description = "Developed by ".$matches[2].".";
+                if (lcfirst($matches[1])=="designer") $description = "Designed by ".$matches[2].".";
+                if (lcfirst($matches[1])=="translator") $description = "Translated by ".$matches[2].".";
                 if (lcfirst($matches[1])=="status") $status = $matches[2];
             }
         }
-        return array($extension, $version, $published, $status);
+        return array($extension, $version, $published, $description, $status);
     }
     
     // Return extension languages available

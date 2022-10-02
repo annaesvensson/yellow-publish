@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.52
+# Publish 0.8.53
 
 Make and publish extensions.
 
@@ -14,13 +14,13 @@ If you want others to discover your extension, add the topic [datenstrom-yellow]
 
 ## How to publish an extension
 
-The [published extensions](https://github.com/datenstrom/yellow-extensions) are included in the [update process](https://github.com/annaesvensson/yellow-update). This will make sure that everyone gets the latest version of your extension. First increase the version number in your code, then publish your extension at the [command line](https://github.com/annaesvensson/yellow-command). Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish` followed by a folder. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow-extensions`.
+The [published extensions](https://github.com/datenstrom/yellow-extensions) are included in the [update process](https://github.com/annaesvensson/yellow-update) and [tests process](https://github.com/datenstrom/yellow-extensions/actions). You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-command). Increase the version number in your code. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. Upload your changes to GitHub and create a pull request for `datenstrom/yellow-extensions`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
 ## How to publish the standard installation
 
-The [standard installation](https://github.com/datenstrom/yellow) is a collection of the most important extensions. You can update the standard installation at the [command line](https://github.com/annaesvensson/yellow-command). Usually a maintainer takes care of it, but the same tools are available to everyone. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish yellow`. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
+The [standard installation](https://github.com/datenstrom/yellow) is a collection of the most important extensions. You can publish the standard installation at the [command line](https://github.com/annaesvensson/yellow-command). Usually a maintainer takes care of it, but the same tools are available to everyone. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish yellow`. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
@@ -109,17 +109,17 @@ The following settings can be configured in file `extension.ini`:
 `DocumentationUrl` = extension documentation  
 `DownloadUrl` = extension download address  
 `Published` = extension publication date, YYYY-MM-DD format  
-`Status` = extension status, [supported status values](#settings-status)  
 `Developer` = feature developer(s), comma separated  
 `Designer` = theme designer(s), comma separated  
 `Translator` = language translator(s), comma separated  
+`Status` = extension status, [supported status values](#settings-status)  
 `Tag` = extension tag(s) for categorisation, comma separated  
 
 <a id="settings-status"></a>The following extension status values are supported:
 
-`public` = extension is visible in official repository  
+`public` = extension is published in official repository  
+`private` = extension is not published in official repository  
 `unlisted` = extension is not visible in official repository  
-`unpublished` = extension is not available in official repository  
 
 <a id="settings-actions"></a>The following file actions are supported:
 
@@ -137,4 +137,4 @@ The following settings can be configured in file `extension.ini`:
 
 ## Developer
 
-Datenstrom. [Get help](https://datenstrom.se/yellow/help/).
+Anna Svensson. [Get help](https://datenstrom.se/yellow/help/).

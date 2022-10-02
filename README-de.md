@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.52
+# Publish 0.8.53
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -14,13 +14,13 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) sind beim [Aktualisierungsprozess](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) mit dabei. Das stellt sicher dass alle die neueste Version deiner Erweiterung erhalten. Erhöhe zuerst die Versionsnummer in deinem Code und veröffentliche dann deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md). Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish` gefolgt von einem Verzeichnis. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow-extensions`.
+Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) sind beim [Aktualisierungsprozess](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Testprozess](https://github.com/datenstrom/yellow-extensions/actions) mit dabei. Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Code. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow-extensions`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
 ## Wie man die Standardinstallation veröffentlicht
 
-Die [Standardinstallation](https://github.com/datenstrom/yellow) ist eine Sammlung der wichtigsten Erweiterungen. Du kannst die Standardinstallation in der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) aktualisieren. In der Regel kümmert sich ein Betreuer darum, doch die gleichen Werkzeuge stehen allen zur Verfügung. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish yellow`. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
+Die [Standardinstallation](https://github.com/datenstrom/yellow) ist eine Sammlung der wichtigsten Erweiterungen. Du kannst die Standardinstallation in der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) veröffentlichen. In der Regel kümmert sich ein Betreuer darum, doch die gleichen Werkzeuge stehen allen zur Verfügung. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish yellow`. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -109,17 +109,17 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `DocumentationUrl` = Dokumentation der Erweiterung  
 `DownloadUrl` = Adresse zum Herunterladen der Erweiterung  
 `Published` = Veröffentlichungsdatum der Erweiterung, JJJJ-MM-TT Format  
-`Status` = Status der Erweiterung, [unterstützte Statuswerte](#einstellungen-status)  
 `Developer` = Entwickler einer Funktion, durch Komma getrennt  
 `Designer` = Designer eines Themas, durch Komma getrennt  
 `Translator` = Übersetzer einer Sprache, durch Komma getrennt  
+`Status` = Status der Erweiterung, [unterstützte Statuswerte](#einstellungen-status)  
 `Tag` = Tags zur Kategorisierung der Erweiterung, durch Komma getrennt  
 
 <a id="einstellungen-status"></a>Die folgenden Erweiterungs-Statuswerte werden unterstützt:
 
-`public` = Erweiterung ist im offiziellen Repository sichtbar  
+`public` = Erweiterung ist im offiziellen Repository veröffentlicht  
+`private` = Erweiterung ist im offiziellen Repository nicht veröffentlicht  
 `unlisted` = Erweiterung ist im offiziellen Repository nicht sichtbar  
-`unpublished` = Erweiterung ist im offiziellen Repository nicht vorhanden  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:
 
@@ -137,4 +137,4 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 
 ## Entwickler
 
-Datenstrom. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Anna Svensson. [Hilfe finden](https://datenstrom.se/de/yellow/help/).

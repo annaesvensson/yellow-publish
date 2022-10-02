@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.52
+# Publish 0.8.53
 
 Göra och publicera tillägg.
 
@@ -14,13 +14,13 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md). Detta säkerställer att alla får senaste versionen av ditt tillägg. Öka först versionsnumret i din kod och publicera sedan ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish` följt av en mapp. Detta uppdaterar alla nödvändiga filer. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
+De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [testprocessen](https://github.com/datenstrom/yellow-extensions/actions). Du kan publicera standardinstallationen på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). Öka versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
 ## Hur man publicerar standardinstallationen
 
-[Standardinstallationen](https://github.com/datenstrom/yellow) är en samling av viktigaste tillägg. Du kan uppdatera standardinstallationen på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). Vanligtvis tar en underhållare hand om det, dock samma verktyg är tillgängliga för alla. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish yellow`. Detta uppdaterar alla nödvändiga filer. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow`.
+[Standardinstallationen](https://github.com/datenstrom/yellow) är en samling av viktigaste tillägg. Du kan publicera standardinstallationen på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). Vanligtvis tar en underhållare hand om det, dock samma verktyg är tillgängliga för alla. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish yellow`. Detta uppdaterar alla nödvändiga filer. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
@@ -109,17 +109,17 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `DocumentationUrl` = tilläggets dokumentation  
 `DownloadUrl` = tilläggets nedladdningsadress  
 `Published` = tilläggets publiceringsdatum, ÅÅÅÅ-MM-DD format  
-`Status` = tilläggets status, [stödda statusvärden](#inställningar-status)  
 `Developer` = utvecklare av en funktion, kommaseparerade  
 `Designer` = formgivare av ett tema, kommaseparerade  
 `Translator` = översättare av ett språk, kommaseparerade  
+`Status` = tilläggets status, [stödda statusvärden](#inställningar-status)  
 `Tag` = taggar för kategorisering av tilläget, kommaseparerade  
 
 <a id="inställningar-status"></a>Följande statusvärden stöds:
 
-`public` = tilläget syns i den officiella repository  
+`public` = tilläget publiceras i den officiella repository  
+`private` = tillägget publiceras inte i den officiella repository  
 `unlisted` = tilläget syns inte i den officiella repository  
-`unpublished` = tilläget finns inte i den officiella repository  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
 
@@ -137,4 +137,4 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 ## Utvecklare
 
-Datenstrom. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
+Anna Svensson. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
