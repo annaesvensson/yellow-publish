@@ -58,10 +58,10 @@ DownloadUrl: https://github.com/annasvensson/yellow-helsinki/archive/main.zip
 Published: 2019-01-24 19:42:13
 Designer: Anna Svensson
 Tag: theme
-system/extensions/basic.php: basic.php, create, update
-system/extensions/basic.txt: basic.txt, create, update
-system/themes/basic.css: basic.css, create, update, careful
-system/themes/basic.png: basic.png, create
+system/extensions/helsinki.php: helsinki.php, create, update
+system/extensions/helsinki.txt: helsinki.txt, create, update
+system/themes/helsinki.css: helsinki.css, create, update, careful
+system/themes/helsinki.png: helsinki.png, create
 ~~~
 
 Erweiterungseinstellungen für eine Sprache:
