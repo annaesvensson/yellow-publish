@@ -8,7 +8,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-Börja med en [exempel-funktion](https://github.com/schulle4u/yellow-helloworld) eller ett [exempel-tema](https://github.com/schulle4u/yellow-basic). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
+Börja med en [funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [språk](https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Detta visar dig vilka filer och inställningar som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
@@ -36,7 +36,7 @@ Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
-Published: 2019-01-24 19:42:13
+Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
@@ -45,40 +45,42 @@ system/extensions/helloworld.css: helloworld.css, create, update
 system/extensions/helloworld.txt: helloworld.txt, create, update
 ~~~
 
-Tilläggsinställningar för ett tema:
-
-~~~
-# Datenstrom Yellow extension settings
-
-Extension: Helsinki
-Version: 0.8.15
-Description: Example theme for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-helsinki
-DownloadUrl: https://github.com/annasvensson/yellow-helsinki/archive/main.zip
-Published: 2019-01-24 19:42:13
-Designer: Anna Svensson
-Tag: theme
-system/extensions/helsinki.php: helsinki.php, create, update
-system/extensions/helsinki.txt: helsinki.txt, create, update
-system/themes/helsinki.css: helsinki.css, create, update, careful
-system/themes/helsinki.png: helsinki.png, create
-~~~
-
 Tilläggsinställningar för ett språk:
 
 ~~~
 # Datenstrom Yellow extension settings
 
 Extension: Swedish
-Version: 0.8.24
+Version: 0.8.32
 Description: Swedish/Svenska with language 'sv'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/swedish.zip
-Published: 2019-01-24 19:42:13
+Published: 2022-04-24 15:40:40
 Translator: Adam Engel
 Tag: language
 system/extensions/swedish.php: swedish.php, create, update
 system/extensions/swedish.txt: swedish.txt, create, update
+~~~
+
+Tilläggsinställningar för ett tema:
+
+~~~
+# Datenstrom Yellow extension settings
+
+Extension: Stockholm
+Version: 0.8.13
+Description: Stockholm is a clean theme.
+DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
+DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/stockholm.zip
+Published: 2022-06-15 16:03:38
+Designer: Anna Svensson
+Tag: theme
+system/extensions/stockholm.php: stockholm.php, create, update
+system/themes/stockholm.css: stockholm.css, create, update, careful
+system/themes/stockholm.png: stockholm.png, create
+system/themes/stockholm-opensans-bold.woff: stockholm-opensans-bold.woff, create, update, careful
+system/themes/stockholm-opensans-light.woff: stockholm-opensans-light.woff, create, update, careful
+system/themes/stockholm-opensans-regular.woff: stockholm-opensans-regular.woff, create, update, careful
 ~~~
 
 Visar tillgängliga mappar på kommandoraden:
@@ -92,8 +94,8 @@ Publicera alla mappar på kommandoraden:
 Publicera tillägg på kommandoraden:
 
 `php yellow.php publish yellow-helloworld`  
-`php yellow.php publish yellow-helsinki`  
 `php yellow.php publish yellow-language`  
+`php yellow.php publish yellow-stockholm`  
 
 ## Inställningar
 

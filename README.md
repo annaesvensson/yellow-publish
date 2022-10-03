@@ -8,7 +8,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-Start with an [example feature](https://github.com/schulle4u/yellow-helloworld) or [example theme](https://github.com/schulle4u/yellow-basic). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
+Start with a [feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translation/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files and settings are required. Every extension needs an `extension.ini` file with extension settings. Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
@@ -36,7 +36,7 @@ Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
-Published: 2019-01-24 19:42:13
+Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
@@ -45,40 +45,42 @@ system/extensions/helloworld.css: helloworld.css, create, update
 system/extensions/helloworld.txt: helloworld.txt, create, update
 ~~~
 
-Extension settings for a theme:
-
-~~~
-# Datenstrom Yellow extension settings
-
-Extension: Helsinki
-Version: 0.8.15
-Description: Example theme for Datenstrom Yellow.
-DocumentationUrl: https://github.com/annasvensson/yellow-helsinki
-DownloadUrl: https://github.com/annasvensson/yellow-helsinki/archive/main.zip
-Published: 2019-01-24 19:42:13
-Designer: Anna Svensson
-Tag: theme
-system/extensions/helsinki.php: helsinki.php, create, update
-system/extensions/helsinki.txt: helsinki.txt, create, update
-system/themes/helsinki.css: helsinki.css, create, update, careful
-system/themes/helsinki.png: helsinki.png, create
-~~~
-
 Extension settings for a language:
 
 ~~~
 # Datenstrom Yellow extension settings
 
 Extension: English
-Version: 0.8.24
+Version: 0.8.32
 Description: English/English with language 'en'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/english
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/english.zip
-Published: 2019-01-24 19:42:13
+Published: 2022-04-24 15:40:08
 Translator: Mark Seuffert
 Tag: language
 system/extensions/english.php: english.php, create, update
 system/extensions/english.txt: english.txt, create, update
+~~~
+
+Extension settings for a theme:
+
+~~~
+# Datenstrom Yellow extension settings
+
+Extension: Stockholm
+Version: 0.8.13
+Description: Stockholm is a clean theme.
+DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
+DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/stockholm.zip
+Published: 2022-06-15 16:03:38
+Designer: Anna Svensson
+Tag: theme
+system/extensions/stockholm.php: stockholm.php, create, update
+system/themes/stockholm.css: stockholm.css, create, update, careful
+system/themes/stockholm.png: stockholm.png, create
+system/themes/stockholm-opensans-bold.woff: stockholm-opensans-bold.woff, create, update, careful
+system/themes/stockholm-opensans-light.woff: stockholm-opensans-light.woff, create, update, careful
+system/themes/stockholm-opensans-regular.woff: stockholm-opensans-regular.woff, create, update, careful
 ~~~
 
 Showing available folders at the command line:
@@ -92,8 +94,8 @@ Publishing all folders at the command line:
 Publishing extensions at the command line:
 
 `php yellow.php publish yellow-helloworld`  
-`php yellow.php publish yellow-helsinki`  
 `php yellow.php publish yellow-language`  
+`php yellow.php publish yellow-stockholm`  
 
 ## Settings
 
