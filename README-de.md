@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.53
+# Publish 0.8.54
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -120,7 +120,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 <a id="einstellungen-status"></a>Die folgenden Erweiterungs-Statuswerte werden unterstützt:
 
 `public` = Erweiterung ist im offiziellen Repository veröffentlicht  
-`private` = Erweiterung ist im offiziellen Repository nicht veröffentlicht  
+`experimental` = Erweiterung ist im offiziellen Repository nicht veröffentlicht  
 `unlisted` = Erweiterung ist im offiziellen Repository nicht sichtbar  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:

@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.53
+# Publish 0.8.54
 
 Göra och publicera tillägg.
 
@@ -56,7 +56,7 @@ Description: Swedish/Svenska with language 'sv'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/swedish
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/swedish.zip
 Published: 2022-04-24 15:40:40
-Translator: Adam Engel
+Translator: Anna Svensson
 Tag: language
 system/extensions/swedish.php: swedish.php, create, update
 system/extensions/swedish.txt: swedish.txt, create, update
@@ -120,7 +120,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 <a id="inställningar-status"></a>Följande statusvärden stöds:
 
 `public` = tilläget publiceras i den officiella repository  
-`private` = tillägget publiceras inte i den officiella repository  
+`experimental` = tillägget publiceras inte i den officiella repository  
 `unlisted` = tilläget syns inte i den officiella repository  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:

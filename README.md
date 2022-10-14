@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.53
+# Publish 0.8.54
 
 Make and publish extensions.
 
@@ -120,7 +120,7 @@ The following settings can be configured in file `extension.ini`:
 <a id="settings-status"></a>The following extension status values are supported:
 
 `public` = extension is published in official repository  
-`private` = extension is not published in official repository  
+`experimental` = extension is not published in official repository  
 `unlisted` = extension is not visible in official repository  
 
 <a id="settings-actions"></a>The following file actions are supported:
