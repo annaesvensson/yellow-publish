@@ -111,9 +111,9 @@ The following settings can be configured in file `extension.ini`:
 `DocumentationUrl` = extension documentation  
 `DownloadUrl` = extension download address  
 `Published` = extension publication date, YYYY-MM-DD format  
-`Developer` = feature developer(s), comma separated  
-`Designer` = theme designer(s), comma separated  
-`Translator` = language translator(s), comma separated  
+`Developer` = responsible developer(s) of a feature, comma separated  
+`Designer` = responsible designer(s) of a theme, comma separated  
+`Translator` = responsible translator(s) of a language, comma separated  
 `Status` = extension status, [supported status values](#settings-status)  
 `Tag` = extension tag(s) for categorisation, comma separated  
 
