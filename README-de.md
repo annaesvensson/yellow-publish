@@ -111,9 +111,9 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `DocumentationUrl` = Dokumentation der Erweiterung  
 `DownloadUrl` = Adresse zum Herunterladen der Erweiterung  
 `Published` = Veröffentlichungsdatum der Erweiterung, JJJJ-MM-TT Format  
-`Developer` = Entwickler einer Funktion, durch Komma getrennt  
-`Designer` = Designer eines Themas, durch Komma getrennt  
-`Translator` = Übersetzer einer Sprache, durch Komma getrennt  
+`Developer` = verantwortlicher Entwickler einer Funktion, durch Komma getrennt  
+`Designer` = verantwortlicher Designer eines Themas, durch Komma getrennt  
+`Translator` = verantwortlicher Übersetzer einer Sprache, durch Komma getrennt  
 `Status` = Status der Erweiterung, [unterstützte Statuswerte](#einstellungen-status)  
 `Tag` = Tags zur Kategorisierung der Erweiterung, durch Komma getrennt  
 
