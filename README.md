@@ -8,7 +8,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-Start with a [feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translation/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. Every extension needs an `extension.ini` file with extension settings. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
+Start with a [feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. Every extension needs an `extension.ini` file with extension settings. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
@@ -53,7 +53,7 @@ Extension settings for a language:
 Extension: English
 Version: 0.8.32
 Description: English/English with language 'en'.
-DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translation/english
+DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
 DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/english.zip
 Published: 2022-04-24 15:40:08
 Translator: Mark Seuffert
