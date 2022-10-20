@@ -42,7 +42,6 @@ Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
-system/extensions/helloworld.txt: helloworld.txt, create, update
 ~~~
 
 Tilläggsinställningar för ett språk:
@@ -59,7 +58,6 @@ Published: 2022-04-24 15:40:40
 Translator: Anna Svensson
 Tag: language
 system/extensions/swedish.php: swedish.php, create, update
-system/extensions/swedish.txt: swedish.txt, create, update
 ~~~
 
 Tilläggsinställningar för ett tema:

@@ -42,7 +42,6 @@ Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
-system/extensions/helloworld.txt: helloworld.txt, create, update
 ~~~
 
 Erweiterungseinstellungen für eine Sprache:
@@ -59,7 +58,6 @@ Published: 2022-04-24 15:40:14
 Translator: David Fehrmann
 Tag: language
 system/extensions/german.php: german.php, create, update
-system/extensions/german.txt: german.txt, create, update
 ~~~
 
 Erweiterungseinstellungen für ein Thema:
