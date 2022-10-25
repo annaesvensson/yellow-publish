@@ -20,7 +20,7 @@ If you want to mention other developers/designers/translators, add [co-authors](
 
 ## How to publish the standard installation
 
-You can publish the standard installation at the [command line](https://github.com/annaesvensson/yellow-command). The [standard installation](https://github.com/datenstrom/yellow) is a collection of the most important [extensions](https://github.com/datenstrom/yellow-extensions). Usually a maintainer takes care of it, but the same tools are available to everyone. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish yellow`. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
+You can publish the standard installation at the [command line](https://github.com/annaesvensson/yellow-command). The [standard installation](https://github.com/datenstrom/yellow) is a collection of the most important extensions, [translations](https://github.com/annaesvensson/yellow-language) and the [installer](https://github.com/annaesvensson/yellow-install). Usually a maintainer takes care of it, but the same tools are available to everyone. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish yellow`. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
