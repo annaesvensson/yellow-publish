@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.55";
+    const VERSION = "0.8.56";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -731,7 +731,10 @@ class YellowPublish {
         }
         if ($language!="en") {
             $fileNameShort = "README-$language".$this->yellow->system->get("coreContentExtension");
-            if (is_file($path.$fileNameShort)) $postfix = "/tree/main/".$fileNameShort;
+            if (is_file($path.$fileNameShort)) {
+                $postfix = preg_match("#/tree/main/#", $url) ? "/" : "/tree/main/";
+                $postfix .= $fileNameShort;
+            }
         }
         return $url.$postfix;
     }
