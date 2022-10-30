@@ -14,7 +14,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). Bara publicerade [tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md). Öka versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md). Öka versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
@@ -133,7 +133,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 ## Installation
 
-[Ladda ner tillägg](https://github.com/annaesvensson/yellow-publish/archive/main.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
+[Ladda ner tillägg](https://github.com/annaesvensson/yellow-publish/archive/main.zip) och kopiera ZIP-fil till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ## Utvecklare
 
