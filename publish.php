@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.56";
+    const VERSION = "0.8.57";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -26,7 +26,7 @@ class YellowPublish {
 
     // Handle command help
     public function onCommandHelp() {
-        return "publish [directory]\n";
+        return "publish [directory]";
     }
     
     // Process command to publish extensions
@@ -516,24 +516,33 @@ class YellowPublish {
     // Return default language settings from raw data
     public function getLanguageDefaultSettings($rawData) {
         $settings = new YellowArray();
-        if (preg_match("/^(.*?<<<\s*'END'[\r\n]+)(.*?[\r\n]+)(\s*END.*)$/s", $rawData, $matches)) {
-            $settings = $this->yellow->toolbox->getTextSettings($matches[2], "");
+        if (preg_match("/^(.*?\$this->yellow->language->setDefault\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $matches)) {
+            foreach ($this->getTextLines($matches[2]) as $line) {
+                if (preg_match("/^\s*\"(.*?)\s*:\s*(.*?)\s*\",$/", $line, $matches)) {
+                    if (!empty($matches[1]) && !strempty($matches[2])) {
+                        $settings[$matches[1]] = $matches[2];
+                    }
+                }
+            }
         }
         return $settings;
     }
     
     // Set default language settings in raw data
     public function setLanguageDefaultSettings($rawData, $settings) {
-        $rawDataStart = $rawDataMiddle = $rawDataEnd = "";
-        if (preg_match("/^(.*?<<<\s*'END'[\r\n]+)(.*?[\r\n]+)(\s*END.*)$/s", $rawData, $matches)) {
+        if (preg_match("/^(.*?\$this->yellow->language->setDefault\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $matches)) {
             $rawDataStart = $matches[1];
             $rawDataEnd = $matches[3];
             $rawDataMiddle = "";
             foreach ($settings as $key=>$value) {
-                $rawDataMiddle .= "        ".ucfirst($key).": $value\n";
+                $rawDataMiddle .= "            \"".ucfirst($key).": $value\",\n";
             }
+            $rawDataMiddle = rtrim($rawDataMiddle, ",\n");
+            $rawDataNew = $rawDataStart.$rawDataMiddle.$rawDataEnd;
+        } else {
+            $rawDataNew = $rawData;
         }
-        return $rawDataStart.$rawDataMiddle.$rawDataEnd;
+        return $rawDataNew;
     }
     
     // Check extension settings
