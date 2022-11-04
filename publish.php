@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.59";
+    const VERSION = "0.8.60";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -31,7 +31,7 @@ class YellowPublish {
     
     // Process command to publish extensions
     public function processCommandPublish($command, $text) {
-        if (empty($text)) {
+        if (is_string_empty($text)) {
             $statusCode = $this->showExtension($command);
         } else {
             $statusCode = $this->publishExtension($command, $text);
@@ -57,7 +57,7 @@ class YellowPublish {
                 }
                 echo "$entry - $responsible\n";
             }
-            if (count($entries)==0) echo "Yellow $command: No folders\n";
+            if (is_array_empty($entries)) echo "Yellow $command: No folders\n";
         } else {
             $statusCode = 500;
             $fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
@@ -137,7 +137,7 @@ class YellowPublish {
         list($dummy, $versionLatest, $publishedLatest, $status) = $this->getExtensionInformationFromSettings($path);
         if ($version==$versionLatest) $published = $publishedLatest;
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !empty($extension) && !empty($version) && $status!="experimental") {
+        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
             $url = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
@@ -148,7 +148,7 @@ class YellowPublish {
                     if (lcfirst($matches[1])=="version") $line = "Version: $version\n";
                     if (lcfirst($matches[1])=="downloadUrl") $line = "DownloadUrl: $url\n";
                     if (lcfirst($matches[1])=="published") $line = "Published: ".date("Y-m-d H:i:s", $published)."\n";
-                    if (!empty($matches[1]) && !strempty($matches[2]) && strposu($matches[1], "/")) {
+                    if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                         $matches[2] = preg_replace("/,(\S)/", ", $1", $matches[2]);
                         $line = "$matches[1]: $matches[2]\n";
                         $fileNameDestination = $matches[1];
@@ -158,11 +158,11 @@ class YellowPublish {
                             echo "ERROR publishing files: File '$fileNameDestination' is not possible!\n";
                         }
                     }
-                    if (!empty($matches[1]) && !strempty($matches[2])) $settings[$matches[1]] = $matches[2];
+                    if (!is_string_empty($matches[1]) && !is_string_empty($matches[2])) $settings[$matches[1]] = $matches[2];
                 }
                 $fileDataNew .= $line;
             }
-            if (!empty($fileNameSource)) {
+            if (!is_string_empty($fileNameSource)) {
                 $fileNameClass = basename($fileNameSource);
                 if ($extension!=$this->yellow->lookup->normaliseName($fileNameClass, true, true)) {
                     $statusCode = 500;
@@ -189,7 +189,7 @@ class YellowPublish {
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!empty($extension) && !empty($version) && $status!="experimental") {
+        if (!is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
@@ -211,7 +211,7 @@ class YellowPublish {
         $statusCode = 200;
         list($extension, $dummy, $published, $status) = $this->getExtensionInformationFromSettings($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !empty($extension) && $status!="experimental") {
+        if (is_file($fileNameExtension) && !is_string_empty($extension) && $status!="experimental") {
             $zip = new ZipArchive();
             $fileNameZipArchive = $pathRepositorySource."yellow-extensions/downloads/".strtoloweru("$extension.zip");
             if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
@@ -277,7 +277,7 @@ class YellowPublish {
     public function updateExtensionList($path, $pathRepositorySource) {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status, $tag) = $this->getExtensionInformationFromSettings($path);
-        if (!empty($extension) && $status!="experimental" && $status!="unlisted" && !empty($tag)) {
+        if (!is_string_empty($extension) && $status!="experimental" && $status!="unlisted" && !is_string_empty($tag)) {
             $pathRepositoryOffical = $pathRepositorySource."yellow-extensions/";
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($pathRepositoryOffical, $regex, true, false) as $entry) {
@@ -461,7 +461,7 @@ class YellowPublish {
     
     // Set documenation list entry in Markdown data
     public function setDocumentationListEntry($rawData, $extension, $description, $url, $tag) {
-        if (!empty($extension) && !empty($description) && !empty($url) && !empty($tag)) {
+        if (!is_string_empty($extension) && !is_string_empty($description) && !is_string_empty($url) && !is_string_empty($tag)) {
             if (preg_match("/feature/i", $tag)) {
                 $section = 1;
             } elseif (preg_match("/language/i", $tag)) {
@@ -476,7 +476,7 @@ class YellowPublish {
             foreach ($this->yellow->toolbox->getTextLines($rawData) as $line) {
                 if (preg_match("/^\#\#/", $line)) --$section;
                 if ($section==0) $scan = preg_match("/^\*\s*\[(\S+)\]/", $line);
-                if (!$scan && empty($rawDataMiddle)) {
+                if (!$scan && is_string_empty($rawDataMiddle)) {
                     $rawDataStart .= $line;
                 } elseif ($scan) {
                     $rawDataMiddle .= $line;
@@ -484,7 +484,7 @@ class YellowPublish {
                     $rawDataEnd .= $line;
                 }
             }
-            if (!empty($rawDataMiddle)) {
+            if (!is_string_empty($rawDataMiddle)) {
                 $data = array();
                 foreach ($this->yellow->toolbox->getTextLines($rawDataMiddle) as $line) {
                     if (preg_match("/^\*\s*\[(\S+)\]/", $line, $matches)) $data[strtoloweru($matches[1])] = $line;
@@ -519,7 +519,7 @@ class YellowPublish {
         if (preg_match("/^(.*?\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
             foreach ($this->getTextLines($parts[2]) as $line) {
                 if (preg_match("/^\s*\"(.*?)\s*:\s*(.*?)\s*\",$/", $line, $matches)) {
-                    if (!empty($matches[1]) && !strempty($matches[2])) {
+                    if (!is_string_empty($matches[1]) && !is_string_empty($matches[2])) {
                         $settings[$matches[1]] = $matches[2];
                     }
                 }
@@ -643,13 +643,13 @@ class YellowPublish {
                     if ($matches[1]=="function" || $matches[2]=="function") break;
                 }
             }
-            if (!empty($extension) && !empty($version)) {
+            if (!is_string_empty($extension) && !is_string_empty($version)) {
                 $published = $this->yellow->toolbox->getFileModified($entry);
                 $fileNameSource = $entry;
                 break;
             }
         }
-        if (empty($extension) || empty($version) || empty($published)) {
+        if (is_string_empty($extension) || is_string_empty($version) || is_string_empty($published)) {
             list($extension, $version, $published) = $this->getExtensionInformationFromSettings($path);
         }
         return array($extension, $version, $published, $fileNameSource);
@@ -684,10 +684,10 @@ class YellowPublish {
                 if (lcfirst($matches[1])=="translator") $translator = $matches[2];
             }
         }
-        if (!empty($developer)) $responsible = "Developed by $developer.";
-        if (!empty($designer)) $responsible = "Designed by $designer.";
-        if (!empty($translator)) $responsible = "Translated by $translator.";
-        if (empty($responsible)) $responsible = "No description available.";
+        if (!is_string_empty($developer)) $responsible = "Developed by $developer.";
+        if (!is_string_empty($designer)) $responsible = "Designed by $designer.";
+        if (!is_string_empty($translator)) $responsible = "Translated by $translator.";
+        if (is_string_empty($responsible)) $responsible = "No description available.";
         return $responsible;
     }
     
@@ -708,19 +708,19 @@ class YellowPublish {
         if ($this->yellow->language->isText($extension."Description", $language)) {
             $description = $this->yellow->language->getText($extension."Description", $language);
         }
-        if (!empty($developer)) {
+        if (!is_string_empty($developer)) {
             $responsible = $this->yellow->language->getText("updateExtensionDeveloper", $language);;
             $responsible = preg_replace("/@x/i", $developer, $responsible);
         }
-        if (!empty($designer)) {
+        if (!is_string_empty($designer)) {
             $responsible = $this->yellow->language->getText("updateExtensionDesigner", $language);;
             $responsible = preg_replace("/@x/i", $designer, $responsible);
         }
-        if (!empty($translator)) {
+        if (!is_string_empty($translator)) {
             $responsible = $this->yellow->language->getText("updateExtensionTranslator", $language);;
             $responsible = preg_replace("/@x/i", $translator, $responsible);
         }
-        if (empty($description)) {
+        if (is_string_empty($description)) {
             $description = $this->yellow->language->getText("updateExtensionDefaultDescription", $language);
         }
         return "$description $responsible";
@@ -764,7 +764,7 @@ class YellowPublish {
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
-                if (!empty($matches[1]) && !strempty($matches[2]) && strposu($matches[1], "/")) {
+                if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/multi-language/i", $flags) && $this->yellow->lookup->isContentFile($matches[1])) {
@@ -797,8 +797,8 @@ class YellowPublish {
         $fileData = $this->yellow->toolbox->readFile($fileNameCurrent);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
-                if (lcfirst($matches[1])=="extension" && !strempty($matches[2])) $extension = $matches[2];
-                if (!empty($matches[1]) && !strempty($matches[2]) && strposu($matches[1], "/")) {
+                if (lcfirst($matches[1])=="extension" && !is_string_empty($matches[2])) $extension = $matches[2];
+                if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/additional/i", $flags)) continue;
