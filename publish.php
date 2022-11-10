@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.60";
+    const VERSION = "0.8.61";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -152,7 +152,7 @@ class YellowPublish {
                         $matches[2] = preg_replace("/,(\S)/", ", $1", $matches[2]);
                         $line = "$matches[1]: $matches[2]\n";
                         $fileNameDestination = $matches[1];
-                        $fileNameNormalised = $this->yellow->toolbox->normalisePath($matches[1]);
+                        $fileNameNormalised = $this->yellow->lookup->normalisePath($matches[1]);
                         if (!$this->yellow->lookup->isValidFile($fileNameNormalised)) {
                             $statusCode = 500;
                             echo "ERROR publishing files: File '$fileNameDestination' is not possible!\n";
@@ -411,7 +411,7 @@ class YellowPublish {
         $fileNamesRequired = $this->getStandardFileNamesRequired($path, $pathRepositorySource);
         foreach ($fileNamesRequired as $fileNameSource=>$fileNameDestination) {
             $fileNameNormalised = substru($fileNameDestination, strlenu($path));
-            $fileNameNormalised = $this->yellow->toolbox->normalisePath($fileNameNormalised);
+            $fileNameNormalised = $this->yellow->lookup->normalisePath($fileNameNormalised);
             if ($this->yellow->lookup->isValidFile($fileNameNormalised)) {
                 if (!$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true)) {
                     $statusCode = 500;
