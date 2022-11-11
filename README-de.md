@@ -60,7 +60,7 @@ Tag: language
 system/extensions/german.php: german.php, create, update
 ~~~
 
-Erweiterungseinstellungen für ein Thema:
+Erweiterungseinstellungen für ein Theme:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -110,7 +110,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `DownloadUrl` = Adresse zum Herunterladen der Erweiterung  
 `Published` = Veröffentlichungsdatum der Erweiterung, JJJJ-MM-TT Format  
 `Developer` = verantwortlicher Entwickler einer Funktion, durch Komma getrennt  
-`Designer` = verantwortlicher Designer eines Themas, durch Komma getrennt  
+`Designer` = verantwortlicher Designer eines Themes, durch Komma getrennt  
 `Translator` = verantwortlicher Übersetzer einer Sprache, durch Komma getrennt  
 `Status` = Status der Erweiterung, [unterstützte Statuswerte](#einstellungen-status)  
 `Tag` = Tags zur Kategorisierung der Erweiterung, durch Komma getrennt  
