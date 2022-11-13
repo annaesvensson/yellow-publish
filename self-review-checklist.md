@@ -6,8 +6,8 @@ You should always review your own extension first. Please make sure:
 - [ ] repository has the license `GPL version 2`, [see license file](https://github.com/datenstrom/yellow/blob/main/LICENSE.md)
 - [ ] check that the extension works with a brand new installation
 - [ ] check for consistency, apply the same patterns and standards at all times
-- [ ] check for code security and adherence to our coding standards
-- [ ] check for spelling errors and adherence to our documentation standards
+- [ ] check for code security and adherence to our coding standard
+- [ ] check for spelling errors and adherence to our documentation standard
 - [ ] do not have features just in case someone needs them later
 - [ ] do not have code comments inside methods and functions, see note A
 - [ ] do not have more than one extension per repository, see note B
