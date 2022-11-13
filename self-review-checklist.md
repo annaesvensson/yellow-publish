@@ -17,14 +17,14 @@ You should always review your own extension first. Please make sure:
 
 - file header and legal stuff, as little as necessary
 - class methods and functions, one comment line before
-- class instance variables, one comment at the end of the line
-- TODOs, for example things that need fixing in a later release
+- instance variables, one comment at the end of the line
+- there are exceptions for TODOs, for example things that need fixing in a later release
 
 <a id="note-b"></a>Note B: Our documentation standard recommends one extension per repository:
 
 - easier to explore all extensions at https://github.com/topics/datenstrom-yellow
 - easier to know which extensions you have worked on recently, GitHub profile lists them
-- easier to hand over extensions to another developer/designer, GitHub respository has redirect
+- easier to hand over extensions to another developer/designer, GitHub repository has redirect
 - there are exceptions for special cases, for example for translations and the installer
  
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
