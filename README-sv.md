@@ -14,7 +14,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md). Öka versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md). De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i [uppdateringsprocessen](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Öka versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
