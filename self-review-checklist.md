@@ -9,22 +9,22 @@ You should always review your own extension first. Please make sure:
 - [ ] check for code security and adherence to our coding standards
 - [ ] check for spelling errors and adherence to our documentation standards
 - [ ] do not have features just in case someone needs them later
-- [ ] do not have code comments inside methods and functions, communicate exceptions
-- [ ] do not have more than one extension per repository, communicate exceptions
-- [ ] If there are failing tests in a pull request, fix them until they're passing
+- [ ] do not have code comments inside methods and functions, see note A
+- [ ] do not have more than one extension per repository, see note B
+- [ ] do not have failing tests in a pull request
 
-Our coding standard uses few code comments, mainly for:
+<a id="note-a"></a>Note A: Our coding standard uses code comments mainly for:
 
 - file header and legal stuff, as little as necessary
 - class methods and functions, one comment line before
 - class instance variables, one comment at the end of the line
 - TODOs, for example things that need fixing in a later release
 
-Our documentation standard uses one extension per repository, mainly to:
+<a id="note-b"></a>Note B: Our documentation standard recommends one extension per repository:
 
-- explore all extensions at https://github.com/topics/datenstrom-yellow
-- mark which extensions are experimental, for example with the topic `experimental`
-- know which extensions someone has worked on recently, GitHub profiles list them
-- hand over extensions between developers/designers, GitHub has an automatic redirect
-
+- easier to explore all extensions at https://github.com/topics/datenstrom-yellow
+- easier to know which extensions you have worked on recently, GitHub profile lists them
+- easier to hand over extensions to another developer/designer, GitHub respository has redirect
+- there are exceptions for special cases, for example for translations and the installer
+ 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
