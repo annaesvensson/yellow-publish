@@ -12,6 +12,5 @@ You should always review your own extension first. Please make sure:
 - [ ] don't have features just in case someone needs them later
 - [ ] don't have code comments inside methods and functions
 - [ ] don't have more than one extension per repository
-- [ ] don't have failing tests in a pull request
  
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
