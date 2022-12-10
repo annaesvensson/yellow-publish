@@ -6,6 +6,10 @@ Make and publish extensions.
 
 <p align="center"><img src="publish-screenshot.png?raw=true" alt="Screenshot"></p>
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/annaesvensson/yellow-publish/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to make an extension
 
 Start with a [feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. Every extension needs an `extension.ini` file with extension settings. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Upload your extension to GitHub, let us know if you need help.
@@ -130,10 +134,6 @@ The following settings can be configured in file `extension.ini`:
 `additional` = only after first installation  
 `careful` = only if not modified  
 `multi-language` = use content from corresponding subfolder  
-
-## Installation
-
-[Download extension](https://github.com/annaesvensson/yellow-publish/archive/main.zip) and copy ZIP file into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## Developer
 

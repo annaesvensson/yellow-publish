@@ -6,6 +6,10 @@ Göra och publicera tillägg.
 
 <p align="center"><img src="publish-screenshot.png?raw=true" alt="Skärmdump"></p>
 
+## Hur man installerar ett tillägg
+
+[Ladda ner ZIP-fil](https://github.com/annaesvensson/yellow-publish/archive/main.zip) och kopiera den till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+
 ## Hur man gör ett tillägg
 
 Börja med en [funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Detta visar dig vilka filer som krävs. Varje tillägg behöver en `extension.ini` fil med tilläggsinställningar. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
@@ -130,10 +134,6 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `additional` = endast efter första installationen  
 `careful` = endast om den inte ändras  
 `multi-language` = använda innehåll från motsvarande undermapp  
-
-## Installation
-
-[Ladda ner tillägg](https://github.com/annaesvensson/yellow-publish/archive/main.zip) och kopiera ZIP-fil till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ## Utvecklare
 
