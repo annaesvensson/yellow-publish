@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.61";
+    const VERSION = "0.8.62";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -71,9 +71,9 @@ class YellowPublish {
         $statusCode = 0;
         if ($this->checkExtensionSettings()) {
             $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
-            $pathRepositoryOffical = $pathRepositorySource."yellow-extensions/";
+            $pathRepositoryPublished = $pathRepositorySource."yellow-extensions/";
             $pathRepositoryRequested = $pathRepositorySource.($text=="all" ? "" : rtrim($text, "/")."/");
-            if (is_dir($pathRepositoryOffical) && is_dir($pathRepositoryRequested)) {
+            if (is_dir($pathRepositoryPublished) && is_dir($pathRepositoryRequested)) {
                 $this->extensions = $this->errors = 0;
                 $this->firstStepPaths = $this->getExtensionPaths($pathRepositoryRequested);
                 $this->secondStepPaths = array();
@@ -91,7 +91,7 @@ class YellowPublish {
                 $statusCode = 500;
                 $this->extensions = 0;
                 $this->errors = 1;
-                $pathRequired = !is_dir($pathRepositoryOffical) ? $pathRepositoryOffical : $pathRepositoryRequested;
+                $pathRequired = !is_dir($pathRepositoryPublished) ? $pathRepositoryPublished : $pathRepositoryRequested;
                 echo "ERROR publishing files: Can't find directory '$pathRequired'!\n";
             }
         } else {
@@ -278,9 +278,9 @@ class YellowPublish {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status, $tag) = $this->getExtensionInformationFromSettings($path);
         if (!is_string_empty($extension) && $status!="experimental" && $status!="unlisted" && !is_string_empty($tag)) {
-            $pathRepositoryOffical = $pathRepositorySource."yellow-extensions/";
+            $pathRepositoryPublished = $pathRepositorySource."yellow-extensions/";
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
-            foreach ($this->yellow->toolbox->getDirectoryEntries($pathRepositoryOffical, $regex, true, false) as $entry) {
+            foreach ($this->yellow->toolbox->getDirectoryEntries($pathRepositoryPublished, $regex, true, false) as $entry) {
                 $language = preg_match("/-(\w+)\.\w+$/", $entry, $matches) ? $matches[1] : "en";
                 if ($this->yellow->language->isExisting($language)) {
                     $description = $this->getExtensionDescription($path, $language);
