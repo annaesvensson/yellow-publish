@@ -12,7 +12,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-Börja med en [funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Detta visar dig vilka filer som krävs. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
+[Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld), ett [språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Detta visar dig vilka filer som krävs. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Se till att ditt tillägg följer våra kodnings- och dokumentationsstandarder. Det är inte viktigt vilken standard vi använder, men att vi alla använder en gemensam. Sen kan man dyka in i vilken tillägg som helst och hitta en välbekant struktur som man snabbt kan hitta runt i. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Ladda upp ditt tillägg till GitHub, låt oss veta om du behöver hjälp.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
@@ -121,9 +121,9 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 <a id="inställningar-status"></a>Följande statusvärden stöds:
 
-`public` = tilläget publiceras i den officiella repository  
-`experimental` = tillägget publiceras inte i den officiella repository  
-`unlisted` = tilläget syns inte i den officiella repository  
+`public` = tilläget publiceras  
+`experimental` = tillägget publiceras inte  
+`unlisted` = tilläget syns inte, men används av installationsprogrammet  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
 
