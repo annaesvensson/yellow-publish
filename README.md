@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.62
+# Publish 0.8.63
 
 Make and publish extensions.
 
@@ -12,7 +12,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Please make sure that your extension follows our coding and documentation standards. It's not important which standard we use, but that we all use a common one. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. The [extension settings](#settings) are stored in file `extension.ini`. Upload your extension to GitHub, let us know if you need help.
+[Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Please make sure that your extension follows our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. The [extension settings](#settings) are stored in file `extension.ini`. Upload your extension to GitHub, let us know if you need help.
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
@@ -122,8 +122,8 @@ The following settings can be configured in file `extension.ini`:
 <a id="settings-status"></a>The following extension status values are supported:
 
 `public` = extension is published  
-`experimental` = extension is not published  
-`unlisted` = extension is not visible, but is used by the installer  
+`unlisted` = extension is published, but not shown  
+`experimental` = extension must be installed/updated manually  
 
 <a id="settings-actions"></a>The following file actions are supported:
 

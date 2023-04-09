@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.62";
+    const VERSION = "0.8.63";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -135,10 +135,14 @@ class YellowPublish {
         $statusCode = 200;
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
         list($dummy, $versionLatest, $publishedLatest, $status) = $this->getExtensionInformationFromSettings($path);
+        list($dummy, $downloadUrl) = $this->getExtensionUrlsFromSettings($path);
         if ($version==$versionLatest) $published = $publishedLatest;
+        if ($status!="experimental") {
+            $downloadUrl = $this->yellow->system->get("updateExtensionUrl").
+                "/raw/main/downloads/".strtoloweru("$extension.zip");
+        }
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
-            $url = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
+        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version)) {
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
             $fileDataNew = "";
@@ -146,7 +150,7 @@ class YellowPublish {
                 if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
                     if (lcfirst($matches[1])=="extension") $line = "Extension: ".ucfirst($extension)."\n";
                     if (lcfirst($matches[1])=="version") $line = "Version: $version\n";
-                    if (lcfirst($matches[1])=="downloadUrl") $line = "DownloadUrl: $url\n";
+                    if (lcfirst($matches[1])=="downloadUrl") $line = "DownloadUrl: $downloadUrl\n";
                     if (lcfirst($matches[1])=="published") $line = "Published: ".date("Y-m-d H:i:s", $published)."\n";
                     if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                         $matches[2] = preg_replace("/,(\S)/", ", $1", $matches[2]);
@@ -189,7 +193,7 @@ class YellowPublish {
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
+        if (!is_string_empty($extension) && !is_string_empty($version)) {
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
@@ -670,6 +674,20 @@ class YellowPublish {
             }
         }
         return array($extension, $version, $published, $status, $tag);
+    }
+    
+    // Return extension download/documentation URL from settings
+    public function getExtensionUrlsFromSettings($path) {
+        $documentationUrl = $downloadUrl = "";
+        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
+        $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
+        foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
+            if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
+                if (lcfirst($matches[1])=="documentationUrl") $documentationUrl = $matches[2];
+                if (lcfirst($matches[1])=="downloadUrl") $downloadUrl = $matches[2];
+            }
+        }
+        return array($documentationUrl, $downloadUrl);
     }
     
     // Return extension responsible developer/designer/translator from settings
