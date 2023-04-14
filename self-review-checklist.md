@@ -10,7 +10,7 @@ You should always review your own extension first. Please make sure:
 - [ ] check for code security and adherence to our coding standard
 - [ ] check for spelling errors and adherence to our documentation standard
 - [ ] don't keep parts that are leftovers from experimentation
-- [ ] don't have features just in case someone needs them later
+- [ ] don't have features/settings just in case someone needs them later
 - [ ] don't have code comments inside methods and functions
 - [ ] don't have more than one extension per repository
  
