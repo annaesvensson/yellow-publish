@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.63";
+    const VERSION = "0.8.64";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -615,6 +615,7 @@ class YellowPublish {
 
     // Return progress in percent
     public function getProgressPercent($now, $total, $increments, $max) {
+        $max = intval($max/$increments) * $increments;
         $percent = intval(($max/$total) * $now);
         if ($increments>1) $percent = intval($percent/$increments) * $increments;
         return min($max, $percent);
