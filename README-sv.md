@@ -18,9 +18,9 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i en webbplatsuppdatering. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Öka sedan versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). De [publicerade tilläggen](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) ingår i en webbplatsuppdatering. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du publicerar ditt tillägg. Öka sedan versionsnumret i din kod. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow-extensions`.
 
-Om du inte vill att ett tillägg ska publiceras, ställ in `Status: experimental` i [tilläggsinställningar](#inställningar).
+Om du inte vill att ditt tillägg ska publiceras, ställ in `Status: experimental` i [tilläggsinställningar](#inställningar).
 
 ## Hur man publicerar standardinstallationen
 
@@ -108,7 +108,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 Följande inställningar kan konfigureras i filen `extension.ini`:
 
 `Extension` = tilläggets namn  
-`Version` = tilläggets versionnummer  
+`Version` = tilläggets versionsnummer  
 `Description` = tilläggets beskrivning, max en rad  
 `DocumentationUrl` = tilläggets dokumentation  
 `DownloadUrl` = tilläggets nedladdningsadress  
