@@ -12,7 +12,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-[Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld), einer [Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translations/german) oder einem [Theme](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md). Das zeigt dir welche Dateien erforderlich sind. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Bitte stelle sicher, dass deine Erweiterung unseren Programmierungs- und Dokumentationsstandards entspricht. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
+[Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld), einer [Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translations/german) oder einem [Theme](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md). Das zeigt dir welche Dateien erforderlich sind. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Schau dir den Code von installierten Erweiterungen an, mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kann man in jede Erweiterung eintauchen und findet eine vertraute Struktur vor, in der man sich schnell zurecht findet. Lade deine Erweiterung zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
 
 Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
 
@@ -20,7 +20,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) sind bei einer Webseitenaktualisierung mit dabei. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Erhöhe dann die Versionsnummer in deinem Code. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow-extensions`.
 
-Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
+Falls du nicht willst dass eine Erweiterung veröffentlicht wird, kannst du `Status: experimental` in den [Erweiterungseinstellungen](#einstellungen) festlegen.
 
 ## Wie man die Standardinstallation veröffentlicht
 
