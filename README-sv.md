@@ -123,7 +123,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 `public` = tillägget publiceras  
 `unlisted` = tillägget publiceras, men visas inte  
-`experimental` = tillägget måste installeras/uppdateras manuellt  
+`experimental` = tillägget publiceras inte  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
 

@@ -123,7 +123,7 @@ The following settings can be configured in file `extension.ini`:
 
 `public` = extension is published  
 `unlisted` = extension is published, but not shown  
-`experimental` = extension must be installed/updated manually  
+`experimental` = extension is not published  
 
 <a id="settings-actions"></a>The following file actions are supported:
 

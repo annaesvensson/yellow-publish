@@ -123,7 +123,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 
 `public` = Erweiterung ist veröffentlicht  
 `unlisted` = Erweiterung ist veröffentlicht, aber wird nicht angezeigt  
-`experimental` = Erweiterung muss manuell installiert/aktualisiert werden  
+`experimental` = Erweiterung ist nicht veröffentlicht  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:
 
