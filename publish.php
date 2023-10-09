@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.66";
+    const VERSION = "0.8.67";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -115,7 +115,6 @@ class YellowPublish {
             $statusCode = max($statusCode, $this->updateExtensionDownload($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateExtensionLatest($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateExtensionList($path, $pathRepositorySource));
-            ++$this->extensions;
             if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
         } elseif (is_file("$path/yellow.php")) {
@@ -135,14 +134,10 @@ class YellowPublish {
         $statusCode = 200;
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
         list($dummy, $versionLatest, $publishedLatest, $status) = $this->getExtensionInformationFromSettings($path);
-        list($dummy, $downloadUrl) = $this->getExtensionUrlsFromSettings($path);
         if ($version==$versionLatest) $published = $publishedLatest;
-        if ($status!="experimental") {
-            $downloadUrl = $this->yellow->system->get("updateExtensionUrl").
-                "/raw/main/downloads/".strtoloweru("$extension.zip");
-        }
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version)) {
+        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
+            $downloadUrl = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
             $fileDataNew = "";
@@ -182,6 +177,7 @@ class YellowPublish {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$fileNameExtension'!\n";
             }
+            if ($statusCode==200) ++$this->extensions;
             if ($this->yellow->system->get("coreDebugMode")>=2) {
                 echo "YellowPublish::updateExtensionSettings file:$fileNameExtension<br/>\n";
             }
@@ -193,7 +189,7 @@ class YellowPublish {
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && !is_string_empty($version)) {
+        if (!is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
@@ -520,9 +516,9 @@ class YellowPublish {
     // Return default language settings from raw data
     public function getLanguageDefaultSettings($rawData) {
         $settings = new YellowArray();
-        if (preg_match("/^(.*?\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
-            foreach ($this->getTextLines($parts[2]) as $line) {
-                if (preg_match("/^\s*\"(.*?)\s*:\s*(.*?)\s*\",$/", $line, $matches)) {
+        if (preg_match("/^(.*?\\\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
+            foreach ($this->yellow->toolbox->getTextLines($parts[2]) as $line) {
+                if (preg_match("/^\s*\"(.*?)\s*:\s*(.*?)\s*\"(,)?$/", $line, $matches)) {
                     if (!is_string_empty($matches[1]) && !is_string_empty($matches[2])) {
                         $settings[$matches[1]] = $matches[2];
                     }
@@ -534,7 +530,7 @@ class YellowPublish {
     
     // Set default language settings in raw data
     public function setLanguageDefaultSettings($rawData, $settings) {
-        if (preg_match("/^(.*?\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
+        if (preg_match("/^(.*?\\\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
             $rawDataMiddle = "";
             foreach ($settings as $key=>$value) {
                 $rawDataMiddle .= "            \"".ucfirst($key).": $value\",\n";
@@ -675,20 +671,6 @@ class YellowPublish {
             }
         }
         return array($extension, $version, $published, $status, $tag);
-    }
-    
-    // Return extension download/documentation URL from settings
-    public function getExtensionUrlsFromSettings($path) {
-        $documentationUrl = $downloadUrl = "";
-        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
-        foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
-            if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
-                if (lcfirst($matches[1])=="documentationUrl") $documentationUrl = $matches[2];
-                if (lcfirst($matches[1])=="downloadUrl") $downloadUrl = $matches[2];
-            }
-        }
-        return array($documentationUrl, $downloadUrl);
     }
     
     // Return extension responsible developer/designer/translator from settings
