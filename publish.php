@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.68";
+    const VERSION = "0.8.69";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -158,7 +158,7 @@ class YellowPublish {
                 }
                 $fileDataNew .= $line;
             }
-            $fileNamesRequired = $this->getExtensionFileNamesRequired($path);
+            $fileNamesRequired = $this->getExtensionFileNamesRequired($path, $extension);
             foreach ($fileNamesRequired as $fileNameRequired=>$fileNameShort) {
                 if (!is_file($fileNameRequired)) {
                     $statusCode = 500;
@@ -213,14 +213,15 @@ class YellowPublish {
     // Update extension files
     public function updateExtensionFiles($path, $pathRepositorySource) {
         $statusCode = 200;
-        list($extension, $dummy, $published, $status) = $this->getExtensionInformationFromSettings($path);
+        list($extension, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         if (!is_string_empty($extension) && $status!="experimental") {
             $fileNamesCompress = $this->getExtensionFileNamesCompress($path, $pathRepositorySource);
             foreach ($fileNamesCompress as $fileNameZipArchive=>$pathZipArchive) {
+                list($extension, $dummy, $published) = $this->getExtensionInformationFromSettings($pathZipArchive);
                 $zip = new ZipArchive();
                 if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
                 if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE)===true) {
-                    $fileNamesRequired = $this->getExtensionFileNamesRequired($pathZipArchive);
+                    $fileNamesRequired = $this->getExtensionFileNamesRequired($pathZipArchive, $extension);
                     foreach ($fileNamesRequired as $fileNameRequired=>$fileNameShort) {
                         if (is_file($fileNameRequired)) {
                             $zip->addFile($fileNameRequired, $fileNameShort);
@@ -773,30 +774,29 @@ class YellowPublish {
     }
     
     // Return extension file names required
-    public function getExtensionFileNamesRequired($path) {
+    public function getExtensionFileNamesRequired($path, $extension) {
         $data = array();
-        $extension = "";
+        $pathBase = "yellow-".strtoloweru($extension);
         $languages = $this->getExtensionLanguagesAvailable($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
+        $data[$fileNameExtension] = $pathBase."/".$this->yellow->system->get("updateExtensionFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
-                if (lcfirst($matches[1])=="extension" && !is_string_empty($matches[2])) $extension = $matches[2];
                 if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/multi-language/i", $flags) && $this->yellow->lookup->isContentFile($matches[1])) {
                         foreach ($languages as $language) {
                             $pathLanguage = $language."/";
-                            $data["$path$pathLanguage$entry"] = "yellow-".strtoloweru($extension)."/".$pathLanguage.$entry;
+                            $data["$path$pathLanguage$entry"] = $pathBase."/".$pathLanguage.$entry;
                         }
                     } else {
-                        $data["$path$entry"] = "yellow-".strtoloweru($extension)."/".$entry;
+                        $data["$path$entry"] = $pathBase."/".$entry;
                     }
                 }
             }
         }
-        $data[$fileNameExtension] = "yellow-".strtoloweru($extension)."/".$this->yellow->system->get("updateExtensionFile");
         return $data;
     }
     
