@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.67";
+    const VERSION = "0.8.68";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -12,7 +12,7 @@ class YellowPublish {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-        $this->yellow->system->setDefault("publishSourceCodeDirectory", "/My/Documents/GitHub/");
+        $this->yellow->system->setDefault("publishSourceDirectory", "/My/Documents/GitHub/");
     }
 
     // Handle command
@@ -43,15 +43,14 @@ class YellowPublish {
     public function showExtension($command) {
         $statusCode = 200;
         if ($this->checkExtensionSettings()) {
-            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
+            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceDirectory"), "/")."/";
             $entries = $this->yellow->toolbox->getDirectoryEntries($pathRepositorySource, "/.*/", true, true, false);
             foreach ($entries as $entry) {
-                if ($entry=="yellow-extensions") continue;
                 $path = $pathRepositorySource.$entry."/";
                 if (is_file($path.$this->yellow->system->get("updateExtensionFile"))) {
                     $responsible = $this->getExtensionResponsibleFromSettings($path);
                 } elseif (is_file("$path/yellow.php")) {
-                    $responsible = "Developed by various contributors.";
+                    $responsible = "Developed by Datenstrom community.";
                 } else {
                     $responsible = "No description available.";
                 }
@@ -61,7 +60,7 @@ class YellowPublish {
         } else {
             $statusCode = 500;
             $fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-            echo "ERROR publishing files: Please configure PublishSourceCodeDirectory in file '$fileName'!\n";
+            echo "ERROR publishing files: Please configure PublishSourceDirectory in file '$fileName'!\n";
         }
         return $statusCode;
     }
@@ -70,10 +69,10 @@ class YellowPublish {
     public function publishExtension($command, $text) {
         $statusCode = 0;
         if ($this->checkExtensionSettings()) {
-            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceCodeDirectory"), "/")."/";
-            $pathRepositoryPublished = $pathRepositorySource."yellow-extensions/";
+            $pathRepositorySource = rtrim($this->yellow->system->get("publishSourceDirectory"), "/")."/";
+            $pathRepositoryYellow = $pathRepositorySource."yellow/";
             $pathRepositoryRequested = $pathRepositorySource.($text=="all" ? "" : rtrim($text, "/")."/");
-            if (is_dir($pathRepositoryPublished) && is_dir($pathRepositoryRequested)) {
+            if (is_dir($pathRepositoryYellow) && is_dir($pathRepositoryRequested)) {
                 $this->extensions = $this->errors = 0;
                 $this->firstStepPaths = $this->getExtensionPaths($pathRepositoryRequested);
                 $this->secondStepPaths = array();
@@ -91,7 +90,7 @@ class YellowPublish {
                 $statusCode = 500;
                 $this->extensions = 0;
                 $this->errors = 1;
-                $pathRequired = !is_dir($pathRepositoryPublished) ? $pathRepositoryPublished : $pathRepositoryRequested;
+                $pathRequired = !is_dir($pathRepositoryYellow) ? $pathRepositoryYellow : $pathRepositoryRequested;
                 echo "ERROR publishing files: Can't find directory '$pathRequired'!\n";
             }
         } else {
@@ -99,7 +98,7 @@ class YellowPublish {
             $this->extensions = 0;
             $this->errors = 1;
             $fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-            echo "ERROR publishing files: Please configure PublishSourceCodeDirectory in file '$fileName'!\n";
+            echo "ERROR publishing files: Please configure PublishSourceDirectory in file '$fileName'!\n";
         }
         echo "Yellow $command: $this->extensions extension".($this->extensions!=1 ? "s" : "");
         echo ", $this->errors error".($this->errors!=1 ? "s" : "")."\n";
@@ -112,14 +111,14 @@ class YellowPublish {
         if (is_file($path.$this->yellow->system->get("updateExtensionFile"))) {
             $statusCode = max($statusCode, $this->updateExtensionSettings($path));
             $statusCode = max($statusCode, $this->updateExtensionDocumentation($path));
-            $statusCode = max($statusCode, $this->updateExtensionDownload($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateExtensionFiles($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateExtensionLatest($path, $pathRepositorySource));
-            $statusCode = max($statusCode, $this->updateExtensionList($path, $pathRepositorySource));
             if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
         } elseif (is_file("$path/yellow.php")) {
-            $statusCode = max($statusCode, $this->updateStandardInstall($path, $pathRepositorySource));
-            $statusCode = max($statusCode, $this->updateStandardLanguage($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateStandardTranslations($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateStandardExtensions($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateStandardCurrent($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardFiles($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardDocumentation($path));
             if ($analyse && !$all) $this->extensions += $this->getStandardExtensionsCount($path);
@@ -137,7 +136,6 @@ class YellowPublish {
         if ($version==$versionLatest) $published = $publishedLatest;
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
-            $downloadUrl = $this->yellow->system->get("updateExtensionUrl")."/raw/main/downloads/".strtoloweru("$extension.zip");
             $settings = new YellowArray();
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
             $fileDataNew = "";
@@ -145,7 +143,6 @@ class YellowPublish {
                 if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
                     if (lcfirst($matches[1])=="extension") $line = "Extension: ".ucfirst($extension)."\n";
                     if (lcfirst($matches[1])=="version") $line = "Version: $version\n";
-                    if (lcfirst($matches[1])=="downloadUrl") $line = "DownloadUrl: $downloadUrl\n";
                     if (lcfirst($matches[1])=="published") $line = "Published: ".date("Y-m-d H:i:s", $published)."\n";
                     if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                         $matches[2] = preg_replace("/,(\S)/", ", $1", $matches[2]);
@@ -160,6 +157,13 @@ class YellowPublish {
                     if (!is_string_empty($matches[1]) && !is_string_empty($matches[2])) $settings[$matches[1]] = $matches[2];
                 }
                 $fileDataNew .= $line;
+            }
+            $fileNamesRequired = $this->getExtensionFileNamesRequired($path);
+            foreach ($fileNamesRequired as $fileNameRequired=>$fileNameShort) {
+                if (!is_file($fileNameRequired)) {
+                    $statusCode = 500;
+                    echo "ERROR publishing files: Can't find file '$fileNameRequired'!\n";
+                }
             }
             if (!is_string_empty($fileNameSource)) {
                 $fileNameClass = basename($fileNameSource);
@@ -206,36 +210,36 @@ class YellowPublish {
         return $statusCode;
     }
     
-    // Update extension download
-    public function updateExtensionDownload($path, $pathRepositorySource) {
+    // Update extension files
+    public function updateExtensionFiles($path, $pathRepositorySource) {
         $statusCode = 200;
         list($extension, $dummy, $published, $status) = $this->getExtensionInformationFromSettings($path);
-        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !is_string_empty($extension) && $status!="experimental") {
-            $zip = new ZipArchive();
-            $fileNameZipArchive = $pathRepositorySource."yellow-extensions/downloads/".strtoloweru("$extension.zip");
-            if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
-            if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE)===true) {
-                $pathBase = strtoloweru($extension)."/";
-                $fileNamesRequired = $this->getExtensionFileNamesRequired($path, $pathBase, $pathRepositorySource);
-                foreach ($fileNamesRequired as $fileNameRequired=>$fileNameShort) {
-                    if (is_file($fileNameRequired)) {
-                        $zip->addFile($fileNameRequired, $fileNameShort);
-                    } else {
-                        $statusCode = 500;
-                        echo "ERROR publishing files: Can't find file '$fileNameRequired'!\n";
+        if (!is_string_empty($extension) && $status!="experimental") {
+            $fileNamesCompress = $this->getExtensionFileNamesCompress($path, $pathRepositorySource);
+            foreach ($fileNamesCompress as $fileNameZipArchive=>$pathZipArchive) {
+                $zip = new ZipArchive();
+                if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
+                if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE)===true) {
+                    $fileNamesRequired = $this->getExtensionFileNamesRequired($pathZipArchive);
+                    foreach ($fileNamesRequired as $fileNameRequired=>$fileNameShort) {
+                        if (is_file($fileNameRequired)) {
+                            $zip->addFile($fileNameRequired, $fileNameShort);
+                        } else {
+                            $statusCode = 500;
+                            echo "ERROR publishing files: Can't find file '$fileNameRequired'!\n";
+                        }
                     }
-                }
-                if (!$zip->close() || !$this->normaliseZipArchive($fileNameZipArchive, $published, 0100666)) {
+                    if (!$zip->close() || !$this->normaliseZipArchive($fileNameZipArchive, $published, 0100666)) {
+                        $statusCode = 500;
+                        echo "ERROR publishing files: Can't write file '$fileNameZipArchive'!\n";
+                    }
+                } else {
                     $statusCode = 500;
                     echo "ERROR publishing files: Can't write file '$fileNameZipArchive'!\n";
                 }
-            } else {
-                $statusCode = 500;
-                echo "ERROR publishing files: Can't write file '$fileNameZipArchive'!\n";
-            }
-            if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateExtensionDownload file:$fileNameZipArchive<br/>\n";
+                if ($this->yellow->system->get("coreDebugMode")>=2) {
+                    echo "YellowPublish::updateExtensionFiles file:$fileNameZipArchive<br/>\n";
+                }
             }
         }
         return $statusCode;
@@ -246,7 +250,8 @@ class YellowPublish {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        $fileNameLatest = $pathRepositorySource."yellow-extensions/".$this->yellow->system->get("updateLatestFile");
+        $fileNameLatest = $pathRepositorySource."yellow/".$this->yellow->system->get("coreExtensionDirectory").
+            $this->yellow->system->get("updateLatestFile");
         if (is_file($fileNameExtension) && is_file($fileNameLatest) && $status!="experimental" && $status!="unlisted") {
             $fileDataExtension = $this->yellow->toolbox->readFile($fileNameExtension);
             $settingsExtension = $this->yellow->toolbox->getTextSettings($fileDataExtension, "");
@@ -273,85 +278,11 @@ class YellowPublish {
         return $statusCode;
     }
     
-    // Update extension in list of published extensions
-    public function updateExtensionList($path, $pathRepositorySource) {
+    // Update standard installation, collection of published translations
+    public function updateStandardTranslations($path, $pathRepositorySource) {
         $statusCode = 200;
-        list($extension, $dummy, $dummy, $status, $tag) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && $status!="experimental" && $status!="unlisted" && !is_string_empty($tag)) {
-            $pathRepositoryPublished = $pathRepositorySource."yellow-extensions/";
-            $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
-            foreach ($this->yellow->toolbox->getDirectoryEntries($pathRepositoryPublished, $regex, true, false) as $entry) {
-                $language = preg_match("/-(\w+)\.\w+$/", $entry, $matches) ? $matches[1] : "en";
-                if ($this->yellow->language->isExisting($language)) {
-                    $description = $this->getExtensionDescription($path, $language);
-                    $url = $this->getExtensionDocumentationUrl($path, $language);
-                    $fileData = $this->yellow->toolbox->readFile($entry);
-                    $fileDataNew = $this->setDocumentationListEntry($fileData, $extension, $description, $url, $tag);
-                    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
-                        $statusCode = 500;
-                        echo "ERROR publishing files: Can't write file '$entry'!\n";
-                    }
-                } else {
-                    $statusCode = 500;
-                    echo "ERROR publishing files: Can't find language '$language'!\n";
-                }
-                if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateExtensionList file:$entry<br/>\n";
-                }
-            }
-        }
-        return $statusCode;
-    }
-    
-    // Update standard installation, make sure settings are up-to-date
-    public function updateStandardInstall($path, $pathRepositorySource) {
-        $statusCode = 200;
-        $pathRequired = $pathRepositorySource."yellow-install/";
-        if (is_dir($pathRequired)) {
-            $fileNameInstall = $pathRepositorySource."yellow-install/".$this->yellow->system->get("updateExtensionFile");
-            $fileNameLatest = $pathRepositorySource."yellow-extensions/".$this->yellow->system->get("updateLatestFile");
-            $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-                $this->yellow->system->get("updateCurrentFile");
-            if (is_file($fileNameInstall) && is_file($fileNameLatest) && is_file($fileNameCurrent)) {
-                $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameInstall);
-                $fileDataExtensions .= $this->yellow->toolbox->readFile($fileNameLatest);
-                $settingsExtensions = $this->yellow->toolbox->getTextSettings($fileDataExtensions, "extension");
-                $fileData = $this->yellow->toolbox->readFile($fileNameCurrent);
-                $settingsCurrent = $this->yellow->toolbox->getTextSettings($fileData, "extension");
-                foreach ($settingsExtensions as $extension=>$block) {
-                    if ($settingsCurrent->isExisting($extension)) {
-                        $settingsCurrent[$extension] = new YellowArray();
-                        foreach ($block as $key=>$value) $settingsCurrent[$extension][$key] = $value;
-                    }
-                }
-                $fileDataNew = "# Datenstrom Yellow update settings\n";
-                foreach ($settingsCurrent as $extension=>$block) {
-                    $fileDataNew .= "\n";
-                    foreach ($block as $key=>$value) {
-                        $fileDataNew .= (strposu($key, "/") ? $key : ucfirst($key)).": $value\n";
-                    }
-                }
-                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameCurrent, $fileDataNew)) {
-                    $statusCode = 500;
-                    echo "ERROR publishing files: Can't write file '$fileNameCurrent'!\n";
-                }
-                if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateStandardInstall file:$fileNameCurrent<br/>\n";
-                }
-            }
-        } else {
-            $statusCode = 500;
-            echo "ERROR publishing files: Can't find directory '$pathRequired'!\n";
-        }
-        return $statusCode;
-    }
-    
-    // Update standard installation, make sure translations are up-to-date
-    public function updateStandardLanguage($path, $pathRepositorySource) {
-        $statusCode = 200;
-        $pathRequired = $pathRepositorySource."yellow-language/";
-        if (is_dir($pathRequired)) {
-            $fileNameLatest = $pathRepositorySource."yellow-extensions/".$this->yellow->system->get("updateLatestFile");
+        if (is_dir($pathRepositorySource."yellow-language/")) {
+            $fileNameLatest = $pathRepositorySource."yellow/".$this->yellow->system->get("updateLatestFile");
             $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameLatest);
             $settingsExtensions = $this->yellow->toolbox->getTextSettings($fileDataExtensions, "extension");
             $fileNameEnglish = $pathRepositorySource."yellow-language/translations/english/english.php";
@@ -395,17 +326,84 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't write file '$fileName'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateStandardLanguage file:$fileName<br/>\n";
+                    echo "YellowPublish::updateStandardTranslations file:$fileName<br/>\n";
                 }
             }
-        } else {
-            $statusCode = 500;
-            echo "ERROR publishing files: Can't find directory '$pathRequired'!\n";
+        }
+        return $statusCode;
+    }
+    
+    // Update standard installation, collection of published extensions
+    public function updateStandardExtensions($path, $pathRepositorySource) {
+        $statusCode = 200;
+        if (is_dir($pathRepositorySource."yellow-extensions/")) {
+            list($extension, $dummy, $dummy, $status, $tag) = $this->getExtensionInformationFromSettings($path);
+            if (!is_string_empty($extension) && $status!="experimental" && $status!="unlisted" && !is_string_empty($tag)) {
+                $pathRepositoryExtensions = $pathRepositorySource."yellow-extensions/";
+                $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
+                foreach ($this->yellow->toolbox->getDirectoryEntries($pathRepositoryExtensions, $regex, true, false) as $entry) {
+                    $language = preg_match("/-(\w+)\.\w+$/", $entry, $matches) ? $matches[1] : "en";
+                    if ($this->yellow->language->isExisting($language)) {
+                        $description = $this->getExtensionDescription($path, $language);
+                        $url = $this->getExtensionDocumentationUrl($path, $language);
+                        $fileData = $this->yellow->toolbox->readFile($entry);
+                        $fileDataNew = $this->setDocumentationListEntry($fileData, $extension, $description, $url, $tag);
+                        if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+                            $statusCode = 500;
+                            echo "ERROR publishing files: Can't write file '$entry'!\n";
+                        }
+                    } else {
+                        $statusCode = 500;
+                        echo "ERROR publishing files: Can't find language '$language'!\n";
+                    }
+                    if ($this->yellow->system->get("coreDebugMode")>=2) {
+                        echo "YellowPublish::updateStandardExtensions file:$entry<br/>\n";
+                    }
+                }
+            }
         }
         return $statusCode;
     }
 
-    // Update standard installation files
+    // Update standard installation, make sure current settings are up-to-date
+    public function updateStandardCurrent($path, $pathRepositorySource) {
+        $statusCode = 200;
+        $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
+            $this->yellow->system->get("updateCurrentFile");
+        $fileNameLatest = $path.$this->yellow->system->get("coreExtensionDirectory").
+            $this->yellow->system->get("updateLatestFile");
+        if (is_file($fileNameCurrent) && is_file($fileNameLatest)) {
+            $fileNameInstall = $pathRepositorySource."yellow-install/".$this->yellow->system->get("updateExtensionFile");
+            $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameInstall);
+            $fileDataExtensions .= $this->yellow->toolbox->readFile($fileNameLatest);
+            $settingsExtensions = $this->yellow->toolbox->getTextSettings($fileDataExtensions, "extension");
+            $fileData = $this->yellow->toolbox->readFile($fileNameCurrent);
+            $settingsCurrent = $this->yellow->toolbox->getTextSettings($fileData, "extension");
+            foreach ($settingsExtensions as $extension=>$block) {
+                if ($settingsCurrent->isExisting($extension)) {
+                    $settingsCurrent[$extension] = new YellowArray();
+                    foreach ($block as $key=>$value) $settingsCurrent[$extension][$key] = $value;
+                }
+            }
+            $fileDataNew = "# Datenstrom Yellow update settings\n";
+            foreach ($settingsCurrent as $extension=>$block) {
+                $fileDataNew .= "\n";
+                foreach ($block as $key=>$value) {
+                    $fileDataNew .= (strposu($key, "/") ? $key : ucfirst($key)).": $value\n";
+                }
+            }
+            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameCurrent, $fileDataNew)) {
+                $statusCode = 500;
+                echo "ERROR publishing files: Can't write file '$fileNameCurrent'!\n";
+            }
+            if ($this->yellow->system->get("coreDebugMode")>=2) {
+                echo "YellowPublish::updateStandardCurrent file:$fileNameCurrent<br/>\n";
+            }
+        }
+        return $statusCode;
+    }
+    
+    // Update standard installation, make sure current files are up-to-date
     public function updateStandardFiles($path, $pathRepositorySource) {
         $statusCode = 200;
         $fileNamesRequired = $this->getStandardFileNamesRequired($path, $pathRepositorySource);
@@ -413,7 +411,7 @@ class YellowPublish {
             $fileNameNormalised = substru($fileNameDestination, strlenu($path));
             $fileNameNormalised = $this->yellow->lookup->normalisePath($fileNameNormalised);
             if ($this->yellow->lookup->isValidFile($fileNameNormalised)) {
-                if (!$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true)) {
+                if (is_file($fileNameSource) && !$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true)) {
                     $statusCode = 500;
                     echo "ERROR publishing files: Can't write file '$fileNameDestination'!\n";
                 }
@@ -425,7 +423,7 @@ class YellowPublish {
         return $statusCode;
     }
 
-    // Update standard installation documentation
+    // Update standard installation, make sure documentation is up-to-date
     public function updateStandardDocumentation($path) {
         $statusCode = 200;
         list($product, $release) = $this->getProductInformationFromSource($path);
@@ -505,7 +503,7 @@ class YellowPublish {
     public function analyseExtensionSettings($path) {
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
-        if (preg_match("/@base\/downloads\//i", $fileData)) {
+        if (preg_match("/compress\s+@source\//i", $fileData)) {
             array_push($this->secondStepPaths, $path);
             if ($this->yellow->system->get("coreDebugMode")>=2) {
                 echo "YellowPublish::analyseExtensionSettings detected path:$path<br/>\n";
@@ -545,7 +543,7 @@ class YellowPublish {
     
     // Check extension settings
     public function checkExtensionSettings() {
-        return $this->yellow->system->get("publishSourceCodeDirectory")!="/My/Documents/GitHub/";
+        return $this->yellow->system->get("publishSourceDirectory")!="/My/Documents/GitHub/";
     }
     
     // Normalise ZIP archive created with libzip, make platform independent
@@ -756,36 +754,49 @@ class YellowPublish {
         return array_unique($languages);
     }
     
-    // Return extension file names required
-    public function getExtensionFileNamesRequired($path, $pathBase, $pathRepositorySource) {
+    // Return extension file names required to make ZIP-file
+    public function getExtensionFileNamesCompress($path, $pathRepositorySource) {
         $data = array();
-        $languages = $this->getExtensionLanguagesAvailable($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        $data[$fileNameExtension] = $pathBase.basename($fileNameExtension);
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
+                if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
+                    list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
+                    if (preg_match("/compress\s+@source\/(.*\/)/i", $flags, $matches)) {
+                        $data["$path$entry"] = $pathRepositorySource.$matches[1];
+                    }
+                }
+            }
+        }
+        return $data;
+    }
+    
+    // Return extension file names required
+    public function getExtensionFileNamesRequired($path) {
+        $data = array();
+        $extension = "";
+        $languages = $this->getExtensionLanguagesAvailable($path);
+        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
+        $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
+        foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
+            if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
+                if (lcfirst($matches[1])=="extension" && !is_string_empty($matches[2])) $extension = $matches[2];
                 if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/multi-language/i", $flags) && $this->yellow->lookup->isContentFile($matches[1])) {
                         foreach ($languages as $language) {
                             $pathLanguage = $language."/";
-                            $data["$path$pathLanguage$entry"] = $pathBase.$pathLanguage.$entry;
+                            $data["$path$pathLanguage$entry"] = "yellow-".strtoloweru($extension)."/".$pathLanguage.$entry;
                         }
                     } else {
-                        if (preg_match("/^@base/i", $entry)) {
-                            $fileNameRequired = preg_replace("/@base/i", $pathRepositorySource."yellow-extensions", $entry);
-                            $fileNameShort = preg_replace("/@base/i", rtrim($pathBase, "/"), $entry);
-                        } else {
-                            $fileNameRequired = $path.$entry;
-                            $fileNameShort = $pathBase.$entry;
-                        }
-                        $data[$fileNameRequired] = $fileNameShort;
+                        $data["$path$entry"] = "yellow-".strtoloweru($extension)."/".$entry;
                     }
                 }
             }
         }
+        $data[$fileNameExtension] = "yellow-".strtoloweru($extension)."/".$this->yellow->system->get("updateExtensionFile");
         return $data;
     }
     
@@ -803,11 +814,7 @@ class YellowPublish {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/additional/i", $flags)) continue;
-                    if (preg_match("/^@base/i", $entry)) {
-                        $fileNameSource = preg_replace("/@base/i", $pathRepositorySource."yellow-extensions", $entry);
-                    } else {
-                        $fileNameSource = $pathRepositorySource."yellow-".strtoloweru($extension)."/".$entry;
-                    }
+                    $fileNameSource = $pathRepositorySource."yellow-".strtoloweru($extension)."/".$entry;
                     $fileNameDestination = $path.$matches[1];
                     $data[$fileNameSource] = $fileNameDestination;
                 }

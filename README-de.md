@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.67
+# Publish 0.8.68
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -8,7 +8,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung installiert
 
-[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-publish/archive/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-publish/archive/refs/heads/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ## Wie man eine Erweiterung erstellt
 
@@ -18,13 +18,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) bieten das beste Benutzererlebnis und werden von anderen Entwicklern überprüft. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Du brauchst ausserdem die Dateien vom Repository `datenstrom/yellow-extensions`, mache ein Fork vom Repository und klone es. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow-extensions`.
-
-Falls du nicht willst dass deine Erweiterung veröffentlicht wird, kannst du `Status: experimental` in den [Erweiterungseinstellungen](#einstellungen) festlegen.
-
-## Wie man die Standardinstallation veröffentlicht
-
-Du kannst die Standardinstallation in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Die [Standardinstallation](https://github.com/datenstrom/yellow) ist eine Sammlung der wichtigsten Erweiterungen und dem [Installationsprogramm](https://github.com/annaesvensson/yellow-install/tree/main/README-de.md). In der Regel kümmert sich ein Betreuer darum die Standardinstallation auf dem neusten Stand zu halten, doch die gleichen Werkzeuge stehen allen zur Verfügung. Du brauchst ausserdem die Dateien vom Repository `datenstrom/yellow`, mache ein Fork vom Repository und klone es. Möchtest du die Standardinstallation veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Die [veröffentlichten Erweiterungen](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) bieten das beste Benutzererlebnis und werden von anderen Entwicklern überprüft. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Du brauchst ausserdem die Dateien vom Repository `datenstrom/yellow`, mache ein Fork vom Repository und klone es. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert alle notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -39,7 +33,7 @@ Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
+DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: feature
@@ -57,7 +51,7 @@ Extension: German
 Version: 0.8.32
 Description: German/Deutsch with language 'de'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/german
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/german.zip
+DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/german.zip
 Published: 2022-04-24 15:40:14
 Translator: David Fehrmann
 Tag: language
@@ -73,7 +67,7 @@ Extension: Stockholm
 Version: 0.8.13
 Description: Stockholm is a clean theme.
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/stockholm.zip
+DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 Published: 2022-06-15 16:03:38
 Designer: Anna Svensson
 Tag: theme
@@ -103,7 +97,7 @@ Erweiterungen in der Befehlszeile veröffentlichen:
 
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
-`PublishSourceCodeDirectory` = Verzeichnis mit Quellcode  
+`PublishSourceDirectory` = Verzeichnis mit Quellcode  
 
 Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
@@ -133,7 +127,8 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `optional` = nur bei Neuinstallation  
 `additional` = nur nach Neuinstallation  
 `careful` = nur falls nicht verändert  
-`multi-language` = Inhalt aus dem entsprechenden Unterverzeichnis verwenden  
+`compress` = ZIP-Datei aus dem angegebenen Verzeichnis erstellen  
+`multi-language` = Inhaltsdatei aus dem entsprechenden Verzeichnis verwenden  
 
 ## Entwickler
 

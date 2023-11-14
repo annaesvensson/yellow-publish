@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.67
+# Publish 0.8.68
 
 Make and publish extensions.
 
@@ -8,7 +8,7 @@ Make and publish extensions.
 
 ## How to install an extension
 
-[Download ZIP file](https://github.com/annaesvensson/yellow-publish/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+[Download ZIP file](https://github.com/annaesvensson/yellow-publish/archive/refs/heads/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## How to make an extension
 
@@ -18,13 +18,7 @@ If you want others to discover your extension, add the topic [datenstrom-yellow]
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). The [published extensions](https://github.com/datenstrom/yellow-extensions) provide the best user experience and are reviewed by other developers. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. You also need the files from the repository `datenstrom/yellow-extensions`, fork the repository and clone it. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow-extensions`.
-
-If you don't want that your extension is published, set `Status: experimental` in the [extension settings](#settings).
-
-## How to publish the standard installation
-
-You can publish the standard installation at the [command line](https://github.com/annaesvensson/yellow-core). The [standard installation](https://github.com/datenstrom/yellow) is a collection of the most important extensions and the [installer](https://github.com/annaesvensson/yellow-install). Usually a maintainer takes care of keeping the standard installation up to date, but the same tools are available to everyone. You also need the files from the repository `datenstrom/yellow`, fork the repository and clone it. Want to publish the standard installation?  Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). The [published extensions](https://github.com/datenstrom/yellow-extensions) provide the best user experience and are reviewed by other developers. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. You also need the files from the repository `datenstrom/yellow`, fork the repository and clone it. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
@@ -39,7 +33,7 @@ Extension: Helloworld
 Version: 0.8.15
 Description: Example feature for Datenstrom Yellow.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/main.zip
+DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: feature
@@ -57,7 +51,7 @@ Extension: English
 Version: 0.8.32
 Description: English/English with language 'en'.
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/english.zip
+DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
 Published: 2022-04-24 15:40:08
 Translator: Mark Seuffert
 Tag: language
@@ -73,7 +67,7 @@ Extension: Stockholm
 Version: 0.8.13
 Description: Stockholm is a clean theme.
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
-DownloadUrl: https://github.com/datenstrom/yellow-extensions/raw/main/downloads/stockholm.zip
+DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 Published: 2022-06-15 16:03:38
 Designer: Anna Svensson
 Tag: theme
@@ -103,7 +97,7 @@ Publishing extensions at the command line:
 
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
-`PublishSourceCodeDirectory` = directory with source code  
+`PublishSourceDirectory` = directory with source code  
 
 The following settings can be configured in file `extension.ini`:
 
@@ -133,7 +127,8 @@ The following settings can be configured in file `extension.ini`:
 `optional` = only for first installation  
 `additional` = only after first installation  
 `careful` = only if not modified  
-`multi-language` = use content from corresponding subfolder  
+`compress` = make ZIP file from specified directory  
+`multi-language` = use content file from corresponding directory  
 
 ## Developer
 
