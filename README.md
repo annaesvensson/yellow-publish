@@ -12,13 +12,13 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm). This will show you which files are required. The [extension settings](#settings) are stored in file `extension.ini`. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). It's best to have a look at the code of installed extensions, make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. Did you make an extension? Upload your extension to GitHub, let us know if you need help.
+[Start with a feature](https://github.com/schulle4u/yellow-helloworld) or [theme](https://github.com/annaesvensson/yellow-stockholm). It's best to have a look at the code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). The [published extensions](https://github.com/datenstrom/yellow-extensions) provide the best user experience and are reviewed by other developers. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. You also need the files from the repository `datenstrom/yellow`, fork the repository and clone it. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). The published extensions provide the best user experience and are reviewed by other developers. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. You also need the files from the repository `datenstrom/yellow`, fork the repository and clone it. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update all necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
@@ -40,22 +40,6 @@ Tag: feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
-~~~
-
-Extension settings for a language:
-
-~~~
-# Datenstrom Yellow extension settings
-
-Extension: English
-Version: 0.8.32
-Description: English/English with language 'en'.
-DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
-DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
-Published: 2022-04-24 15:40:08
-Translator: Mark Seuffert
-Tag: language
-system/extensions/english.php: english.php, create, update
 ~~~
 
 Extension settings for a theme:
@@ -90,7 +74,6 @@ Publishing all folders at the command line:
 Publishing extensions at the command line:
 
 `php yellow.php publish yellow-helloworld`  
-`php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 
 ## Settings
