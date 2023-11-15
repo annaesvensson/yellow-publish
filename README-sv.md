@@ -12,7 +12,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-[Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Det är bäst att titta på koden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa en repository och ladda upp dina filer till GitHub.
+[Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld) eller ett [tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md). Det är bäst att titta på koden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
@@ -31,12 +31,12 @@ Tilläggsinställningar för en funktion:
 
 Extension: Helloworld
 Version: 0.8.15
-Description: Example feature for Datenstrom Yellow.
+Description: Make animated text.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
-Tag: feature
+Tag: example, feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update

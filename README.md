@@ -31,12 +31,12 @@ Extension settings for a feature:
 
 Extension: Helloworld
 Version: 0.8.15
-Description: Example feature for Datenstrom Yellow.
+Description: Make animated text.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
-Tag: feature
+Tag: example, feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update

@@ -12,7 +12,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-[Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld) oder einem [Theme](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md). Schau dir am besten den Code von einigen Erweiterungen im `system/extensions`-Vereichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Code und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Die Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository und lade deinen Dateien zu GitHub hoch.
+[Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld) oder einem [Theme](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md). Schau dir am besten den Code von einigen Erweiterungen im `system/extensions`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Code und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Die Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository und lade deinen Dateien zu GitHub hoch.
 
 Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
 
@@ -31,12 +31,12 @@ Erweiterungseinstellungen für eine Funktion:
 
 Extension: Helloworld
 Version: 0.8.15
-Description: Example feature for Datenstrom Yellow.
+Description: Make animated text.
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
-Tag: feature
+Tag: example, feature
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
