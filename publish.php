@@ -438,7 +438,7 @@ class YellowPublish {
                             $fileDataNew = $this->setDocumentationListEntry($fileDataNew, $key, $description, $url, $tag);
                         }
                     }
-                    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileName.".new", $fileDataNew)) {
+                    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileName, $fileDataNew)) {
                         $statusCode = 500;
                         echo "ERROR publishing files: Can't write file '$fileName'!\n";
                     }
