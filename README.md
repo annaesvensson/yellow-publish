@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.69
+# Publish 0.8.70
 
 Make and publish extensions.
 
@@ -32,8 +32,8 @@ Extension settings for a feature:
 Extension: Helloworld
 Version: 0.8.15
 Description: Make animated text.
-DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: example, feature
@@ -50,8 +50,9 @@ Extension settings for a theme:
 Extension: Stockholm
 Version: 0.8.13
 Description: Stockholm is a clean theme.
-DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
+DocumentationLanguage: en, de, sv
 Published: 2022-06-15 16:03:38
 Designer: Anna Svensson
 Tag: theme
@@ -81,14 +82,16 @@ Publishing extensions at the command line:
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
 `PublishSourceDirectory` = directory with source code  
+`PublishWebsiteDirectory` = directory with official website  
 
 The following settings can be configured in file `extension.ini`:
 
 `Extension` = extension name  
 `Version` = extension version number  
 `Description` = extension description, one line maximum  
-`DocumentationUrl` = extension documentation  
 `DownloadUrl` = extension download address  
+`DocumentationUrl` = extension documentation  
+`DocumentationLanguage` = extension documentation language(s), comma separated  
 `Published` = extension publication date, YYYY-MM-DD format  
 `Developer` = responsible developer(s) of a feature, comma separated  
 `Designer` = responsible designer(s) of a theme, comma separated  

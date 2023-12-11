@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.69
+# Publish 0.8.70
 
 Göra och publicera tillägg.
 
@@ -32,8 +32,8 @@ Tilläggsinställningar för en funktion:
 Extension: Helloworld
 Version: 0.8.15
 Description: Make animated text.
-DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 Published: 2020-08-13 16:12:30
 Developer: Steffen Schultz
 Tag: example, feature
@@ -50,8 +50,9 @@ Tilläggsinställningar för ett tema:
 Extension: Stockholm
 Version: 0.8.13
 Description: Stockholm is a clean theme.
-DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
+DocumentationLanguage: en, de, sv
 Published: 2022-06-15 16:03:38
 Designer: Anna Svensson
 Tag: theme
@@ -81,14 +82,16 @@ Publicera tillägg på kommandoraden:
 Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
 `PublishSourceDirectory` = mapp med källkod  
+`PublishWebsiteDirectory` = mapp med officiell webbplats  
 
 Följande inställningar kan konfigureras i filen `extension.ini`:
 
 `Extension` = tilläggets namn  
 `Version` = tilläggets versionsnummer  
 `Description` = tilläggets beskrivning, max en rad  
-`DocumentationUrl` = tilläggets dokumentation  
 `DownloadUrl` = tilläggets nedladdningsadress  
+`DocumentationUrl` = tilläggets dokumentation  
+`DocumentationLanguage` = tilläggets dokumentationsspråk, kommaseparerade  
 `Published` = tilläggets publiceringsdatum, ÅÅÅÅ-MM-DD format  
 `Developer` = ansvarig utvecklare av en funktion, kommaseparerade  
 `Designer` = ansvarig formgivare av ett tema, kommaseparerade  
