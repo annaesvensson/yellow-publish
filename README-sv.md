@@ -118,7 +118,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 Följande filer kommer att uppdateras i repository `datenstrom/yellow`:
 
-`system/extensions/update-latest.ini` = fil med tillgängliga tillägg  
+`system/extensions/update-latest.ini` = fil med tillgängliga tillägg, [se senaste filen](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-latest.ini)  
 `system/extensions/update-current.ini` = fil med installerade tillägg  
 
 ## Utvecklare

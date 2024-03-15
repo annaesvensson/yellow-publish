@@ -118,7 +118,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 
 Die folgenden Dateien werden im Repository `datenstrom/yellow` aktualisiert:
 
-`system/extensions/update-latest.ini` = Datei mit den verfügbaren Erweiterungen  
+`system/extensions/update-latest.ini` = Datei mit den verfügbaren Erweiterungen, [siehe neuste Datei](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-latest.ini)  
 `system/extensions/update-current.ini` = Datei mit den installierten Erweiterungen  
 
 ## Entwickler

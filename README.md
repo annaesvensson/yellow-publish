@@ -118,7 +118,7 @@ The following settings can be configured in file `extension.ini`:
 
 The following files will be updated in the repository `datenstrom/yellow`:
 
-`system/extensions/update-latest.ini` = file with available extensions  
+`system/extensions/update-latest.ini` = file with available extensions, [see latest file](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-latest.ini)  
 `system/extensions/update-current.ini` = file with installed extensions  
 
 ## Developer
