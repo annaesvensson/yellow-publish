@@ -18,7 +18,7 @@ If you want others to discover your extension, add the topic [datenstrom-yellow]
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files in `datenstrom/yellow`. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. Are you ready to publish your extension? Increase the version number in your code, this is important, so that everybody knows that a new version of your extension is available. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
@@ -115,6 +115,11 @@ The following settings can be configured in file `extension.ini`:
 `careful` = only if not modified  
 `compress` = make ZIP file from specified directory  
 `multi-language` = use content file from corresponding directory  
+
+The following files will be updated in the repository `datenstrom/yellow`:
+
+`system/extensions/update-latest.ini` = file with latest available extensions  
+`system/extensions/update-current.ini` = file with installed extensions  
 
 ## Developer
 

@@ -18,7 +18,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien in `datenstrom/yellow`. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Bist du bereit deine Erweiterung zu veröffentlichen? Erhöhe die Versionsnummer in deinem Code, das ist wichtig, damit jeder weiß dass eine neue Version deiner Erweiterung verfügbar ist. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `datenstrom/yellow`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -115,6 +115,11 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `careful` = nur falls nicht verändert  
 `compress` = ZIP-Datei aus dem angegebenen Verzeichnis erstellen  
 `multi-language` = Inhaltsdatei aus dem entsprechenden Verzeichnis verwenden  
+
+Die folgenden Dateien werden im Repository `datenstrom/yellow` aktualisiert:
+
+`system/extensions/update-latest.ini` = Datei mit den neuesten verfügbaren Erweiterungen  
+`system/extensions/update-current.ini` = Datei mit den installierten Erweiterungen  
 
 ## Entwickler
 

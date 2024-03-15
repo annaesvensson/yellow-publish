@@ -18,7 +18,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du publicerar ditt tillägg. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna i `datenstrom/yellow`. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du publicerar ditt tillägg. Är du redo att publicera ditt tillägg? Öka versionsnumret i din kod, detta är viktigt, så att alla vet att en ny version av ditt tillägg är tillgänglig. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar till GitHub och skapa en pull-request för `datenstrom/yellow`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
@@ -115,6 +115,11 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `careful` = endast om den inte ändras  
 `compress` = skapa ZIP-fil från angivna mappen  
 `multi-language` = använda innehållsfil från motsvarande mappen  
+
+Följande filer kommer att uppdateras i repository `datenstrom/yellow`:
+
+`system/extensions/update-latest.ini` = fil med senaste tillgängliga tillägg  
+`system/extensions/update-current.ini` = fil med installerade tillägg  
 
 ## Utvecklare
 
