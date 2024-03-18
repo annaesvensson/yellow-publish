@@ -18,7 +18,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Bist du bereit deine Erweiterung zu veröffentlichen? Überprüfe ob du die Versionsnummer in deinem Code erhöht hast, das ist wichtig, damit alle wissen dass es eine neue Version deiner Erweiterung gibt. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Bitte stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung veröffentlichst. Bist du bereit deine Erweiterung zu veröffentlichen? Überprüfe noch einmal ob du die Versionsnummer in deinem Code erhöht hast, das ist wichtig, damit alle wissen dass es eine neue Version deiner Erweiterung gibt. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
 Falls du andere Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -82,7 +82,6 @@ Erweiterungen in der Befehlszeile veröffentlichen:
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
 `PublishSourceDirectory` = Verzeichnis mit Quellcode  
-`PublishWebsiteDirectory` = Verzeichnis mit offizieller Webseite  
 
 Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
