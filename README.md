@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.70
+# Publish 0.8.71
 
 Make and publish extensions.
 
@@ -12,13 +12,13 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with an experimental extension](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub
+[Start with an experimental extension](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core) and make it available to everyone. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before publishing your extension. Are you ready to publish your extension? Check again if you have increased the version number in your code, this is important, so that everybody knows there's a new version of your extension. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for the repository `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). You can choose between different [status values](#settings-status), to control where your extension will be published. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before making your extension available to everyone. Are you ready to publish your extension? Check again if you have increased the version number in your code, this is important, so that everybody knows there's a new version of your extension. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for the repository `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
@@ -49,14 +49,14 @@ Extension settings for a theme:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.8.13
+Version: 0.8.14
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
-Tag: theme
+Tag: default, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2022-06-15 16:03:38
+Published: 2024-04-20 18:43:38
 Status: available
 system/extensions/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
@@ -76,7 +76,7 @@ Publishing all folders at the command line:
 
 Publishing extensions at the command line:
 
-`php yellow.php publish yellow-helloworld`  
+`php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 
 ## Settings
@@ -105,7 +105,7 @@ The following settings can be configured in file `extension.ini`:
 `experimental` = extension is still experimental, use at your own risk  
 `unmaintained` = extension is no longer maintained, use at your own risk  
 `unlisted` = extension is available to everyone, but is not shown  
-`available` = extension is available to everyone  (**TODO: implement and test**)  
+`available` = extension is available to everyone    
 
 <a id="settings-actions"></a>The following file actions are supported:
 

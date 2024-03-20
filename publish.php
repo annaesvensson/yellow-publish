@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.70";
+    const VERSION = "0.8.71";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -113,7 +113,7 @@ class YellowPublish {
             $statusCode = max($statusCode, $this->updateExtensionSettings($path));
             $statusCode = max($statusCode, $this->updateExtensionDocumentation($path));
             $statusCode = max($statusCode, $this->updateExtensionFiles($path, $pathRepositorySource));
-            $statusCode = max($statusCode, $this->updateExtensionLatest($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateExtensionAvailable($path, $pathRepositorySource));
             if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
         } elseif (is_file("$path/yellow.php")) {
@@ -133,8 +133,8 @@ class YellowPublish {
     public function updateExtensionSettings($path) {
         $statusCode = 200;
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
-        list($dummy, $versionLatest, $publishedLatest, $status) = $this->getExtensionInformationFromSettings($path);
-        if ($version==$versionLatest) $published = $publishedLatest;
+        list($dummy, $versionAvailable, $publishedAvailable, $status) = $this->getExtensionInformationFromSettings($path);
+        if ($version==$versionAvailable) $published = $publishedAvailable;
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
             $settings = new YellowArray();
@@ -247,50 +247,50 @@ class YellowPublish {
         return $statusCode;
     }
     
-    // Update extension in latest update settings
-    public function updateExtensionLatest($path, $pathRepositorySource) {
+    // Update extension in update settings
+    public function updateExtensionAvailable($path, $pathRepositorySource) {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        $fileNameLatest = $pathRepositorySource."yellow/".$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("updateLatestFile");
-        if (is_file($fileNameExtension) && is_file($fileNameLatest) && $status!="experimental" && $status!="unlisted") {
+        $fileNameAvailable = $pathRepositorySource."yellow/".$this->yellow->system->get("coreExtensionDirectory").
+            $this->yellow->system->get("updateAvailableFile");
+        if (is_file($fileNameExtension) && is_file($fileNameAvailable) && $status!="experimental" && $status!="unlisted") {
             $fileDataExtension = $this->yellow->toolbox->readFile($fileNameExtension);
             $settingsExtension = $this->yellow->toolbox->getTextSettings($fileDataExtension, "");
-            $fileData = $this->yellow->toolbox->readFile($fileNameLatest);
-            $settingsLatest = $this->yellow->toolbox->getTextSettings($fileData, "extension");
-            $settingsLatest[$extension] = new YellowArray();
-            foreach ($settingsExtension as $key=>$value) $settingsLatest[$extension][$key] = $value;
-            $settingsLatest->uksort("strnatcasecmp");
-            $fileDataNew = "# Datenstrom Yellow update settings\n";
-            foreach ($settingsLatest as $extension=>$block) {
+            $fileData = $this->yellow->toolbox->readFile($fileNameAvailable);
+            $settingsAvailable = $this->yellow->toolbox->getTextSettings($fileData, "extension");
+            $settingsAvailable[$extension] = new YellowArray();
+            foreach ($settingsExtension as $key=>$value) $settingsAvailable[$extension][$key] = $value;
+            $settingsAvailable->uksort("strnatcasecmp");
+            $fileDataNew = "# Datenstrom Yellow update settings for available extensions\n";
+            foreach ($settingsAvailable as $extension=>$block) {
                 $fileDataNew .= "\n";
                 foreach ($block as $key=>$value) {
                     $fileDataNew .= (strposu($key, "/") ? $key : ucfirst($key)).": $value\n";
                 }
             }
-            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameLatest, $fileDataNew)) {
+            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameAvailable, $fileDataNew)) {
                 $statusCode = 500;
-                echo "ERROR publishing files: Can't write file '$fileNameLatest'!\n";
+                echo "ERROR publishing files: Can't write file '$fileNameAvailable'!\n";
             }
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateExtensionLatest file:$fileNameLatest<br/>\n";
+                echo "YellowPublish::updateExtensionAvailable file:$fileNameAvailable<br/>\n";
             }
         }
         return $statusCode;
     }
     
-    // Update standard installation, make sure current update settings are up-to-date
+    // Update standard installation, make sure update settings are up-to-date
     public function updateStandardCurrent($path, $pathRepositorySource) {
         $statusCode = 200;
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
             $this->yellow->system->get("updateCurrentFile");
-        $fileNameLatest = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("updateLatestFile");
-        if (is_file($fileNameCurrent) && is_file($fileNameLatest)) {
+        $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
+            $this->yellow->system->get("updateAvailableFile");
+        if (is_file($fileNameCurrent) && is_file($fileNameAvailable)) {
             $fileNameInstall = $pathRepositorySource."yellow-install/".$this->yellow->system->get("updateExtensionFile");
             $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameInstall);
-            $fileDataExtensions .= $this->yellow->toolbox->readFile($fileNameLatest);
+            $fileDataExtensions .= $this->yellow->toolbox->readFile($fileNameAvailable);
             $settingsExtensions = $this->yellow->toolbox->getTextSettings($fileDataExtensions, "extension");
             $fileDataCurrent = $this->yellow->toolbox->readFile($fileNameCurrent);
             $settingsCurrent = $this->yellow->toolbox->getTextSettings($fileDataCurrent, "extension");
@@ -300,7 +300,7 @@ class YellowPublish {
                     foreach ($block as $key=>$value) $settingsCurrent[$extension][$key] = $value;
                 }
             }
-            $fileDataNew = "# Datenstrom Yellow update settings\n";
+            $fileDataNew = "# Datenstrom Yellow update settings for installed extensions\n";
             foreach ($settingsCurrent as $extension=>$block) {
                 $fileDataNew .= "\n";
                 foreach ($block as $key=>$value) {
@@ -342,9 +342,9 @@ class YellowPublish {
     public function updateStandardTranslations($path, $pathRepositorySource) {
         $statusCode = 200;
         if (is_dir($pathRepositorySource."yellow-language/")) {
-            $fileNameLatest = $path.$this->yellow->system->get("coreExtensionDirectory").
-                $this->yellow->system->get("updateLatestFile");
-            $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameLatest);
+            $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
+                $this->yellow->system->get("updateAvailableFile");
+            $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameAvailable);
             $settingsExtensions = $this->yellow->toolbox->getTextSettings($fileDataExtensions, "extension");
             $fileNameEnglish = $pathRepositorySource."yellow-language/translations/english/english.php";
             $fileDataEnglish = $this->yellow->toolbox->readFile($fileNameEnglish);
@@ -419,17 +419,17 @@ class YellowPublish {
         $pathWebsiteContent = $this->yellow->system->get("publishWebsiteDirectory").
             $this->yellow->system->get("coreContentDirectory");
         if (is_dir($pathWebsiteContent)) {
-            $fileNameLatest = $path.$this->yellow->system->get("coreExtensionDirectory").
-                $this->yellow->system->get("updateLatestFile");
-            $fileDataLatest = $this->yellow->toolbox->readFile($fileNameLatest);
-            $settingsLatest = $this->yellow->toolbox->getTextSettings($fileDataLatest, "extension");
+            $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
+                $this->yellow->system->get("updateAvailableFile");
+            $fileDataAvailable = $this->yellow->toolbox->readFile($fileNameAvailable);
+            $settingsAvailable = $this->yellow->toolbox->getTextSettings($fileDataAvailable, "extension");
             foreach ($this->yellow->toolbox->getDirectoryEntries($pathWebsiteContent, "/.*/", true, true, false) as $entry) {
                 $fileName = $pathWebsiteContent.$entry."/2-yellow/2-extensions/page.md";
                 $fileData = $fileDataNew = $this->yellow->toolbox->readFile($fileName);
                 $language = $this->yellow->lookup->normaliseToken($entry);
                 if (!is_file($fileName)) continue;
                 if ($this->yellow->language->isExisting($language)) {
-                    foreach ($settingsLatest as $key=>$value) {
+                    foreach ($settingsAvailable as $key=>$value) {
                         $description = $this->getExtensionDescription($key, $value, $language);
                         $url = $this->getExtensionDocumentationUrl($key, $value, $language);
                         $status = $value->get("status");
