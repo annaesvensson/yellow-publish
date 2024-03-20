@@ -5,10 +5,10 @@ You should always review your own extension first. Please make sure:
 - [ ] repository has the topic `datenstrom-yellow`, [see documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
 - [ ] repository has the default branch `main`, [see documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)
 - [ ] repository has the annotated `GPL version 2` [license file](https://github.com/datenstrom/yellow/blob/main/LICENSE.md)
+- [ ] check that you have set `Status: available` in the [extension settings](https://github.com/annaesvensson/yellow-publish#settings)
 - [ ] check that you have increased the version number in the source code
 - [ ] check for code security and adherence to our coding standard
 - [ ] check for spelling errors and adherence to our documentation standard
-- [ ] check that you have selected the correct `Status` in the [extension settings](https://github.com/annaesvensson/yellow-publish#settings)
 - [ ] check that your extension works in the [standard installation](https://github.com/datenstrom/yellow)
 - [ ] don't keep features/settings that are leftovers from experimentation
 - [ ] don't have features/settings just in case someone needs them later
