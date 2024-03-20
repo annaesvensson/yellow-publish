@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.71";
+    const VERSION = "0.8.72";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -13,7 +13,6 @@ class YellowPublish {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
         $this->yellow->system->setDefault("publishSourceDirectory", "/My/Documents/GitHub/");
-        $this->yellow->system->setDefault("publishWebsiteDirectory", "/My/Sync/Website/");
     }
 
     // Handle command
@@ -135,9 +134,9 @@ class YellowPublish {
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
         list($dummy, $versionAvailable, $publishedAvailable, $status) = $this->getExtensionInformationFromSettings($path);
         if ($version==$versionAvailable) $published = $publishedAvailable;
-        $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameExtension) && !is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
+        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unlisted")) {
             $settings = new YellowArray();
+            $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
             $fileDataNew = "";
             foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
@@ -178,14 +177,20 @@ class YellowPublish {
                 $statusCode = 500;
                 echo "ERROR publishing files: Please configure DownloadUrl and DocumentationUrl in file '$fileNameExtension'!\n";
             }
+            if (!$settings->isExisting("published")) {
+                $statusCode = 500;
+                echo "ERROR publishing files: Please configure Published in file '$fileNameExtension'!\n";
+            }
             if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameExtension, $fileDataNew)) {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$fileNameExtension'!\n";
             }
             if ($statusCode==200) ++$this->extensions;
-            if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateExtensionSettings file:$fileNameExtension<br/>\n";
-            }
+        }
+        if ($this->yellow->system->get("coreDebugMode")>=1) {
+            $extension = !is_string_empty($extension) ? $extension : "unknown";
+            $status = !is_string_empty($status) ? $status : "none";
+            echo "YellowPublish::updateExtensionSettings extension:$extension status:$status<br/>\n";
         }
         return $statusCode;
     }
@@ -194,7 +199,7 @@ class YellowPublish {
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && !is_string_empty($version) && $status!="experimental") {
+        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unlisted")) {
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
@@ -215,7 +220,7 @@ class YellowPublish {
     public function updateExtensionFiles($path, $pathRepositorySource) {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && $status!="experimental") {
+        if (!is_string_empty($extension) && ($status=="available" || $status=="unlisted")) {
             $fileNamesCompress = $this->getExtensionFileNamesCompress($path, $pathRepositorySource);
             foreach ($fileNamesCompress as $fileNameZipArchive=>$pathZipArchive) {
                 list($extension, $dummy, $published) = $this->getExtensionInformationFromSettings($pathZipArchive);
@@ -254,7 +259,7 @@ class YellowPublish {
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         $fileNameAvailable = $pathRepositorySource."yellow/".$this->yellow->system->get("coreExtensionDirectory").
             $this->yellow->system->get("updateAvailableFile");
-        if (is_file($fileNameExtension) && is_file($fileNameAvailable) && $status!="experimental" && $status!="unlisted") {
+        if (is_file($fileNameExtension) && is_file($fileNameAvailable) && $status=="available") {
             $fileDataExtension = $this->yellow->toolbox->readFile($fileNameExtension);
             $settingsExtension = $this->yellow->toolbox->getTextSettings($fileDataExtension, "");
             $fileData = $this->yellow->toolbox->readFile($fileNameAvailable);
@@ -418,7 +423,7 @@ class YellowPublish {
         $statusCode = 200;
         $pathWebsiteContent = $this->yellow->system->get("publishWebsiteDirectory").
             $this->yellow->system->get("coreContentDirectory");
-        if (is_dir($pathWebsiteContent)) {
+        if (is_dir($pathWebsiteContent) && $this->yellow->system->isExisting("publishWebsiteDirectory")) {
             $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
                 $this->yellow->system->get("updateAvailableFile");
             $fileDataAvailable = $this->yellow->toolbox->readFile($fileNameAvailable);
@@ -434,7 +439,7 @@ class YellowPublish {
                         $url = $this->getExtensionDocumentationUrl($key, $value, $language);
                         $status = $value->get("status");
                         $tag = $value->get("tag");
-                        if ($status!="experimental" && $status!="unlisted")  {
+                        if ($status=="available")  {
                             $fileDataNew = $this->setDocumentationListEntry($fileDataNew, $key, $description, $url, $tag);
                         }
                     }

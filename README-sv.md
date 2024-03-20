@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.71
+# Publish 0.8.72
 
 Göra och publicera tillägg.
 
@@ -18,7 +18,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Du kan välja mellan olika [statusvärden](#inställningar-status) för att bestämma var ditt tillägg kommer att publiceras. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du gör ditt tillägg tillgängligt för alla. Är du redo att publicera ditt tillägg? Kontrollera igen om du har ökat versionsnumret i din kod, detta är viktigt, så att alla vet att det finns en ny version av ditt tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar till GitHub och skapa en pull-request för repository `datenstrom/yellow`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Du kan välja mellan olika [statusvärden](#inställningar-status) för att bestämma hur du gör ditt tillägg tillgängligt. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du gör ditt tillägg tillgängligt för alla. Är du redo att publicera ditt tillägg? Kontrollera igen om du har ökat versionsnumret i din kod, detta är viktigt, så att alla vet att det finns en ny version av ditt tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar till GitHub och skapa en pull-request för repository `datenstrom/yellow`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 

@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.71
+# Publish 0.8.72
 
 Make and publish extensions.
 
@@ -18,7 +18,7 @@ If you want others to discover your extension, add the topic [datenstrom-yellow]
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). You can choose between different [status values](#settings-status), to control where your extension will be published. Please make sure that you have completed the [self-review checklist](self-review-checklist.md) before making your extension available to everyone. Are you ready to publish your extension? Check again if you have increased the version number in your code, this is important, so that everybody knows there's a new version of your extension. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for the repository `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). You can choose between different [status values](#settings-status), to control how you make your extension available. Make sure you have completed the [self-review checklist](self-review-checklist.md) before making your extension available to everyone. Are you ready to publish your extension? Check again if you have increased the version number in your code, this is important, so that everybody knows there's a new version of your extension. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for the repository `datenstrom/yellow`.
 
 If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
