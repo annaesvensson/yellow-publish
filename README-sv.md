@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.72
+# Publish 0.8.73
 
 Göra och publicera tillägg.
 
@@ -12,13 +12,13 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-[Börja med ett experimentellt tillägg](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på koden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
+[Börja med ett experimentellt tillägg](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på källkoden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Du kan välja mellan olika [statusvärden](#inställningar-status) för att bestämma hur du gör ditt tillägg tillgängligt. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du gör ditt tillägg tillgängligt för alla. Är du redo att publicera ditt tillägg? Kontrollera igen om du har ökat versionsnumret i din kod, detta är viktigt, så att alla vet att det finns en ny version av ditt tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar till GitHub och skapa en pull-request för repository `datenstrom/yellow`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Öka versionsnumret i din källkod. Du kan välja mellan olika [statusvärden](#inställningar-status) för att bestämma hur du gör ditt tillägg tillgängligt. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du gör ditt tillägg tillgängligt för alla. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar till GitHub och skapa en pull-request för repository `datenstrom/yellow`.
 
 Om du vill nämna andra utvecklare/designer/översättare, lägg till [medförfattare](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) till commit-meddelandet.
 
@@ -41,6 +41,23 @@ Status: experimental
 system/extensions/helloworld.php: helloworld.php, create, update
 system/extensions/helloworld.js: helloworld.js, create, update
 system/extensions/helloworld.css: helloworld.css, create, update
+~~~
+
+Tilläggsinställningar för ett språk:
+
+~~~
+# Datenstrom Yellow extension settings
+
+Extension: Swedish
+Version: 0.8.44
+Description: Swedish language.
+Translator: Anna Svensson
+Tag: language
+DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/swedish.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish
+Published: 2024-03-21 00:16:05
+Status: available
+system/extensions/swedish.php: swedish.php, create, update
 ~~~
 
 Tilläggsinställningar för ett tema:
@@ -104,8 +121,8 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 
 `experimental` = tillägget är fortfarande experimentellt, använd på egen risk  
 `unmaintained ` = tillägget underhålls inte längre, använd på egen risk  
-`unlisted` = tillägget är tillgängligt för alla, men visas inte  
-`available` = tillägget är tillgängligt för alla  
+`unassembled` = tillägget sätts ihop av den interna verktygskedjan  
+`available` = tillägget är tillgängligt för alla och [visas på webbsidan](https://datenstrom.se/sv/yellow/extensions/)  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
 

@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.72
+# Publish 0.8.73
 
 Make and publish extensions.
 
@@ -121,7 +121,7 @@ The following settings can be configured in file `extension.ini`:
 
 `experimental` = extension is still experimental, use at your own risk  
 `unmaintained` = extension is no longer maintained, use at your own risk  
-`unassembled` = extension is assembled by the internal toolchain  **TODO**  
+`unassembled` = extension is assembled by the internal toolchain  
 `available` = extension is available to everyone and [shown on the website](https://datenstrom.se/yellow/extensions/)  
 
 <a id="settings-actions"></a>The following file actions are supported:

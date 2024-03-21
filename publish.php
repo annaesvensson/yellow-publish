@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.72";
+    const VERSION = "0.8.73";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -134,7 +134,7 @@ class YellowPublish {
         list($extension, $version, $published, $fileNameSource) = $this->getExtensionInformationFromSource($path);
         list($dummy, $versionAvailable, $publishedAvailable, $status) = $this->getExtensionInformationFromSettings($path);
         if ($version==$versionAvailable) $published = $publishedAvailable;
-        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unlisted")) {
+        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unassembled")) {
             $settings = new YellowArray();
             $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
             $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
@@ -199,7 +199,7 @@ class YellowPublish {
     public function updateExtensionDocumentation($path) {
         $statusCode = 200;
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unlisted")) {
+        if (!is_string_empty($extension) && !is_string_empty($version) && ($status=="available" || $status=="unassembled")) {
             $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
@@ -220,7 +220,7 @@ class YellowPublish {
     public function updateExtensionFiles($path, $pathRepositorySource) {
         $statusCode = 200;
         list($extension, $dummy, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
-        if (!is_string_empty($extension) && ($status=="available" || $status=="unlisted")) {
+        if (!is_string_empty($extension) && ($status=="available" || $status=="unassembled")) {
             $fileNamesCompress = $this->getExtensionFileNamesCompress($path, $pathRepositorySource);
             foreach ($fileNamesCompress as $fileNameZipArchive=>$pathZipArchive) {
                 list($extension, $dummy, $published) = $this->getExtensionInformationFromSettings($pathZipArchive);
