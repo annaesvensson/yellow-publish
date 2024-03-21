@@ -122,7 +122,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `experimental` = tillägget är fortfarande experimentellt, använd på egen risk  
 `unmaintained ` = tillägget underhålls inte längre, använd på egen risk  
 `unassembled` = tillägget sätts ihop av den interna verktygskedjan  
-`available` = tillägget är tillgängligt för alla och [visas på webbsidan](https://datenstrom.se/sv/yellow/extensions/)  
+`available` = tillägget är tillgängligt för alla och [visas på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/)  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
 

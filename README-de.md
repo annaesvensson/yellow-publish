@@ -122,7 +122,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `experimental` = Erweiterung ist noch experimentell, Nutzung auf eigene Gefahr  
 `unmaintained ` = Erweiterung wird nicht mehr gepflegt, Nutzung auf eigene Gefahr  
 `unassembled` = Erweiterung wird durch die interne Werkzeugkette zusammengebaut  
-`available` = Erweiterung ist für alle verfügbar und [wird auf der Website angezeigt](https://datenstrom.se/de/yellow/extensions/)  
+`available` = Erweiterung ist für alle verfügbar und [wird auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:
 

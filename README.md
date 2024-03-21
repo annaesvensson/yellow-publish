@@ -122,7 +122,7 @@ The following settings can be configured in file `extension.ini`:
 `experimental` = extension is still experimental, use at your own risk  
 `unmaintained` = extension is no longer maintained, use at your own risk  
 `unassembled` = extension is assembled by the internal toolchain  
-`available` = extension is available to everyone and [shown on the website](https://datenstrom.se/yellow/extensions/)  
+`available` = extension is available to everyone and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
 
 <a id="settings-actions"></a>The following file actions are supported:
 
