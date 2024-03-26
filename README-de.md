@@ -35,7 +35,7 @@ Erweiterungseinstellungen für eine Funktion:
 
 Extension: Helloworld
 Version: 0.8.15
-Description: Make animated text.
+Description: Experimental extension for Datenstrom Yellow developers.
 Developer: Steffen Schultz
 Tag: example, feature
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
