@@ -14,13 +14,17 @@ Make and publish extensions.
 
 [Start with an experimental extension](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the source code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
 
+## How to announce an extension
+
+Tell others about your extension and [make an announcement](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). This is a great way to get feedback, to experiment with features and improve your extension. Most extensions start as experimental. Over time you will get a better understanding of what people need. Take the time to review your extension from the perspective of the user. Imagine what the user wants to do and what would make life easier. Focus on people and their everyday lives. Not on technical details and lots of features.
+
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
 ## How to publish an extension
 
 You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Increase the version number in your source code. You can choose between different [status values](#settings-status), to control how to make your extension available. Make sure you have completed the [self-review checklist](self-review-checklist.md) before making your extension available to everyone. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes to GitHub and create a pull request for the repository `datenstrom/yellow`.
 
-If you want to mention other developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
+If you want to mention developers/designers/translators, add [co-authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) to the commit message.
 
 ## Examples
 
@@ -137,7 +141,7 @@ The following settings can be configured in file `extension.ini`:
 
 The following files will be updated in the repository `datenstrom/yellow`:
 
-`system/extensions/update-available.ini` = file with [available extensions](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
+`system/extensions/update-available.ini` = [file with available extensions](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
 `system/extensions/update-current.ini` = file with installed extensions  
 
 ## Developer
