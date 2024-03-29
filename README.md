@@ -16,7 +16,7 @@ Make and publish extensions.
 
 ## How to announce an extension
 
-Tell others about your extension and [make an announcement](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). This is a great way to get feedback, to experiment with features and improve your extension. Most extensions start as experimental. Over time you will get a better understanding of what people need. Take the time to review your extension from the perspective of the user. Imagine what the user wants to do and what would make life easier. Focus on people and their everyday lives. Not on technical details and lots of features.
+Tell others about your extension and [make an announcement](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). This is a great way to get feedback, to experiment with features and improve your extension. Most extensions start as experimental. Over time you will get a better understanding of what people need. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make life easier. Focus on people and their everyday lives. Not on technical details and lots of features.
 
 If you want others to discover your extension, add the topic [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) to your repository.
 
