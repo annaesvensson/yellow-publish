@@ -16,7 +16,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung ankündigt
 
-Erzähle anderen von deiner Erweiterung und [mache eine Ankündigung](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Das ist eine großartige Möglichkeit um Feedback zu erhalten, mit Funktionen zu experimentieren und seine Erweiterung zu verbessern. Die meisten Erweiterungen beginnen experimentell. Mit der Zeit wirst du besser verstehen was Menschen brauchen. Nihm dir die Zeit um deine Erweiterung aus der Perspektive des Benutzers zu überprüfen. Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde. Konzentriere dich auf Menschen und ihren Alltag. Nicht auf technische Details und viele Funktionen.
+Erzähle anderen von deiner Erweiterung und [mache eine Ankündigung](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Das ist eine großartige Möglichkeit um Feedback zu erhalten, mit Funktionen zu experimentieren und seine Erweiterung zu verbessern. Die meisten Erweiterungen beginnen experimentell. Im Laufe der Zeit wirst du besser verstehen was Menschen brauchen. Gute Technologie wird für Menschen gemacht. Überprüfen deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde. Konzentriere dich auf Menschen und ihren Alltag. Nicht auf technische Details und viele Funktionen.
 
 Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
 
