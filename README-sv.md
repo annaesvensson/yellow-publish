@@ -16,7 +16,7 @@ Göra och publicera tillägg.
 
 ## Hur man annonserar ett tillägg
 
-Berätta för andra om ditt tillägg och [skriva ett medelande](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Det här är ett bra sätt att få feedback, att experimentera med funktioner och förbättra ditt tillägg. De flesta tillägg börjar som experimentella. Med tiden kommer du att få en bättre förståelse för vad människor behöver. Ta dig tid att granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare. Fokusera på människor och deras vardag. Inte på tekniska detaljer och massor av funktioner.
+Berätta för andra om ditt tillägg och [skriva ett medelande](https://github.com/datenstrom/yellow/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Det här är ett bra sätt att få feedback, att experimentera med funktioner och förbättra ditt tillägg. De flesta tillägg börjar som experimentella. Med tiden kommer du att få en bättre förståelse för vad människor behöver. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare. Fokusera på människor och deras vardag. Inte på tekniska detaljer och massor av funktioner.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) till ditt repository.
 
