@@ -139,10 +139,7 @@ The following settings can be configured in file `extension.ini`:
 `compress` = make ZIP file from specified directory  
 `multi-language` = use content file from corresponding directory  
 
-The following files will be updated in the repository `datenstrom/yellow`:
-
-`system/extensions/update-available.ini` = [file with available extensions](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
-`system/extensions/yellow-extension.ini` = file with installed extensions  
+The [update information](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) can be found in file `system/extensions/update-available.ini`.
 
 ## Developer
 
