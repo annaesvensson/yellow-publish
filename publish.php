@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.8.73";
+    const VERSION = "0.9.1";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -289,7 +289,7 @@ class YellowPublish {
     public function updateStandardCurrent($path, $pathRepositorySource) {
         $statusCode = 200;
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("updateCurrentFile");
+            $this->yellow->system->get("coreExtensionFile");
         $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
             $this->yellow->system->get("updateAvailableFile");
         if (is_file($fileNameCurrent) && is_file($fileNameAvailable)) {
@@ -305,7 +305,7 @@ class YellowPublish {
                     foreach ($block as $key=>$value) $settingsCurrent[$extension][$key] = $value;
                 }
             }
-            $fileDataNew = "# Datenstrom Yellow update settings for installed extensions\n";
+            $fileDataNew = "# Datenstrom Yellow extension settings\n";
             foreach ($settingsCurrent as $extension=>$block) {
                 $fileDataNew .= "\n";
                 foreach ($block as $key=>$value) {
@@ -461,10 +461,10 @@ class YellowPublish {
     
     // Set documentation heading in Markdown data
     public function setDocumentationHeading($rawData, $text) {
-        if (preg_match("/^(\xEF\xBB\xBF)?(<.*>[\r\n]+)?(\#[\w ]+[0-9\.]{5,}[\r\n]+)(.*)$/s", $rawData, $parts)) {
+        if (preg_match("/^(\xEF\xBB\xBF)?(<.*>[\r\n]+)?(\#[\w ]+[0-9\.]{3,}[\r\n]+)(.*)$/s", $rawData, $parts)) {
             $parts[3] = "# ".$text."\n\n";
             $rawDataNew = $parts[1].$parts[2].$parts[3].$parts[4];
-        } elseif (preg_match("/^(\xEF\xBB\xBF)?(<.*>[\r\n]+)?([\w ]+[0-9\.]{5,}[\r\n]+)(\=+[\r\n]+)(.*)$/s", $rawData, $parts)) {
+        } elseif (preg_match("/^(\xEF\xBB\xBF)?(<.*>[\r\n]+)?([\w ]+[0-9\.]{3,}[\r\n]+)(\=+[\r\n]+)(.*)$/s", $rawData, $parts)) {
             $parts[3] = "# ".$text."\n\n";
             $parts[4] = "";
             $rawDataNew = $parts[1].$parts[2].$parts[3].$parts[4].$parts[5];
@@ -641,7 +641,7 @@ class YellowPublish {
     public function getProductInformationFromSource($path) {
         $product = "Datenstrom Yellow";
         $release = "";
-        $fileNameSource = rtrim($path, "/")."/system/extensions/core.php";
+        $fileNameSource = $path.$this->yellow->system->get("coreWorkerDirectory")."/core.php";
         $fileData = $this->yellow->toolbox->readFile($fileNameSource, 4096);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(\S+)\s+(\S+)/", $line, $matches)) {
@@ -810,7 +810,7 @@ class YellowPublish {
         $data = array();
         $extension = "";
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("updateCurrentFile");
+            $this->yellow->system->get("coreExtensionFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameCurrent);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
@@ -831,7 +831,7 @@ class YellowPublish {
     // Return number of extensions in standard installation
     public function getStandardExtensionsCount($path) {
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("updateCurrentFile");
+            $this->yellow->system->get("coreExtensionFile");
         $fileDataCurrent = $this->yellow->toolbox->readFile($fileNameCurrent);
         $settingsCurrent = $this->yellow->toolbox->getTextSettings($fileDataCurrent, "extension");
         return count($settingsCurrent);

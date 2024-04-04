@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.73
+# Publish 0.9.1
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -12,7 +12,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-[Beginne mit einer experimentellen Erweiterung](https://github.com/schulle4u/yellow-helloworld). Schau dir am besten den Quellcode von einigen Erweiterungen im `system/extensions`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Code und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Die Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository und lade deinen Dateien zu GitHub hoch.
+Beginne mit einer [experimentellen Erweiterung für Entwickler](https://github.com/schulle4u/yellow-helloworld). Schau dir am besten den Quellcode von einigen Erweiterungen im `system/extensions`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Code und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Die Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository und lade deinen Dateien zu GitHub hoch.
 
 ## Wie man eine Erweiterung ankündigt
 
@@ -34,7 +34,7 @@ Erweiterungseinstellungen für eine Funktion:
 # Datenstrom Yellow extension settings
 
 Extension: Helloworld
-Version: 0.8.15
+Version: 0.9.1
 Description: Experimental extension for Datenstrom Yellow developers.
 Developer: Steffen Schultz
 Tag: example, feature
@@ -42,9 +42,9 @@ DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/m
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 Published: 2020-08-13 16:12:30
 Status: experimental
-system/extensions/helloworld.php: helloworld.php, create, update
-system/extensions/helloworld.js: helloworld.js, create, update
-system/extensions/helloworld.css: helloworld.css, create, update
+system/workers/helloworld.php: helloworld.php, create, update
+system/workers/helloworld.js: helloworld.js, create, update
+system/workers/helloworld.css: helloworld.css, create, update
 ~~~
 
 Erweiterungseinstellungen für eine Sprache:
@@ -53,15 +53,15 @@ Erweiterungseinstellungen für eine Sprache:
 # Datenstrom Yellow extension settings
 
 Extension: German
-Version: 0.8.44
+Version: 0.9.1
 Description: German language.
 Translator: David Fehrmann
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/german.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/german
-Published: 2024-03-21 00:16:05
+Published: 2024-04-04 15:20:49
 Status: available
-system/extensions/german.php: german.php, create, update
+system/workers/german.php: german.php, create, update
 ~~~
 
 Erweiterungseinstellungen für ein Theme:
@@ -70,16 +70,16 @@ Erweiterungseinstellungen für ein Theme:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.8.14
+Version: 0.9.1
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: default, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2024-04-20 18:43:38
+Published: 2024-04-04 15:00:52
 Status: available
-system/extensions/stockholm.php: stockholm.php, create, update
+system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
 system/themes/stockholm.png: stockholm.png, create
 system/themes/stockholm-opensans-bold.woff: stockholm-opensans-bold.woff, create, update, careful
@@ -142,7 +142,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 Die folgenden Dateien werden im Repository `datenstrom/yellow` aktualisiert:
 
 `system/extensions/update-available.ini` = [Datei mit den verfügbaren Erweiterungen](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
-`system/extensions/update-current.ini` = Datei mit den installierten Erweiterungen  
+`system/extensions/yellow-extension.ini` = Datei mit den installierten Erweiterungen  
 
 ## Entwickler
 

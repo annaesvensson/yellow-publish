@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.73
+# Publish 0.9.1
 
 Göra och publicera tillägg.
 
@@ -12,7 +12,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-[Börja med ett experimentellt tillägg](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på källkoden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
+Börja med ett [experimentellt tillägg för utvecklare](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på källkoden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
 
 ## Hur man annonserar ett tillägg
 
@@ -34,7 +34,7 @@ Tilläggsinställningar för en funktion:
 # Datenstrom Yellow extension settings
 
 Extension: Helloworld
-Version: 0.8.15
+Version: 0.9.1
 Description: Experimental extension for Datenstrom Yellow developers.
 Developer: Steffen Schultz
 Tag: example, feature
@@ -42,9 +42,9 @@ DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/m
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 Published: 2020-08-13 16:12:30
 Status: experimental
-system/extensions/helloworld.php: helloworld.php, create, update
-system/extensions/helloworld.js: helloworld.js, create, update
-system/extensions/helloworld.css: helloworld.css, create, update
+system/workers/helloworld.php: helloworld.php, create, update
+system/workers/helloworld.js: helloworld.js, create, update
+system/workers/helloworld.css: helloworld.css, create, update
 ~~~
 
 Tilläggsinställningar för ett språk:
@@ -53,15 +53,15 @@ Tilläggsinställningar för ett språk:
 # Datenstrom Yellow extension settings
 
 Extension: Swedish
-Version: 0.8.44
+Version: 0.9.1
 Description: Swedish language.
 Translator: Anna Svensson
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/swedish.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish
-Published: 2024-03-21 00:16:05
+Published: 2024-04-04 15:24:20
 Status: available
-system/extensions/swedish.php: swedish.php, create, update
+system/workers/swedish.php: swedish.php, create, update
 ~~~
 
 Tilläggsinställningar för ett tema:
@@ -70,16 +70,16 @@ Tilläggsinställningar för ett tema:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.8.14
+Version: 0.9.1
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: default, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2024-04-20 18:43:38
+Published: 2024-04-04 15:00:52
 Status: available
-system/extensions/stockholm.php: stockholm.php, create, update
+system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
 system/themes/stockholm.png: stockholm.png, create
 system/themes/stockholm-opensans-bold.woff: stockholm-opensans-bold.woff, create, update, careful
@@ -142,7 +142,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 Följande filer kommer att uppdateras i repository `datenstrom/yellow`:
 
 `system/extensions/update-available.ini` = [fil med tillgängliga tillägg](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
-`system/extensions/update-current.ini` = fil med installerade tillägg  
+`system/extensions/yellow-extension.ini` = fil med installerade tillägg  
 
 ## Utvecklare
 

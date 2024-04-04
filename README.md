@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.8.73
+# Publish 0.9.1
 
 Make and publish extensions.
 
@@ -12,7 +12,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with an experimental extension](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the source code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
+Start with an [experimental extension for developers](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the source code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
 
 ## How to announce an extension
 
@@ -34,7 +34,7 @@ Extension settings for a feature:
 # Datenstrom Yellow extension settings
 
 Extension: Helloworld
-Version: 0.8.15
+Version: 0.9.1
 Description: Experimental extension for Datenstrom Yellow developers.
 Developer: Steffen Schultz
 Tag: example, feature
@@ -42,9 +42,9 @@ DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/m
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
 Published: 2020-08-13 16:12:30
 Status: experimental
-system/extensions/helloworld.php: helloworld.php, create, update
-system/extensions/helloworld.js: helloworld.js, create, update
-system/extensions/helloworld.css: helloworld.css, create, update
+system/workers/helloworld.php: helloworld.php, create, update
+system/workers/helloworld.js: helloworld.js, create, update
+system/workers/helloworld.css: helloworld.css, create, update
 ~~~
 
 Extension settings for a language:
@@ -53,15 +53,15 @@ Extension settings for a language:
 # Datenstrom Yellow extension settings
 
 Extension: English
-Version: 0.8.44
+Version: 0.9.1
 Description: English language.
 Translator: Mark Seuffert
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
-Published: 2024-03-21 00:16:05
+Published: 2024-04-04 15:20:39
 Status: available
-system/extensions/english.php: english.php, create, update
+system/workers/english.php: english.php, create, update
 ~~~
 
 Extension settings for a theme:
@@ -70,16 +70,16 @@ Extension settings for a theme:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.8.14
+Version: 0.9.1
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: default, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2024-04-20 18:43:38
+Published: 2024-04-04 15:00:52
 Status: available
-system/extensions/stockholm.php: stockholm.php, create, update
+system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
 system/themes/stockholm.png: stockholm.png, create
 system/themes/stockholm-opensans-bold.woff: stockholm-opensans-bold.woff, create, update, careful
@@ -142,7 +142,7 @@ The following settings can be configured in file `extension.ini`:
 The following files will be updated in the repository `datenstrom/yellow`:
 
 `system/extensions/update-available.ini` = [file with available extensions](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini)  
-`system/extensions/update-current.ini` = file with installed extensions  
+`system/extensions/yellow-extension.ini` = file with installed extensions  
 
 ## Developer
 
