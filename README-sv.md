@@ -40,7 +40,7 @@ Developer: Steffen Schultz
 Tag: example, feature
 DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-Published: 2020-08-13 16:12:30
+Published: 2024-04-05 10:35:30
 Status: experimental
 system/workers/helloworld.php: helloworld.php, create, update
 system/workers/helloworld.js: helloworld.js, create, update
@@ -139,7 +139,7 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `compress` = skapa ZIP-fil från angivna mappen  
 `multi-language` = använda innehållsfil från motsvarande mappen  
 
-[Uppdateringsinformationen](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) finns i filen `system/extensions/update-available.ini`. 
+[Uppdateringsdata](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) finns i filen `system/extensions/update-available.ini`. 
 
 ## Utvecklare
 
