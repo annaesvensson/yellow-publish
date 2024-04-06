@@ -12,7 +12,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-Börja med ett [experimentellt tillägg för utvecklare](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på källkoden för några tillägg in din `system/extensions` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
+Börja med ett [experimentellt tillägg för utvecklare](https://github.com/schulle4u/yellow-extension-helloworld). Det är bäst att titta på källkoden för några tillägg in din `system/workers` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Tilläggsinställningarna innehåller information om alla filer som behöver installeras. Gjorde du ett tillägg? Skapa ett repository och ladda upp dina filer till GitHub.
 
 ## Hur man annonserar ett tillägg
 

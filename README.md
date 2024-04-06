@@ -12,7 +12,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-Start with an [experimental extension for developers](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the source code of some extensions in your `system/extensions` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
+Start with an [experimental extension for developers](https://github.com/schulle4u/yellow-helloworld). It's best to have a look at the source code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code and additional files. The [extension settings](#settings) are stored in file `extension.ini`. The extension settings contain information about all files that need to be installed. Did you make an extension? Create a repository and upload your files to GitHub.
 
 ## How to announce an extension
 
