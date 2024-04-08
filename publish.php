@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.1";
+    const VERSION = "0.9.2";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -116,7 +116,7 @@ class YellowPublish {
             if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
         } elseif (is_file("$path/yellow.php")) {
-            $statusCode = max($statusCode, $this->updateStandardCurrent($path, $pathRepositorySource));
+            $statusCode = max($statusCode, $this->updateStandardSettings($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardFiles($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardTranslations($path, $pathRepositorySource));
             $statusCode = max($statusCode, $this->updateStandardDocumentation($path));
@@ -285,8 +285,8 @@ class YellowPublish {
         return $statusCode;
     }
     
-    // Update standard installation, make sure update settings are up-to-date
-    public function updateStandardCurrent($path, $pathRepositorySource) {
+    // Update standard installation, make sure settings are up-to-date
+    public function updateStandardSettings($path, $pathRepositorySource) {
         $statusCode = 200;
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
             $this->yellow->system->get("coreExtensionFile");
@@ -317,7 +317,7 @@ class YellowPublish {
                 echo "ERROR publishing files: Can't write file '$fileNameCurrent'!\n";
             }
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateStandardCurrent file:$fileNameCurrent<br/>\n";
+                echo "YellowPublish::updateStandardSettings file:$fileNameCurrent<br/>\n";
             }
         }
         return $statusCode;
@@ -819,6 +819,7 @@ class YellowPublish {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
                     if (preg_match("/delete/i", $flags)) continue;
                     if (preg_match("/additional/i", $flags)) continue;
+                    if ($fileNameCurrent==$path.$matches[1]) continue;
                     $fileNameSource = $pathRepositorySource."yellow-".strtoloweru($extension)."/".$entry;
                     $fileNameDestination = $path.$matches[1];
                     $data[$fileNameSource] = $fileNameDestination;
