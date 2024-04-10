@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.2";
+    const VERSION = "0.9.3";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -181,7 +181,7 @@ class YellowPublish {
                 $statusCode = 500;
                 echo "ERROR publishing files: Please configure Published in file '$fileNameExtension'!\n";
             }
-            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameExtension, $fileDataNew)) {
+            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileNameExtension, $fileDataNew)) {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$fileNameExtension'!\n";
             }
@@ -204,7 +204,7 @@ class YellowPublish {
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
                 $fileDataNew = $this->setDocumentationHeading($fileData, ucfirst($extension)." ".$version);
-                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
                     $statusCode = 500;
                     echo "ERROR publishing files: Can't write file '$entry'!\n";
                 }
@@ -274,7 +274,7 @@ class YellowPublish {
                     $fileDataNew .= (strposu($key, "/") ? $key : ucfirst($key)).": $value\n";
                 }
             }
-            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameAvailable, $fileDataNew)) {
+            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileNameAvailable, $fileDataNew)) {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$fileNameAvailable'!\n";
             }
@@ -312,7 +312,7 @@ class YellowPublish {
                     $fileDataNew .= (strposu($key, "/") ? $key : ucfirst($key)).": $value\n";
                 }
             }
-            if ($fileDataCurrent!=$fileDataNew && !$this->yellow->toolbox->createFile($fileNameCurrent, $fileDataNew)) {
+            if ($fileDataCurrent!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileNameCurrent, $fileDataNew)) {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$fileNameCurrent'!\n";
             }
@@ -387,7 +387,7 @@ class YellowPublish {
                     }
                 }
                 $fileDataNew = $this->setLanguageDefaultSettings($fileData, $settingsNew);
-                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileName, $fileDataNew)) {
+                if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileName, $fileDataNew)) {
                     $statusCode = 500;
                     echo "ERROR publishing files: Can't write file '$fileName'!\n";
                 }
@@ -407,7 +407,7 @@ class YellowPublish {
         foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
             $fileData = $this->yellow->toolbox->readFile($entry);
             $fileDataNew = $this->setDocumentationHeading($fileData, $product." ".$release);
-            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+            if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
                 $statusCode = 500;
                 echo "ERROR publishing files: Can't write file '$entry'!\n";
             }
@@ -443,7 +443,7 @@ class YellowPublish {
                             $fileDataNew = $this->setDocumentationListEntry($fileDataNew, $key, $description, $url, $tag);
                         }
                     }
-                    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($fileName, $fileDataNew)) {
+                    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileName, $fileDataNew)) {
                         $statusCode = 500;
                         echo "ERROR publishing files: Can't write file '$fileName'!\n";
                     }
@@ -600,7 +600,7 @@ class YellowPublish {
                     break;
                 }
             }
-            $ok = $this->yellow->toolbox->createFile($fileName, $dataBuffer) &&
+            $ok = $this->yellow->toolbox->writeFile($fileName, $dataBuffer) &&
                 $this->yellow->toolbox->modifyFile($fileName, $published);
         }
         return $ok;
