@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.3";
+    const VERSION = "0.9.4";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -360,17 +360,14 @@ class YellowPublish {
                 }
             }
             $sortIndex = 0;
-            $sortOrderRelative = array();
+            $sortKeys = array();
             foreach ($settingsEnglish as $key=>$value) {
-                $sortOrderRelative[$key] = ++$sortIndex;
+                $keyShort = preg_match("/^([a-z]+)/", $key, $matches) ? $matches[1] : $key;
+                if ($keyShort=="language") $keyShort = "";
+                $sortKeys[$key] = $keyShort." ".++$sortIndex;
             }
-            $callback = function ($a, $b) use ($sortOrderRelative) {
-                $aShort = preg_match("/^([a-z]+)/", $a, $matches) ? $matches[1] : $a;
-                $bShort = preg_match("/^([a-z]+)/", $b, $matches) ? $matches[1] : $b;
-                if ($aShort=="language") $aShort = "";
-                if ($bShort=="language") $bShort = "";
-                $result = strnatcmp($aShort, $bShort);
-                return $result==0 ? $sortOrderRelative[$a] - $sortOrderRelative[$b] : $result;
+            $callback = function ($a, $b) use ($sortKeys) {
+                return strnatcmp($sortKeys[$a], $sortKeys[$b]);
             };
             $settingsEnglish->uksort($callback);
             $path = $pathRepositorySource."yellow-language/translations/";
