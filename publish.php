@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.4";
+    const VERSION = "0.9.5";
     public $yellow;                 // access to API
     public $extensions;             // number of extensions
     public $errors;                 // number of errors
@@ -814,7 +814,7 @@ class YellowPublish {
                 if (lcfirst($matches[1])=="extension" && !is_string_empty($matches[2])) $extension = $matches[2];
                 if (!is_string_empty($matches[1]) && !is_string_empty($matches[2]) && strposu($matches[1], "/")) {
                     list($entry, $flags) = $this->yellow->toolbox->getTextList($matches[2], ",", 2);
-                    if (preg_match("/delete/i", $flags)) continue;
+                    if (!preg_match("/create/i", $flags)) continue;
                     if (preg_match("/additional/i", $flags)) continue;
                     if ($fileNameCurrent==$path.$matches[1]) continue;
                     $fileNameSource = $pathRepositorySource."yellow-".strtoloweru($extension)."/".$entry;
