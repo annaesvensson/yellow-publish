@@ -139,7 +139,7 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 `compress` = ZIP-Datei aus dem angegebenen Verzeichnis erstellen  
 `multi-language` = Inhaltsdatei aus dem entsprechenden Verzeichnis verwenden  
 
-Die [Aktualisierungsdaten](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) findet man in der Datei `system/extensions/update-available.ini`.
+Die [Aktualisierungseinstellungen](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) findet man in der Datei `system/extensions/update-available.ini`.
 
 ## Entwickler
 
