@@ -12,17 +12,17 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-Beginne mit einer [experimentellen Erweiterung für Entwickler](https://github.com/schulle4u/yellow-helloworld). Schau dir am besten den Quellcode von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Code und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Die Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository und lade deinen Dateien zu GitHub hoch.
+Beginne mit einer [Beispiel-Funktion](https://github.com/datenstrom/yellow-example-feature) oder einem [Beispiel-Theme](https://github.com/datenstrom/yellow-example-theme). Schau dir am besten den Quellcode von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Quellcode und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden müssen. Hast du eine Erweiterung erstellt? Erstelle ein Repository auf GitHub oder Codeberg.
 
 ## Wie man eine Erweiterung ankündigt
 
 Erzähle anderen von deiner Erweiterung und [mache eine Ankündigung](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Das ist eine großartige Möglichkeit um Feedback zu erhalten, mit Funktionen zu experimentieren und seine Erweiterung zu verbessern. Die meisten Erweiterungen beginnen experimentell. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfen deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
 
-Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema [datenstrom-yellow](https://github.com/topics/datenstrom-yellow) zur deinem Repository hinzufügen.
+Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema `datenstrom-yellow` zur deinem Repository auf GitHub oder Codeberg hinzufügen.
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode. Du kannst zwischen verschiedenen [Statuswerten](#einstellungen-status) wählen, um zu bestimmen wie du deine Erweiterung verfügbar machst. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast bevor du deine Erweiterung für alle verfügbar machst. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Du kannst zwischen verschiedenen [Statuswerten](#einstellungen-status) wählen, um zu bestimmen wie du deine Erweiterung verfügbar machst. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
 Falls du Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du [Co-Autoren](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) zur Commit-Nachricht hinzufügen.
 
@@ -123,10 +123,10 @@ Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen wer
 
 <a id="einstellungen-status"></a>Die folgenden Erweiterungs-Statuswerte werden unterstützt:
 
-`experimental` = Erweiterung ist noch experimentell, Nutzung auf eigene Gefahr  
+`experimental` = Erweiterung ist experimentell  
+`available` = Erweiterung ist verfügbar und [wird auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
 `unmaintained ` = Erweiterung wird nicht mehr gepflegt, Nutzung auf eigene Gefahr  
-`unassembled` = Erweiterung wird durch  Werkzeugkette zusammengebaut, Nutzung bei Bedarf  
-`available` = Erweiterung ist für alle verfügbar und [wird auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
+`unassembled` = Erweiterung wird durch Werkzeugkette zusammengebaut, Nutzung auf eigene Gefahr  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:
 
