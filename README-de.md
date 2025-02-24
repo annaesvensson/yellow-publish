@@ -22,7 +22,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Benutze die [Erweiterungseinstellungen](#einstellungen) um zu steuern wie deine Erweiterung verfügbar ist und welche Dateien installiert werden müssen. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Benutze die [Erweiterungseinstellungen](#einstellungen) um anzugeben welche Dateien installiert werden müssen. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
 Falls du Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du Co-Autoren zur Commit-Nachricht hinzufügen.
 
@@ -33,18 +33,21 @@ Erweiterungseinstellungen für eine Funktion:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Helloworld
+Extension: Edit
 Version: 0.9.1
-Description: Experimental extension for Datenstrom Yellow developers.
-Developer: Steffen Schultz
-Tag: example, feature
-DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
-DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-Published: 2024-04-05 10:35:30
-Status: experimental
-system/workers/helloworld.php: helloworld.php, create, update
-system/workers/helloworld.js: helloworld.js, create, update
-system/workers/helloworld.css: helloworld.css, create, update
+Description: Edit your website in a web browser.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-edit/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-edit
+DocumentationLanguage: en, de, sv
+Published: 2024-04-04 15:20:39
+Status: available
+system/workers/edit.php: edit.php, create, update
+system/workers/edit.css: edit.css, create, update
+system/workers/edit.js: edit.js, create, update
+system/workers/edit-stack.svg: edit-stack.svg, create, update
+content/shared/page-new-default.md: page-new-default.md, create, optional
 ~~~
 
 Erweiterungseinstellungen für eine Sprache:
@@ -97,6 +100,7 @@ Alle Verzeichnisse in der Befehlszeile veröffentlichen:
 
 Erweiterungen in der Befehlszeile veröffentlichen:
 
+`php yellow.php publish yellow-edit`  
 `php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 

@@ -22,7 +22,7 @@ If you want others to discover your extension, add the topic `datenstrom-yellow`
 
 ## How to publish an extension
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Increase the version number in your source code before publishing. Use the [extension settings](#settings) to control how your extension is available and what files need to be installed. Make sure you have completed the [self-review checklist](self-review-checklist.md). Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Increase the version number in your source code before publishing. Make sure you have completed the [self-review checklist](self-review-checklist.md). Use the [extension settings](#settings) to specify what files need to be installed. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
 If you want to mention developers/designers/translators, add co-authors to the commit message.
 
@@ -33,18 +33,21 @@ Extension settings for a feature:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Helloworld
+Extension: Edit
 Version: 0.9.1
-Description: Experimental extension for Datenstrom Yellow developers.
-Developer: Steffen Schultz
-Tag: example, feature
-DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
-DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-Published: 2024-04-05 10:35:30
-Status: experimental
-system/workers/helloworld.php: helloworld.php, create, update
-system/workers/helloworld.js: helloworld.js, create, update
-system/workers/helloworld.css: helloworld.css, create, update
+Description: Edit your website in a web browser.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-edit/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-edit
+DocumentationLanguage: en, de, sv
+Published: 2024-04-04 15:20:39
+Status: available
+system/workers/edit.php: edit.php, create, update
+system/workers/edit.css: edit.css, create, update
+system/workers/edit.js: edit.js, create, update
+system/workers/edit-stack.svg: edit-stack.svg, create, update
+content/shared/page-new-default.md: page-new-default.md, create, optional
 ~~~
 
 Extension settings for a language:
@@ -97,6 +100,7 @@ Publishing all folders at the command line:
 
 Publishing extensions at the command line:
 
+`php yellow.php publish yellow-edit`  
 `php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 

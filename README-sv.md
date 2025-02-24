@@ -22,7 +22,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet `datenstrom-yell
 
 ## Hur man publicerar ett tillägg
 
-Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Öka versionsnumret i din källkod innan du publicerar. Använd [tilläggsinställningarna](#inställningar) för att bestämma hur ditt tillägg är tillgängligt och vilka filer som behöver installeras. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
+Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Öka versionsnumret i din källkod innan du publicerar. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Använd [tilläggsinställningarna](#inställningar) för att ange vilka filer som behöver installeras. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
 Om du vill nämna utvecklare/designer/översättare, lägg till medförfattare till commit-meddelandet.
 
@@ -33,18 +33,21 @@ Tilläggsinställningar för en funktion:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Helloworld
+Extension: Edit
 Version: 0.9.1
-Description: Experimental extension for Datenstrom Yellow developers.
-Developer: Steffen Schultz
-Tag: example, feature
-DownloadUrl: https://github.com/schulle4u/yellow-helloworld/archive/refs/heads/main.zip
-DocumentationUrl: https://github.com/schulle4u/yellow-helloworld
-Published: 2024-04-05 10:35:30
-Status: experimental
-system/workers/helloworld.php: helloworld.php, create, update
-system/workers/helloworld.js: helloworld.js, create, update
-system/workers/helloworld.css: helloworld.css, create, update
+Description: Edit your website in a web browser.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-edit/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-edit
+DocumentationLanguage: en, de, sv
+Published: 2024-04-04 15:20:39
+Status: available
+system/workers/edit.php: edit.php, create, update
+system/workers/edit.css: edit.css, create, update
+system/workers/edit.js: edit.js, create, update
+system/workers/edit-stack.svg: edit-stack.svg, create, update
+content/shared/page-new-default.md: page-new-default.md, create, optional
 ~~~
 
 Tilläggsinställningar för ett språk:
@@ -97,6 +100,7 @@ Publicera alla mappar på kommandoraden:
 
 Publicera tillägg på kommandoraden:
 
+`php yellow.php publish yellow-edit`  
 `php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 
