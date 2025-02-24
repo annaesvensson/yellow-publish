@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.9.5
+# Publish 0.9.6
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -22,7 +22,7 @@ Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema 
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Benutze die [Erweiterungseinstellungen](#einstellungen) um anzugeben welche Dateien installiert werden müssen. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Benutze die [Erweiterungseinstellungen](#einstellungen) in der Datei `extension.ini` um anzugeben welche Dateien installiert werden müssen. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
 Falls du Entwickler/Designer/Übersetzer erwähnen möchtest, kannst du Co-Autoren zur Commit-Nachricht hinzufügen.
 
