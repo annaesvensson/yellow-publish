@@ -143,8 +143,6 @@ The following settings can be configured in file `extension.ini`:
 `compress` = make ZIP file from specified directory  
 `multi-language` = use content file from corresponding directory  
 
-The [update settings](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) can be found in file `system/extensions/update-available.ini`.
-
 ## Developer
 
 Anna Svensson. [Get help](https://datenstrom.se/yellow/help/).

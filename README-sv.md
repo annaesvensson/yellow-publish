@@ -143,8 +143,6 @@ Följande inställningar kan konfigureras i filen `extension.ini`:
 `compress` = skapa ZIP-fil från angivna mappen  
 `multi-language` = använda innehållsfil från motsvarande mappen  
 
-[Uppdateringsinställningarna](https://raw.githubusercontent.com/datenstrom/yellow/main/system/extensions/update-available.ini) finns i filen `system/extensions/update-available.ini`. 
-
 ## Utvecklare
 
 Anna Svensson. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
