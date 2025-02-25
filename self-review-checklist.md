@@ -7,6 +7,7 @@ You should always review your own extension first. Please make sure:
 - [ ] you checked for spelling errors and adherence to our documentation standard
 - [ ] you checked your extension settings and repository settings have the same `Description`
 - [ ] you checked your extension settings use either `Status: experimental` or `Status: available`
+- [ ] you checked your extension settings specify all the files that should be installed
 - [ ] you checked your repository has the annotated [license file](https://github.com/annaesvensson/yellow-publish/blob/main/LICENSE.md) and [gitattributes file](https://github.com/annaesvensson/yellow-publish/blob/main/.gitattributes)
 - [ ] don't keep features/settings/files that are leftovers from experimentation
 - [ ] don't have features/settings/files just in case someone needs them later
