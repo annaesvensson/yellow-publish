@@ -313,7 +313,7 @@ class YellowPublish {
                     foreach ($block as $key=>$value) $settingsCurrent[$extension][$key] = $value;
                 }
             }
-            $fileDataNew = "# Datenstrom Yellow extension settings\n";
+            $fileDataNew = "# Datenstrom Yellow update settings for installed extensions\n";
             foreach ($settingsCurrent as $extension=>$block) {
                 $fileDataNew .= "\n";
                 foreach ($block as $key=>$value) {
