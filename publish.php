@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.6";
+    const VERSION = "0.9.7";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -297,7 +297,7 @@ class YellowPublish {
     public function updateStandardSettings($path, $pathRepositorySource) {
         $statusCode = 200;
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("coreExtensionFile");
+            $this->yellow->system->get("updateInstalledFile");
         $fileNameAvailable = $path.$this->yellow->system->get("coreExtensionDirectory").
             $this->yellow->system->get("updateAvailableFile");
         if (is_file($fileNameCurrent) && is_file($fileNameAvailable)) {
@@ -815,7 +815,7 @@ class YellowPublish {
         $data = array();
         $extension = "";
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("coreExtensionFile");
+            $this->yellow->system->get("updateInstalledFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameCurrent);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
@@ -837,7 +837,7 @@ class YellowPublish {
     // Return number of extensions in standard installation
     public function getStandardExtensionsCount($path) {
         $fileNameCurrent = $path.$this->yellow->system->get("coreExtensionDirectory").
-            $this->yellow->system->get("coreExtensionFile");
+            $this->yellow->system->get("updateInstalledFile");
         $fileDataCurrent = $this->yellow->toolbox->readFile($fileNameCurrent);
         $settingsCurrent = $this->yellow->toolbox->getTextSettings($fileDataCurrent, "extension");
         return count($settingsCurrent);
