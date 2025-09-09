@@ -1,6 +1,6 @@
-# Product specification for Datenstrom Yellow
+# Product specification list
 
-You can help us with the following problems and solutions:
+You can help us with the following problems and solutions for Datenstrom Yellow:
 
 - [ ] Light/dark mode is expected on mobile devices. Added support for light and dark mode to all themes.                      
 - [ ] Users can't see and install extensions in browser. Added support for installing extensions in web browser. [#991](https://github.com/datenstrom/community/discussions/991)
@@ -12,7 +12,5 @@ You can help us with the following problems and solutions:
 - [ ] Users don't like the long feed URL, it's kind of ugly. Updated feed extension, short URL for feed.xml.                       
 - [ ] Users don't like the long sitemap URL, it's kind of ugly. Updated sitemap extension, short URL for sitemap.xml.                 
 - [x] General dislike for invasive 3rd party services. Removed googlecalendar, googlemap and youtube extension. [#1021](https://github.com/datenstrom/community/discussions/1021)
-
-Solve a problem and mark it as "done". Add a new problem/solution after discussing it with our community or the responsible developer. Edit problems and solutions in order to keep them up-to-date, we welcome both problem-oriented and solution-oriented thinking. Use the product specification in your own work, for example in experiments, meetings, documentation and release notes.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).

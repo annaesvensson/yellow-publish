@@ -1,4 +1,4 @@
-# Self-review checklist for Datenstrom Yellow
+# Self-review checklist
 
 You should always review your own extension first. Please make sure:
 
