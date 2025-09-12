@@ -20,6 +20,12 @@ Erzähle anderen von deiner Erweiterung und [mache eine Ankündigung](https://gi
 
 Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema `datenstrom-yellow` zur deinem Repository hinzufügen.
 
+## Wie man eine Erweiterung verbessert
+
+Verbessere deine Erweiterung und [mache bei Bedarf eine Ankündigung](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22). Du kannst auch die Erweiterung von jemand anderem verbessern. Schau dir [offene Produktentwicklungsaufgaben](product-development-tasks.md) an. Hast du die Erweiterung von jemand anderem verbessert? Die erste Möglichkeit besteht darin einen Pull-Request an den zuständigen Entwickler/Designer/Übersetzer zu senden, der kann akzeptiert werden oder nicht. Die zweite Möglichkeit besteht darin deine Änderungen mit der Datenstrom-Netzgemeinschaft zu besprechen. Die dritte Möglichkeit besteht darin eine neue Erweiterung mit dem geänderten Quellcode zu erstellen. 
+
+Falls du Funktionen/Einstellungen/Dateien vorschlagen möchtest, kannst du das mit der Datenstrom-Netzgemeinschaft besprechen.
+
 ## Wie man eine Erweiterung veröffentlicht
 
 Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.

@@ -20,11 +20,17 @@ Berätta för andra om ditt tillägg och [skriv ett medelande](https://github.co
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet `datenstrom-yellow` till ditt repository.
 
+## Hur man förbättrar ett tillägg
+
+Förbättra ditt tillägg och [skriv ett medelande](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22) vid behov. Du kan också förbättra någon annans tillägg. Ta en titt på [öppna produktutvecklingsuppgifter](product-development-tasks.md). Förbättrade du någon annans tillägg? Det första alternativet är att skicka en pull-request till den ansvariga utvecklaren/formgivaren/översättaren, vilket kan accepteras eller inte. Det andra alternativet är att diskutera dina ändringar med Datenstroms nätgemenskap. Det tredje alternativet är att skapa ett nytt tillägg med den modifierade källkoden.
+
+Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Datenstroms nätgemenskap.
+
 ## Hur man publicerar ett tillägg
 
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Öka versionsnumret i din källkod innan du publicerar. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan eventuellt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
-Om du vill nämna utvecklare/designer/översättare, lägg till medförfattare till commit-meddelandet.
+Om du vill nämna utvecklare/formgivare/översättare, lägg till medförfattare till commit-meddelandet.
 
 ## Exempel
 
