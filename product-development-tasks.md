@@ -9,17 +9,22 @@ You can help us with the following tasks for Datenstrom Yellow:
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
+- [ ] Updated API, renamed parser type "notice" to "general". Make it more intuitive.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
 - [ ] Updated edit extension, settings dialog with dropdown menus. Users want important system settings in browser.
 - [x] Updated edit extension, upload with different JPEG file name extensions. Mobile devices use different formats. 
 - [ ] Updated edit extension toolbar, improved emoji and icon selection dialog. Give users more control. 
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
+- [x] Updated gallery extension, popup can be triggered from link. Give users more flexibility.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [ ] Updated mailer extension, make standalone SMTP extension. Websites may not have a working mail system.
+- [ ] Updated markdown extension, general block element for formatting with CSS. Make it more intuitive.
 - [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Removed googlecalendar, googlemap and youtube extension. General dislike for invasive services.
+- [ ] Published comment extension, no longer experimental. Due to public demand.
+- [ ] Published math extension, no longer experimental. Due to scientific demand.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
