@@ -2,12 +2,16 @@
 
 You can help us with the following tasks for Datenstrom Yellow:
 
-- [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
 - [ ] Added support for installing extensions in web browser. Users want to install extensions in browser.
+- [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
 - [ ] Added support for search in static website. Give users similar features in dynamic/static website.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
+- [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
+- [ ] Announced transliterate extension, convert UTF8 characters to ASCII. Users don't like special characters.
+- [ ] Updated help, what's new page with release notes and latest changes. Better documentation.
+- [ ] Updated help, Swedish translation for missing pages. Better documentation.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [ ] Updated API, renamed parser type "notice" to "general". Make it more intuitive.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.
