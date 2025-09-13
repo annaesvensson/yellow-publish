@@ -22,7 +22,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet `datenstrom-yell
 
 ## Hur man förbättrar ett tillägg
 
-Förbättra ditt tillägg och [skriv ett medelande](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22) vid behov. Du kan också förbättra någon annans tillägg. Jobba med oss och [titta på öppna uppgifter](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md). Förbättrade du någon annans tillägg? Det första alternativet är att skicka en pull-request till den ansvariga utvecklaren/formgivaren/översättaren, vilket kan accepteras eller inte. Det andra alternativet är att diskutera dina ändringar med Datenstroms nätgemenskap. Det tredje alternativet är att skapa ett nytt tillägg med den modifierade källkoden.
+Förbättra ditt tillägg och [skriv ett medelande](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22) vid behov. Du kan också förbättra någon annans tillägg. Jobba med oss och [titta på öppna uppgifter](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md). Förbättrade du någon annans tillägg? Det första alternativet är att skicka en pull-request till den ansvariga personen, vilket kan accepteras eller inte. Det andra alternativet är att diskutera dina ändringar med Datenstroms nätgemenskap. Det tredje alternativet är att skapa ett nytt tillägg med den modifierade källkoden.
 
 Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Datenstroms nätgemenskap.
 

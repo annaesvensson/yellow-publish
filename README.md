@@ -22,7 +22,7 @@ If you want others to discover your extension, add the topic `datenstrom-yellow`
 
 ## How to improve an extension
 
-Improve your extension and [make an announcement](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22) when necessary. You can also improve someone else's extension. Work with us and [have a look at open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md). Did you improve someone else's extension? The first option is to send a pull request to the responsible developer/designer/translator, which may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified source code.
+Improve your extension and [make an announcement](https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=sort%3Adate_created+category%3A%22See+what%27s+new%22) when necessary. You can also improve someone else's extension. Work with us and [have a look at open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md). Did you improve someone else's extension? The first option is to send a pull request to the responsible person, which may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified source code.
 
 If you want to suggest new features/settings/files, discuss it with the Datenstrom community.
 
