@@ -28,7 +28,7 @@ Falls du Funktionen/Einstellungen/Dateien vorschlagen möchtest, kannst du das m
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Der nächste Schritt ist für experimentelle Erweiterungen nicht notwendig.
+Der nächste Schritt ist für Erweiterungen erforderlich die [auf der offiziellen Webseite angezeigt werden](https://datenstrom.se/de/yellow/extensions/), für experimentelle Erweiterungen ist er optional.
 
 Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Erhöhe die Versionsnummer in deinem Quellcode vor der Veröffentlichung. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
