@@ -28,6 +28,8 @@ If you want to suggest new features/settings/files, discuss it with the Datenstr
 
 ## How to publish an extension
 
+The next step is not necessary for experimental extensions.
+
 You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Increase the version number in your source code before publishing. Make sure you have completed the [self-review checklist](self-review-checklist.md). Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
 If you want to mention developers/designers/translators, add co-authors to the commit message.

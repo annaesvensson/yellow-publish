@@ -28,6 +28,8 @@ Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Date
 
 ## Hur man publicerar ett tillägg
 
+Nästa steg är inte nödvändigt för experimentella tillägg.
+
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Öka versionsnumret i din källkod innan du publicerar. Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md). Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
 Om du vill nämna utvecklare/formgivare/översättare, lägg till medförfattare till commit-meddelandet.
