@@ -12,9 +12,9 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung erstellt
 
-[Beginne mit einer Beispiel-Funktion](https://github.com/datenstrom/yellow-newfeature) oder einem [Beispiel-Theme](https://github.com/datenstrom/yellow-newtheme) für Datenstrom Yellow. Schau dir am besten den Quellcode von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise bestehet eine Erweiterung aus dem Quellcode, Dokumentation und zusätzlichen Dateien. Die [Erweiterungseinstellungen](#einstellungen) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Möchtest du eine Erweiterung erstellen? Erstelle ein neues Repository auf GitHub oder Codeberg.
+[Beginne mit einer Beispiel-Funktion](https://github.com/datenstrom/yellow-newfeature) oder einem [Beispiel-Theme](https://github.com/datenstrom/yellow-newtheme) für Datenstrom Yellow. Schau dir am besten den Quellcode von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise besteht eine Erweiterung aus dem Quellcode, Dokumentation und einem Bildschirmfoto. Die [Erweiterungseinstellungen](#einstellungen-extension) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Möchtest du eine Erweiterung erstellen? Erstelle ein neues Repository auf GitHub oder Codeberg.
 
-Falls du Fragen zu deiner ersten Erweiterung hast, kannst du das mit der Datenstrom-Netzgemeinschaft besprechen.
+Falls du Fragen zu GitHub oder Codeberg hast, kannst du es mit der Datenstrom-Netzgemeinschaft besprechen.
 
 ## Wie man eine Erweiterung ankündigt
 
@@ -118,7 +118,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 `PublishSourceDirectory` = Verzeichnis mit Quellcode  
 
-Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
+<a id="einstellungen-extension"></a>Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
 `Extension` = Name der Erweiterung  
 `Version` = Versionsnummer der Erweiterung  

@@ -12,9 +12,9 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with an example feature](https://github.com/datenstrom/yellow-newfeature) or [example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the source code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the source code, documentation and additional files. The [extension settings](#settings) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
+[Start with an example feature](https://github.com/datenstrom/yellow-newfeature) or [example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the source code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the source code, documentation and a screenshot. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
 
-If you have any questions about your first extension, discuss it with the Datenstrom community.
+If you have questions about GitHub or Codeberg, discuss it with the Datenstrom community.
 
 ## How to announce an extension
 
@@ -118,7 +118,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 
 `PublishSourceDirectory` = directory with source code  
 
-The following settings can be configured in file `extension.ini`:
+<a id="settings-extension"></a>The following settings can be configured in file `extension.ini`:
 
 `Extension` = extension name  
 `Version` = extension version number  

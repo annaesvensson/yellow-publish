@@ -12,9 +12,9 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-[Börja med ett exempel-funktion](https://github.com/datenstrom/yellow-newfeature) eller [exempel-tema](https://github.com/datenstrom/yellow-newtheme) för Datenstrom Yellow. Det är bäst att titta på källkoden för några tillägg in din `system/workers` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av källkoden, dokumentation och ytterligare filer. [Tilläggsinställningar](#inställningar) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Vill du göra ett tillägg? Skapa ett nytt repository på GitHub eller Codeberg.
+[Börja med ett exempel-funktion](https://github.com/datenstrom/yellow-newfeature) eller [exempel-tema](https://github.com/datenstrom/yellow-newtheme) för Datenstrom Yellow. Det är bäst att titta på källkoden för några tillägg in din `system/workers` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av källkoden, dokumentation och en skärmdump. [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Vill du göra ett tillägg? Skapa ett nytt repository på GitHub eller Codeberg.
 
-Om du har några frågor om ditt första tillägg, diskutera det med Datenstroms nätgemenskap.
+Om du har några frågor om GitHub eller Codeberg, diskutera det med Datenstroms nätgemenskap.
 
 ## Hur man annonserar ett tillägg
 
@@ -118,7 +118,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 `PublishSourceDirectory` = mapp med källkod  
 
-Följande inställningar kan konfigureras i filen `extension.ini`:
+<a id="inställningar-extension"></a>Följande inställningar kan konfigureras i filen `extension.ini`:
 
 `Extension` = tilläggets namn  
 `Version` = tilläggets versionsnummer  
