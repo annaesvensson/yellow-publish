@@ -32,7 +32,7 @@ If you want to suggest new features/settings/files, discuss it with the Datenstr
 
 The next step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/), it's optional for experimental extensions.
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure you have completed the [self-review checklist](self-review-checklist.md) and increased the version number in your source code before publishing. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure you have completed the [self-review checklist](self-review-checklist.md) and increased the `VERSION` in the source code before publishing. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
 ## Examples
 
