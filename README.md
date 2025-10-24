@@ -18,7 +18,7 @@ If you have questions about GitHub or Codeberg, discuss it with the Datenstrom c
 
 ## How to announce an extension
 
-Tell others about your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). This is a great way to get feedback, to experiment with features and improve your extension. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
+Tell others about your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Make sure your extension follows our coding and documentation standards. This is a great way to get feedback, to experiment with features and improve your extension. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
 
 If you want others to discover your extension, add the topic `datenstrom-yellow` to your repository.
 
@@ -32,7 +32,7 @@ If you want to suggest new features/settings/files, discuss it with the Datenstr
 
 The next step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/), it's optional for experimental extensions.
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Increase the version number in your source code before publishing. Make sure you have completed the [self-review checklist](self-review-checklist.md). Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
+You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure you have completed the [self-review checklist](self-review-checklist.md) and increased the version number in your source code before publishing. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
 ## Examples
 
