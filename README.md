@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.9.7
+# Publish 0.9.8
 
 Make and publish extensions.
 
@@ -30,7 +30,7 @@ If you want to suggest new features/settings/files, discuss it with the Datenstr
 
 ## How to publish an extension
 
-The next step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/), it's optional for experimental extensions.
+This step is only necessary for [available extensions on the official website](https://datenstrom.se/yellow/extensions/), it's optional for experimental extensions. Publishing informs the update mechanism that a new version of an extension is available.
 
 You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure you have completed the [self-review checklist](self-review-checklist.md) and have increased the `VERSION` in the code before publishing. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
@@ -116,7 +116,7 @@ Publishing extensions at the command line:
 
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
-`PublishSourceDirectory` = directory with source code  
+`PublishCodeDirectory` = directory with code of published extensions  
 
 <a id="settings-extension"></a>The following settings can be configured in file `extension.ini`:
 

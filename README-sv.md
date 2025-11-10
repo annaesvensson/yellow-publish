@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.9.7
+# Publish 0.9.8
 
 Göra och publicera tillägg.
 
@@ -30,7 +30,7 @@ Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Date
 
 ## Hur man publicerar ett tillägg
 
-Nästa steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/), det är valfritt för experimentella tillägg.
+Detta steg är endast nödvändigt för [tillgängliga tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/), det är valfritt för experimentella tillägg. Publicering informerar uppdateringsmekanismen om att en ny version av ett tillägg är tillgänglig.
 
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) och har ökat `VERSION` i koden innan du publicerar. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
@@ -116,7 +116,7 @@ Publicera tillägg på kommandoraden:
 
 Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
-`PublishSourceDirectory` = mapp med källkod  
+`PublishCodeDirectory` = mapp med kod för publicerade tillägg  
 
 <a id="inställningar-extension"></a>Följande inställningar kan konfigureras i filen `extension.ini`:
 

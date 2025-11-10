@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Publish 0.9.7
+# Publish 0.9.8
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -30,7 +30,7 @@ Falls du Funktionen/Einstellungen/Dateien vorschlagen möchtest, kannst du das m
 
 ## Wie man eine Erweiterung veröffentlicht
 
-Der nächste Schritt ist nur für [Erweiterungen auf der offiziellen Webseite](https://datenstrom.se/de/yellow/extensions/) erforderlich, für experimentelle Erweiterungen ist er optional.
+Dieser Schritt ist nur für [verfügbare Erweiterungen auf der offiziellen Webseite](https://datenstrom.se/de/yellow/extensions/) erforderlich, für experimentelle Erweiterungen ist er optional. Durch die Veröffentlichung wird der Aktualisierungsmechanismus darüber informiert, dass eine neue Version einer Erweiterung verfügbar ist.
 
 Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) veröffentlichen. Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) ausgefüllt hast und die `VERSION` im Code vor der Veröffentlichung erhöht hast. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
@@ -116,7 +116,7 @@ Erweiterungen in der Befehlszeile veröffentlichen:
 
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
-`PublishSourceDirectory` = Verzeichnis mit Quellcode  
+`PublishCodeDirectory` = Verzeichnis mit dem Code der veröffentlichten Erweiterungen  
 
 <a id="einstellungen-extension"></a>Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
