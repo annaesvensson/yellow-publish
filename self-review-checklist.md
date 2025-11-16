@@ -2,7 +2,6 @@
 
 You should always review your own extension first. Please make sure:
 
-- [ ] you have increased the `VERSION` in the source code before publishing
 - [ ] you checked that extension settings and repository settings have the same `Description`
 - [ ] you checked that extension settings use either `Status: experimental` or `Status: available`
 - [ ] you checked that extension settings specify all the files that should be installed
