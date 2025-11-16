@@ -18,7 +18,7 @@ If you have questions about GitHub or Codeberg, discuss them with the Datenstrom
 
 ## How to announce an extension
 
-Tell others about your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Make sure you have completed the [self-review checklist](self-review-checklist.md). This is a great way to get feedback and to experiment with features. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
+Tell others about your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Make sure you have completed the [self-review checklist](self-review-checklist.md) before the announcement. This is a great way to get feedback and to experiment with features. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
 
 If you want others to discover your extension, add the topic `datenstrom-yellow` to your repository.
 
