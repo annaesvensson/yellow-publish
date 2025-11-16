@@ -14,7 +14,7 @@ Göra och publicera tillägg.
 
 [Börja med en liten exempel-funktion](https://github.com/datenstrom/yellow-newfeature) eller [ett litet exempel-tema](https://github.com/datenstrom/yellow-newtheme) för Datenstrom Yellow. Det är bäst att titta på koden för några tillägg in din `system/workers` mapp. Gör dig bekant med våra kodnings- och dokumentationsstandarder. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). Vanligtvis består ett tillägg av koden, dokumentation och en skärmdump. [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Vill du göra ett tillägg? Skapa ett nytt repository på GitHub eller Codeberg.
 
-Om du har några frågor om GitHub eller Codeberg, diskutera de med Datenstroms nätgemenskap.
+Om du behöver hjälp med GitHub eller Codeberg, fråga Datenstroms nätgemenskapen.
 
 ## Hur man annonserar ett tillägg
 

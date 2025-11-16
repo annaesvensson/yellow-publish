@@ -14,7 +14,7 @@ Make and publish extensions.
 
 [Start with a small example feature](https://github.com/datenstrom/yellow-newfeature) or [small example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code, documentation and a screenshot. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
 
-If you have questions about GitHub or Codeberg, discuss them with the Datenstrom community.
+If you need help with GitHub or Codeberg, ask the Datenstrom community.
 
 ## How to announce an extension
 
