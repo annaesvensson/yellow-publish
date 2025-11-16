@@ -18,7 +18,7 @@ Om du har några frågor om GitHub eller Codeberg, diskutera de med Datenstroms 
 
 ## Hur man annonserar ett tillägg
 
-Berätta för andra om ditt tillägg och [skriv ett meddelande](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du annonserar, Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
+Berätta för andra om ditt tillägg och [skriv ett meddelande](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Se till att du har fyllt i [checklistan för självgranskning](self-review-checklist.md) innan du annonserar. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
 
 Om du vill att andra upptäcka ditt tillägg, lägg till ämnet `datenstrom-yellow` till ditt repository.
 
