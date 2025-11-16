@@ -14,7 +14,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 [Beginne mit einer kleinen Beispiel-Funktion](https://github.com/datenstrom/yellow-newfeature) oder [einem kleinen Beispiel-Theme](https://github.com/datenstrom/yellow-newtheme) für Datenstrom Yellow. Schau dir am besten den Code von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise besteht eine Erweiterung aus dem Code, Dokumentation und einem Bildschirmfoto. Die [Erweiterungseinstellungen](#einstellungen-extension) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Möchtest du eine Erweiterung erstellen? Erstelle ein neues Repository auf GitHub oder Codeberg.
 
-Falls du Hilfe mit GitHub oder Codeberg benötigst, kannst du die Datenstrom Netzgemeinschaft fragen.
+Falls du Hilfe mit GitHub oder Codeberg benötigst, kannst du die Datenstrom-Netzgemeinschaft fragen.
 
 ## Wie man eine Erweiterung ankündigt
 

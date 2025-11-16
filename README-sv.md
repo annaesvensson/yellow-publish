@@ -26,7 +26,7 @@ Om du vill att andra upptäcka ditt tillägg, lägg till ämnet `datenstrom-yell
 
 Förbättra ditt tillägg och [skriv ett meddelande](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Du kan också förbättra andra tillägg, [hjälpa oss med på öppna uppgifter](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) och [rapporterade fel](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Granska alla tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du någon annans tillägg? Det första alternativet är att skicka en pull-request till utvecklaren, vilket kan accepteras eller inte. Det andra alternativet är att diskutera dina ändringar med Datenstroms nätgemenskap. Det tredje alternativet är att skapa ett nytt tillägg med den modifierade koden.
 
-Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Datenstroms nätgemenskap.
+Om du vill föreslå nya funktioner/inställningar/filer, diskutera det med Datenstroms nätgemenskapen.
 
 ## Hur man publicerar ett tillägg
 
