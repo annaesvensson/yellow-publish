@@ -12,7 +12,7 @@ Make and publish extensions.
 
 ## How to make an extension
 
-[Start with a small example feature](https://github.com/datenstrom/yellow-newfeature) or [small example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code, documentation and a screenshot. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
+[Start with an example feature](https://github.com/datenstrom/yellow-newfeature) or [example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code, documentation and a screenshot. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
 
 If you need help with GitHub or Codeberg, ask the Datenstrom community.
 
@@ -24,7 +24,7 @@ If you want others to discover your extension, add the topic `datenstrom-yellow`
 
 ## How to improve an extension
 
-Improve your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). You can also improve other extensions, [help us with open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Review all extensions from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve someone else's extension? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
+You can an improve an extension, [help us with open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Review all extensions from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve someone else's extension? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
 
 If you want to suggest new features/settings/files, discuss it with the Datenstrom community.
 
