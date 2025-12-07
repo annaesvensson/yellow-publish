@@ -14,19 +14,13 @@ Make and publish extensions.
 
 [Start with an example feature](https://github.com/datenstrom/yellow-newfeature) or [example theme](https://github.com/datenstrom/yellow-newtheme) for Datenstrom Yellow. It's best to have a look at the code of some extensions in your `system/workers` folder. Make yourself familiar with our coding and documentation standards. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Typically an extension consists of the code, documentation and a screenshot. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Do you want to make an extension? Create a new repository on GitHub or Codeberg.
 
-If you need help with GitHub or Codeberg, ask the Datenstrom community.
+## How to improve an extension
+
+You can an improve an extension, [help us with open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) and [bug reports](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Review all extensions from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve someone else's extension? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
 
 ## How to announce an extension
 
 Tell others about your extension and [write an announcement](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Make sure you have completed the [self-review checklist](self-review-checklist.md) before the announcement. This is a great way to get feedback and to experiment with features. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
-
-If you want others to discover your extension, add the topic `datenstrom-yellow` to your repository.
-
-## How to improve an extension
-
-You can an improve an extension, [help us with open tasks](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Review all extensions from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve someone else's extension? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
-
-If you want to suggest new features/settings/files, discuss it with the Datenstrom community.
 
 ## How to publish an extension
 

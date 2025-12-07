@@ -14,19 +14,13 @@ Erweiterungen erstellen und veröffentlichen.
 
 [Beginne mit einer Beispiel-Funktion](https://github.com/datenstrom/yellow-newfeature) oder [einem Beispiel-Theme](https://github.com/datenstrom/yellow-newtheme) für Datenstrom Yellow. Schau dir am besten den Code von einigen Erweiterungen im `system/workers`-Verzeichnis an. Mach dich mit unseren Programmierungs- und Dokumentationsstandards vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Normalerweise besteht eine Erweiterung aus dem Code, Dokumentation und einem Bildschirmfoto. Die [Erweiterungseinstellungen](#einstellungen-extension) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Möchtest du eine Erweiterung erstellen? Erstelle ein neues Repository auf GitHub oder Codeberg.
 
-Falls du Hilfe mit GitHub oder Codeberg benötigst, kannst du die Datenstrom-Netzgemeinschaft fragen.
+## Wie man eine Erweiterung verbessert
+
+Du kannst eine Erweiterung verbessern, [uns bei offenen Aufgaben](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) und [Fehlermeldungen helfen](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Überprüfe alle Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Erweiterung von jemand anderem verbessert? Die erste Möglichkeit besteht darin einen Pull-Request an den Entwickler zu senden, der kann akzeptiert werden oder nicht. Die zweite Möglichkeit besteht darin deine Änderungen mit der Datenstrom-Netzgemeinschaft zu besprechen. Die dritte Möglichkeit besteht darin eine neue Erweiterung mit dem geänderten Code zu erstellen. 
 
 ## Wie man eine Erweiterung ankündigt
 
 Erzähle anderen von deiner Erweiterung und [schreibe eine Ankündigung](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Stelle sicher, dass du die [Checkliste zur Selbstüberprüfung](self-review-checklist.md) vor der Ankündigung ausgefüllt hast. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
-
-Falls du möchtest dass andere deine Erweiterung entdecken, kannst du das Thema `datenstrom-yellow` zur deinem Repository hinzufügen.
-
-## Wie man eine Erweiterung verbessert
-
-Du kannst eine Erweiterung verbessern, [uns bei offenen Aufgaben](https://github.com/datenstrom/yellow/blob/main/TASKLIST.md) und [gemeldeten Fehlern helfen](https://github.com/datenstrom/community/discussions/categories/report-a-bug). Überprüfe alle Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Erweiterung von jemand anderem verbessert? Die erste Möglichkeit besteht darin einen Pull-Request an den Entwickler zu senden, der kann akzeptiert werden oder nicht. Die zweite Möglichkeit besteht darin deine Änderungen mit der Datenstrom-Netzgemeinschaft zu besprechen. Die dritte Möglichkeit besteht darin eine neue Erweiterung mit dem geänderten Code zu erstellen. 
-
-Falls du Funktionen/Einstellungen/Dateien vorschlagen möchtest, kannst du das mit der Datenstrom-Netzgemeinschaft besprechen.
 
 ## Wie man eine Erweiterung veröffentlicht
 
