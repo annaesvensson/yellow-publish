@@ -7,7 +7,7 @@ You should always review your own extension first. Please make sure:
 - [ ] you checked that extension settings specify all the files that should be installed
 - [ ] you checked that repository has the topic `datenstrom-yellow`
 - [ ] you checked that repository has the annotated [license file](https://github.com/annaesvensson/yellow-publish/blob/main/LICENSE.md) and [gitattributes file](https://github.com/annaesvensson/yellow-publish/blob/main/.gitattributes)
-- [ ] you checked for adherence to our coding and documentation standards
+- [ ] you checked that repository follows our [style guide](https://github.com/datenstrom/yellow/blob/main/STYLEGUIDE.md)
 - [ ] don't keep features/settings/files that are leftovers from experimentation
 - [ ] don't have features/settings/files just in case someone needs them later
 - [ ] don't have code comments inside methods and functions
