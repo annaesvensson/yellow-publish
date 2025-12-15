@@ -11,7 +11,7 @@ You should always review your own extension first:
 - [ ] Don't keep features/settings/files that are leftovers from experimentation.
 - [ ] Don't have features/settings/files just in case someone needs them later.
 - [ ] Don't have code comments inside methods and functions.
-- [ ] Don't have more than one extension per repository.
 - [ ] Don't use the words "easy, flexible, user-friendly".
+- [ ] Don't have more than one extension per repository.
  
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
