@@ -112,7 +112,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 `Extension` = tilläggets namn  
 `Version` = tilläggets versionsnummer  
-`Description` = tilläggets beskrivning, max en rad  
+`Description` = tilläggets beskrivning, en kort mening  
 `Developer` = ansvarig utvecklare av en funktion, kommaseparerade  
 `Designer` = ansvarig formgivare av ett tema, kommaseparerade  
 `Translator` = ansvarig översättare av ett språk, kommaseparerade  

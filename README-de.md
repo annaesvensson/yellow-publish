@@ -112,7 +112,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 `Extension` = Name der Erweiterung  
 `Version` = Versionsnummer der Erweiterung  
-`Description` = Beschreibung der Erweiterung, maximal eine Zeile  
+`Description` = Beschreibung der Erweiterung, ein kurzer Satz  
 `Developer` = verantwortlicher Entwickler einer Funktion, durch Komma getrennt  
 `Designer` = verantwortlicher Designer eines Themes, durch Komma getrennt  
 `Translator` = verantwortlicher Übersetzer einer Sprache, durch Komma getrennt  

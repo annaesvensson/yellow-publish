@@ -112,7 +112,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 
 `Extension` = extension name  
 `Version` = extension version number  
-`Description` = extension description, one line maximum  
+`Description` = extension description, one short sentence  
 `Developer` = responsible developer(s) of a feature, comma separated  
 `Designer` = responsible designer(s) of a theme, comma separated  
 `Translator` = responsible translator(s) of a language, comma separated  
