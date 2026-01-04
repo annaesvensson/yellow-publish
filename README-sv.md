@@ -16,7 +16,7 @@ Göra och publicera tillägg.
 
 ## Hur man meddelar ett tillägg
 
-[Berätta för andra om ditt tillägg och senaste funktioner](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Se till att du fyller i [checklistan för självgranskning](self-review-checklist.md) innan du meddelar ett tillägg. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
+[Berätta för andra om ditt tillägg och nya funktioner](https://github.com/datenstrom/community/discussions/categories/write-an-announcement). Se till att du fyller i [checklistan för självgranskning](self-review-checklist.md) innan du meddelar ett tillägg. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
 
 ## Hur man publicerar ett tillägg
 
