@@ -1,6 +1,6 @@
 <p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
 
-# Publish 0.9.8
+# Publish 0.9.9
 
 Göra och publicera tillägg.
 
@@ -107,6 +107,7 @@ Publicera tillägg på kommandoraden:
 Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
 `PublishCodeDirectory` = mapp med kod för publicerade tillägg  
+`PublishWebsiteDirectory` = mapp med filer för den officiella webbplatsen  
 
 <a id="inställningar-extension"></a>Följande inställningar kan konfigureras i filen `extension.ini`:
 

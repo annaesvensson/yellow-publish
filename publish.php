@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.8";
+    const VERSION = "0.9.9";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -14,6 +14,7 @@ class YellowPublish {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
         $this->yellow->system->setDefault("publishCodeDirectory", "/My/Documents/GitHub/");
+        $this->yellow->system->setDefault("publishWebsiteDirectory", "/My/Documents/Website/");
     }
 
     // Handle command
@@ -207,7 +208,7 @@ class YellowPublish {
         list($extension, $version, $dummy, $status) = $this->getExtensionInformationFromSettings($path);
         if (!is_string_empty($extension) && !is_string_empty($version) &&
             ($status=="available" || $status=="experimental" || $status=="unassembled")) {
-            $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
+            $regex = "/^readme.*\\".$this->yellow->system->get("coreContentExtension")."$/";
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
                 $fileData = $this->yellow->toolbox->readFile($entry);
                 $fileDataNew = $this->setDocumentationHeading($fileData, ucfirst($extension)." ".$version);
@@ -408,7 +409,7 @@ class YellowPublish {
     public function updateStandardDocumentation($path) {
         $statusCode = 200;
         list($product, $release) = $this->getProductInformationFromCode($path);
-        $regex = "/^README.*\\".$this->yellow->system->get("coreContentExtension")."$/";
+        $regex = "/^readme.*\\".$this->yellow->system->get("coreContentExtension")."$/";
         foreach ($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry) {
             $fileData = $this->yellow->toolbox->readFile($entry);
             $fileDataNew = $this->setDocumentationHeading($fileData, $product." ".$release);
@@ -751,7 +752,7 @@ class YellowPublish {
         $languages = preg_split("/\s*,\s*/", $value->get("documentationLanguage"));
         if ($language!="en" && in_array($language, $languages)) {
             $url .= preg_match("#/tree/main/#", $url) ? "/" : "/tree/main/";
-            $url .= "README-$language.md";
+            $url .= "readme-$language.md";
         }
         return $url;
     }

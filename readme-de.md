@@ -1,6 +1,6 @@
 <p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
 
-# Publish 0.9.8
+# Publish 0.9.9
 
 Erweiterungen erstellen und veröffentlichen.
 
@@ -107,6 +107,7 @@ Erweiterungen in der Befehlszeile veröffentlichen:
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
 `PublishCodeDirectory` = Verzeichnis mit dem Code der veröffentlichten Erweiterungen  
+`PublishWebsiteDirectory ` = Verzeichnis mit den Dateien der offiziellen Webseite  
 
 <a id="einstellungen-extension"></a>Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 

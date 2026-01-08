@@ -1,6 +1,6 @@
 <p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
 
-# Publish 0.9.8
+# Publish 0.9.9
 
 Make and publish extensions.
 
@@ -107,6 +107,7 @@ Publishing extensions at the command line:
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
 `PublishCodeDirectory` = directory with code of published extensions  
+`PublishWebsiteDirectory` = directory with files of the official website  
 
 <a id="settings-extension"></a>The following settings can be configured in file `extension.ini`:
 
