@@ -16,7 +16,7 @@ Make and publish extensions.
 
 ## How to improve an extension
 
-You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
+You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
 
 ## How to publish an extension
 
@@ -126,10 +126,10 @@ The following settings can be configured in file `system/extensions/yellow-syste
 
 <a id="settings-status"></a>The following extension status values are supported:
 
-`experimental` = extension is experimental  
+`experimental` = extension is experimental, use at your own risk  
 `available` = extension is available and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
-`unmaintained` = extension is no longer maintained, use at your own risk  
-`unassembled` = extension is assembled by toolchain, use at your own risk  
+`unmaintained` = extension is no longer maintained  
+`unassembled` = extension is assembled by toolchain  
 
 <a id="settings-actions"></a>The following file actions are supported:
 

@@ -16,7 +16,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung verbessert
 
-Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
+Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
 
 ## Wie man eine Erweiterung veröffentlicht
 
@@ -126,10 +126,10 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 <a id="einstellungen-status"></a>Die folgenden Erweiterungs-Statuswerte werden unterstützt:
 
-`experimental` = Erweiterung ist experimentell  
+`experimental` = Erweiterung ist experimentell, Nutzung auf eigene Gefahr  
 `available` = Erweiterung ist verfügbar und [wird auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
-`unmaintained ` = Erweiterung wird nicht mehr gepflegt, Nutzung auf eigene Gefahr  
-`unassembled` = Erweiterung wird durch Werkzeugkette zusammengebaut, Nutzung auf eigene Gefahr  
+`unmaintained ` = Erweiterung wird nicht mehr gepflegt  
+`unassembled` = Erweiterung wird durch Werkzeugkette zusammengebaut  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:
 
