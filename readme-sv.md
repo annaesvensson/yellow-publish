@@ -20,7 +20,7 @@ Du kan förbättra ditt tillägg och visa den för andra människor. Det här ä
 
 ## Hur man publicerar ett tillägg
 
-Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg, men samma verktyg är tillgängliga för alla. Publicering uppdaterar tilläggsinställningarna och readme-filerna. Publicering informerar också uppdateringsmekanismen om att en ny version av ett tillägg är tillgänglig. Kom ihåg att endast tillägg på den officiella webbplatsen ingår i uppdateringsmekanismen.
+Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg, men samma verktyg är tillgängliga för alla. Publicering uppdaterar tilläggsinställningarna och readme-filerna. Publicering informerar också uppdateringsmekanismen om att en ny version av ett tillägg är tillgänglig. Kom ihåg att endast tillägg som finns på den officiella webbplatsen ingår i uppdateringsmekanismen.
 
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md). Se till att du fyller i [checklistan för självgranskning](self-review-checklist.md) och ökar `VERSION` i koden innan du publicerar ett tillägg. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
