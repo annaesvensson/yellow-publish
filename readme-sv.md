@@ -12,7 +12,7 @@ Göra och publicera tillägg.
 
 ## Hur man gör ett tillägg
 
-[Börja med en exempel-funktion](https://github.com/annaesvensson/yellow-example) eller [ett exempel-tema](https://github.com/annaesvensson/yellow-stockholm) för Datenstrom Yellow. Det är bäst att titta på koden för några tillägg in din `system/workers` mapp. Gör dig också bekant med vår kodningsstil, till exempel med filen `system/workers/core.php`. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Vill du göra ett tillägg? Skapa ett nytt repository på [GitHub](https://github.com/topics/datenstrom-yellow) eller [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=1).
+[Börja med en exempel-funktion](https://github.com/annaesvensson/yellow-example) eller [ett exempel-tema](https://github.com/annaesvensson/yellow-stockholm) för Datenstrom Yellow. Det är bäst att titta på koden för några tillägg in din `system/workers` mapp. Gör dig också bekant med vår kodningsstil. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Vill du göra ett tillägg? Skapa ett nytt repository på [GitHub](https://github.com/topics/datenstrom-yellow) eller [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=1).
 
 ## Hur man förbättrar ett tillägg
 
@@ -20,7 +20,7 @@ Du kan förbättra ditt tillägg och visa den för andra människor. Det här ä
 
 ## Hur man publicerar ett tillägg
 
-Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/), det är valfritt för experimentella tillägg, men samma verktyg är tillgängliga för alla. Publicering uppdaterar tilläggsinställningarna och readme-filerna. Publicering informerar också uppdateringsmekanismen om att en ny version av ett tillägg är tillgänglig.
+Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg, men samma verktyg är tillgängliga för alla. Publicering uppdaterar tilläggsinställningarna och readme-filerna. Publicering informerar också uppdateringsmekanismen om att en ny version av ett tillägg är tillgänglig. Kom ihåg att endast tillägg på den officiella webbplatsen ingår i uppdateringsmekanismen.
 
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md). Se till att du fyller i [checklistan för självgranskning](self-review-checklist.md) och ökar `VERSION` i koden innan du publicerar ett tillägg. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
