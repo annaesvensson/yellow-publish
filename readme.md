@@ -16,7 +16,7 @@ Make and publish extensions.
 
 ## How to improve an extension
 
-You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
+You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. First make it work and then make it better. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
 
 ## How to publish an extension
 

@@ -16,7 +16,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung verbessert
 
-Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
+Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Erst funktionieren lassen und dann besser machen. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
 
 ## Wie man eine Erweiterung veröffentlicht
 

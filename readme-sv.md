@@ -16,7 +16,7 @@ Göra och publicera tillägg.
 
 ## Hur man förbättrar ett tillägg
 
-Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
+Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. Först få det att fungera och sedan gör det bättre. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
 
 ## Hur man publicerar ett tillägg
 
