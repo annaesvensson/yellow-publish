@@ -16,7 +16,7 @@ Göra och publicera tillägg.
 
 ## Hur man förbättrar ett tillägg
 
-Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. Först få det att fungera och sedan gör det bättre. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
+Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
 
 ## Hur man publicerar ett tillägg
 
@@ -31,21 +31,16 @@ Tilläggsinställningar för en funktion:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Edit
+Extension: Example
 Version: 0.9.1
-Description: Edit your website in a web browser.
+Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
-Tag: feature
-DownloadUrl: https://github.com/annaesvensson/yellow-edit/archive/refs/heads/main.zip
-DocumentationUrl: https://github.com/annaesvensson/yellow-edit
-DocumentationLanguage: en, de, sv
-Published: 2024-04-04 15:20:39
-Status: available
-system/workers/edit.php: edit.php, create, update
-system/workers/edit.css: edit.css, create, update
-system/workers/edit.js: edit.js, create, update
-system/workers/edit-stack.svg: edit-stack.svg, create, update
-content/shared/page-new-default.md: page-new-default.md, create, optional
+Tag: example, feature
+DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/datenstrom/yellow-example
+Published: 2025-02-19 10:35:30
+Status: experimental
+system/workers/example.php: example.php, create, update
 ~~~
 
 Tilläggsinställningar för ett språk:
@@ -98,7 +93,7 @@ Publicera alla mappar på kommandoraden:
 
 Publicera tillägg på kommandoraden:
 
-`php yellow.php publish yellow-edit`  
+`php yellow.php publish yellow-example`  
 `php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 

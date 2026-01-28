@@ -16,7 +16,7 @@ Erweiterungen erstellen und veröffentlichen.
 
 ## Wie man eine Erweiterung verbessert
 
-Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Erst funktionieren lassen und dann besser machen. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
+Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
 
 ## Wie man eine Erweiterung veröffentlicht
 
@@ -31,21 +31,16 @@ Erweiterungseinstellungen für eine Funktion:
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Edit
+Extension: Example
 Version: 0.9.1
-Description: Edit your website in a web browser.
+Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
-Tag: feature
-DownloadUrl: https://github.com/annaesvensson/yellow-edit/archive/refs/heads/main.zip
-DocumentationUrl: https://github.com/annaesvensson/yellow-edit
-DocumentationLanguage: en, de, sv
-Published: 2024-04-04 15:20:39
-Status: available
-system/workers/edit.php: edit.php, create, update
-system/workers/edit.css: edit.css, create, update
-system/workers/edit.js: edit.js, create, update
-system/workers/edit-stack.svg: edit-stack.svg, create, update
-content/shared/page-new-default.md: page-new-default.md, create, optional
+Tag: example, feature
+DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/datenstrom/yellow-example
+Published: 2025-02-19 10:35:30
+Status: experimental
+system/workers/example.php: example.php, create, update
 ~~~
 
 Erweiterungseinstellungen für eine Sprache:
@@ -98,7 +93,7 @@ Alle Verzeichnisse in der Befehlszeile veröffentlichen:
 
 Erweiterungen in der Befehlszeile veröffentlichen:
 
-`php yellow.php publish yellow-edit`  
+`php yellow.php publish yellow-example`  
 `php yellow.php publish yellow-language`  
 `php yellow.php publish yellow-stockholm`  
 
