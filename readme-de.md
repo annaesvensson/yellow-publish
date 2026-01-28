@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Publish 0.9.9
 
-Erweiterungen erstellen und veröffentlichen.
+Erweiterungen erstellen und veröffentlichen. Entwickelt von Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Bildschirmfoto"></p>
 
@@ -137,6 +135,4 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 `compress` = ZIP-Datei aus dem angegebenen Verzeichnis erstellen  
 `multi-language` = Inhaltsdatei aus dem entsprechenden Verzeichnis verwenden  
 
-## Entwickler
-
-Anna Svensson. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Hast du Fragen? [Hilfe finden](https://datenstrom.se/de/yellow/help/).

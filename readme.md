@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Publish 0.9.9
 
-Make and publish extensions.
+Make and publish extensions. Developed by Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
@@ -137,6 +135,4 @@ The following settings can be configured in file `system/extensions/yellow-syste
 `compress` = make ZIP file from specified directory  
 `multi-language` = use content file from corresponding directory  
 
-## Developer
-
-Anna Svensson. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
