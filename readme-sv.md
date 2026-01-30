@@ -18,7 +18,7 @@ Du kan förbättra ditt tillägg och visa den för andra människor. Det här ä
 
 ## Hur man publicerar ett tillägg
 
-Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg. Publicering uppdaterar främst tilläggsinställningarna och readme-filerna. Publicering informerar också [uppdateringsmekanismen](https://github.com/annaesvensson/yellow-update/tree/main/readme-sv.md) om att en ny version av ett tillägg är tillgänglig. Kom ihåg att endast tillägg som finns på den officiella webbplatsen ingår i uppdateringsmekanismen.
+Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg. Publicering uppdaterar främst tilläggsinställningarna och readme-filerna. Publicering informerar också [uppdateringsmekanismen](https://github.com/annaesvensson/yellow-update/tree/main/readme-sv.md) om att en ny version av ett tillägg är tillgänglig. Tänk på att endast tillägg som är tillgängliga på den officiella webbplatsen kommer att ingå i uppdateringsmekanismen.
 
 Du kan publicera ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md). Se till att du fyller i [checklistan för självgranskning](self-review-checklist.md) och ökar `VERSION` i koden innan du publicerar ett tillägg. Är du redo att publicera ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php publish all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna. Ladda upp dina ändringar och skapa en pull-request för repository `datenstrom/yellow`.
 
@@ -119,7 +119,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 <a id="inställningar-status"></a>Följande statusvärden stöds:
 
-`experimental` = tillägget är experimentellt, använd på egen risk  
+`experimental` = tillägget är experimentellt, användning på egen risk  
 `available` = tillägget är tillgängligt och [visas på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/)  
 `unmaintained ` = tillägget underhålls inte längre  
 `unassembled` = tillägget sätts ihop av verktygskedjan  
