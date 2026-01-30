@@ -30,13 +30,13 @@ Tilläggsinställningar för en funktion:
 # Datenstrom Yellow extension settings
 
 Extension: Example
-Version: 0.9.1
+Version: 0.9.2
 Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
 Tag: example, feature
 DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/datenstrom/yellow-example
-Published: 2025-02-19 10:35:30
+Published: 2026-01-30 19:00:30
 Status: experimental
 system/workers/example.php: example.php, create, update
 ~~~
@@ -47,13 +47,13 @@ Tilläggsinställningar för ett språk:
 # Datenstrom Yellow extension settings
 
 Extension: Swedish
-Version: 0.9.1
+Version: 0.9.5
 Description: Swedish language.
 Translator: Anna Svensson
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/swedish.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish
-Published: 2024-04-04 15:24:20
+Published: 2025-12-19 01:22:34
 Status: available
 system/workers/swedish.php: swedish.php, create, update
 ~~~
@@ -64,14 +64,14 @@ Tilläggsinställningar för ett tema:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.9.1
+Version: 0.9.5
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: default, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2024-04-04 15:00:52
+Published: 2025-10-02 00:07:19
 Status: available
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
