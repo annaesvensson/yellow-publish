@@ -14,7 +14,7 @@ Make and publish extensions. Developed by Anna Svensson.
 
 ## How to improve an extension
 
-You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. Do you want feedback on an improved feature? Ask the Datenstrom community, [see contributing guidelines](https://datenstrom.se/yellow/help/contributing-guidelines).
+You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. Do you want tips for improving your extension? Ask the Datenstrom community, [see contributing guidelines](https://datenstrom.se/yellow/help/contributing-guidelines).
 
 ## How to publish an extension
 

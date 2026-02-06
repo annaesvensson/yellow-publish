@@ -14,7 +14,7 @@ Göra och publicera tillägg. Utvecklad av Anna Svensson.
 
 ## Hur man förbättrar ett tillägg
 
-Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner. Vill du ha feedback på en förbättrad funktion? Fråga Datenstroms nätgemenskapen, [se riktlinjer för samarbete](https://datenstrom.se/sv/yellow/help/contributing-guidelines).
+Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner. Vill du ha tips för att förbättra ditt tillägg? Fråga Datenstroms nätgemenskapen, [se riktlinjer för samarbete](https://datenstrom.se/sv/yellow/help/contributing-guidelines).
 
 ## Hur man publicerar ett tillägg
 
