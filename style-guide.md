@@ -1,5 +1,11 @@
 # Style guide
 
+You should use the following guidelines for your technology:
+
+* Good technology is useful in function and aesthetic. 
+* Good technology is simple to use and adjust.
+* Good technology is made for people.
+
 You should use the following guidelines for your code:
 
 * Use consistent indentation with 4 spaces, no tabs.
@@ -17,6 +23,7 @@ You should use the following guidelines for your code:
   e.g. `// Core extension, https://github.com/annaesvensson/yellow-core`.
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
+* Spend time on maintainability and refactoring, neglected design is expensive design.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have code comments inside methods and functions.
 
@@ -42,7 +49,7 @@ You should use the following guidelines for your documentation:
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot"></p>`.
 * Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
-* Check spelling, British English is the reference language, all other languages are optional.
+* Check spelling, British English is the reference language, other languages are optional.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
 * Review the entire documentation from the perspective of the user.
 * Don't use the words "easy, flexible, user-friendly".
@@ -54,12 +61,13 @@ You should use the following guidelines for your extension:
 * Descriptions should be one short sentence, e.g. `Core functionality of your website`.
 * File names should use kebab-case, the extension name is sometimes used as prefix,  
   e.g. `fika.php`, `fika.css`, `fika.js`, `fika-library.min.js`, `fika-stack.svg`.
+* Features/themes should be self-hosted and include third-party libraries, CSS, JavaScript and so on.
 * Repository names should use kebap-case, e.g. `yellow-core`, `yellow-edit`, `yellow-fika`.
 * Repository documentation files should be in Markdown format, e.g. `readme.md`.
 * Repository screenshots/previews should be in PNG image format, e.g. `screenshot.png`.
 * Repositories should have a flat folder structure, file actions are stored in file `extension.ini`.
 * Repositories should have a `.gitattributes` file to remove unnecesarry files from the ZIP file.
-* Repositories should have the topic `datenstrom-yellow`, all others topics are optional.
+* Repositories should have the topic `datenstrom-yellow`, others topics are optional.
 * Keep extensions relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have more than one extension per repository.
 
@@ -76,5 +84,7 @@ You should use the following technical terms, alphabetical order:
 * A `theme` is a CSS file, it may come with additional images, fonts, JavaScript and so on.
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
+
+In summary, there are many styles and habits, the point of a style guide is that we have chosen **ONE**.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
