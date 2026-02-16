@@ -46,7 +46,7 @@ You should use the following guidelines for your documentation:
   `system/extensions/yellow-language.ini` = file with language settings  
   `system/extensions/yellow-user.ini` = file with user settings
 * Use HTML to add a screenshot suitable for GitHub, Codeberg and other platforms,  
-  e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot"></p>`.
+  e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
 * Check spelling, British English is the reference language, other languages are optional.
@@ -85,6 +85,6 @@ You should use the following technical terms, alphabetical order:
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
 
-In summary, there are many styles and habits, the point of a style guide is that we have chosen **ONE**.
+In summary, there are many styles and habits, the point of a style guide is that we have chosen ONE.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
