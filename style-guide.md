@@ -24,6 +24,7 @@ You should use the following guidelines for your code:
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
 * Spend time on maintainability and refactoring, neglected design is expensive design.
+* Use the same patterns throughout your code, if unsure strive for consistency.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have code comments inside methods and functions.
 
@@ -49,7 +50,7 @@ You should use the following guidelines for your documentation:
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
-* Check spelling, British English is the reference language, other languages are optional.
+* Check spelling, British English is the reference language for documentation.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
 * Review the entire documentation from the perspective of the user.
 * Don't use the words "easy, flexible, user-friendly".
@@ -76,11 +77,11 @@ You should use the following technical terms, alphabetical order:
 * `Datenstrom Yellow` is the full product name - not "Yellow CMS".
 * An `extension` gives you additional features, languages and themes - not "plugin".
 * A `layout` is a HTML file, it can render a complete or a partial page - not "template".
-* A `navigation` is automatically generated from your content folders - not "menu bar".
+* A `navigation` is automatically generated from content folders - not "menu bar".
 * The `page settings` can be configured at the top of each page - not "front matter".
 * A `shortcut` is a way to extend Markdown with additional features - not "shortcode".
 * A `static generator` makes the entire website in advance, instead of waiting for the request. 
-* The `system settings` contain the settings of your website and of all installed extensions.
+* The `system settings` contain the settings of the website and of all installed extensions.
 * A `theme` is a CSS file, it may come with additional images, fonts, JavaScript and so on.
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
