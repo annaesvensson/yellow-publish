@@ -1,4 +1,4 @@
-# Publish 0.9.9
+# Publish 0.9.10
 
 Make and publish extensions. Developed by Anna Svensson.
 

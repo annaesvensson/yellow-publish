@@ -2,7 +2,7 @@
 // Publish extension, https://github.com/annaesvensson/yellow-publish
 
 class YellowPublish {
-    const VERSION = "0.9.9";
+    const VERSION = "0.9.10";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -197,7 +197,7 @@ class YellowPublish {
         if ($this->yellow->system->get("coreDebugMode")>=1) {
             $extension = !is_string_empty($extension) ? $extension : "unknown";
             $status = !is_string_empty($status) ? $status : "none";
-            echo "YellowPublish::updateExtensionSettings extension:$extension status:$status<br/>\n";
+            echo "YellowPublish::updateExtensionSettings extension:$extension status:$status<br />\n";
         }
         return $statusCode;
     }
@@ -217,7 +217,7 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't write file '$entry'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateExtensionDocumentation file:$entry<br/>\n";
+                    echo "YellowPublish::updateExtensionDocumentation file:$entry<br />\n";
                 }
             }
         }
@@ -254,7 +254,7 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't write file '$fileNameZipArchive'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateExtensionFiles file:$fileNameZipArchive<br/>\n";
+                    echo "YellowPublish::updateExtensionFiles file:$fileNameZipArchive<br />\n";
                 }
             }
         }
@@ -288,7 +288,7 @@ class YellowPublish {
                 echo "ERROR publishing files: Can't write file '$fileNameAvailable'!\n";
             }
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateExtensionAvailable file:$fileNameAvailable<br/>\n";
+                echo "YellowPublish::updateExtensionAvailable file:$fileNameAvailable<br />\n";
             }
         }
         return $statusCode;
@@ -326,7 +326,7 @@ class YellowPublish {
                 echo "ERROR publishing files: Can't write file '$fileNameCurrent'!\n";
             }
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateStandardSettings file:$fileNameCurrent<br/>\n";
+                echo "YellowPublish::updateStandardSettings file:$fileNameCurrent<br />\n";
             }
         }
         return $statusCode;
@@ -345,7 +345,7 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't write file '$fileNameDestination'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateStandardFiles file:$fileNameDestination<br/>\n";
+                    echo "YellowPublish::updateStandardFiles file:$fileNameDestination<br />\n";
                 }
             }
         }
@@ -398,7 +398,7 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't write file '$fileName'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateStandardTranslations file:$fileName<br/>\n";
+                    echo "YellowPublish::updateStandardTranslations file:$fileName<br />\n";
                 }
             }
         }
@@ -418,7 +418,7 @@ class YellowPublish {
                 echo "ERROR publishing files: Can't write file '$entry'!\n";
             }
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::updateStandardDocumentation file:$entry<br/>\n";
+                echo "YellowPublish::updateStandardDocumentation file:$entry<br />\n";
             }
         }
         return $statusCode;
@@ -458,7 +458,7 @@ class YellowPublish {
                     echo "ERROR publishing files: Can't find language '$language'!\n";
                 }
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
-                    echo "YellowPublish::updateOfficialDocumentation file:$fileName<br/>\n";
+                    echo "YellowPublish::updateOfficialDocumentation file:$fileName<br />\n";
                 }
             }
         }
@@ -529,12 +529,12 @@ class YellowPublish {
         if (preg_match("/compress\s+@source\//i", $fileData)) {
             array_unshift($this->secondStepPaths, $path);
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::analyseExtensionSettings detected path:$path<br/>\n";
+                echo "YellowPublish::analyseExtensionSettings detected path:$path<br />\n";
             }
         } elseif (is_file("$path/yellow.php")) {
             array_push($this->secondStepPaths, $path);
             if ($this->yellow->system->get("coreDebugMode")>=2) {
-                echo "YellowPublish::analyseExtensionSettings detected path:$path<br/>\n";
+                echo "YellowPublish::analyseExtensionSettings detected path:$path<br />\n";
             }
         }
     }
