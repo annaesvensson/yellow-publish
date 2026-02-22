@@ -1,6 +1,6 @@
 # Style guide
 
-You should use the following guidelines for your technology:
+You should use the following guidelines for Datestrom Yellow:
 
 * Good technology is useful in function and aesthetic. 
 * Good technology is simple to use and adjust.
@@ -50,9 +50,9 @@ You should use the following guidelines for your documentation:
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
+* Review the entire documentation from the perspective of the user.
 * Check spelling, British English is the reference language for documentation.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
-* Review the entire documentation from the perspective of the user.
 * Don't use the words "easy, flexible, user-friendly".
   
 You should use the following guidelines for your extension:
@@ -74,7 +74,7 @@ You should use the following guidelines for your extension:
 
 You should use the following technical terms, alphabetical order:
 
-* `Datenstrom Yellow` is the full product name - not "Yellow CMS".
+* `Datenstrom Yellow` is the full product name of this software - not "Yellow CMS".
 * An `extension` gives you additional features, languages and themes - not "plugin".
 * A `layout` is a HTML file, it can render a complete or a partial page - not "template".
 * A `navigation` is automatically generated from content folders - not "menu bar".
