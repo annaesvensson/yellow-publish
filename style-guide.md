@@ -1,6 +1,6 @@
 # Style guide
 
-You should use the following guidelines for Datestrom Yellow:
+You should use the following guidelines for Datenstrom Yellow:
 
 * Good technology is useful in function and aesthetic. 
 * Good technology is simple to use and adjust.
