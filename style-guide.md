@@ -53,7 +53,7 @@ You should use the following guidelines for your documentation:
 * Review the entire documentation from the perspective of the user.
 * Check spelling, British English is the reference language for documentation.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
-* Don't use the words "easy, flexible, user-friendly".
+* Don't use the words "easy, fast, user-friendly".
   
 You should use the following guidelines for your extension:
 
