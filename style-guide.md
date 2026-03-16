@@ -50,10 +50,9 @@ You should use the following guidelines for your documentation:
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
-* Review the entire documentation from the perspective of the user.
 * Check spelling, British English is the reference language for documentation.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
-* Don't use the words "easy, fast, user-friendly".
+* Review the entire documentation from the perspective of the user.
   
 You should use the following guidelines for your extension:
 
@@ -86,6 +85,6 @@ You should use the following technical terms, alphabetical order:
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
 
-In summary, there are many styles and habits, the point of a style guide is that we have chosen ONE.
+In summary, there are many styles and habits, the point of a style guide is that we have chosen one.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
