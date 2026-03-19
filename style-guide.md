@@ -68,6 +68,7 @@ You should use the following guidelines for your extension:
 * Repositories should have a flat folder structure, file actions are stored in file `extension.ini`.
 * Repositories should have a `.gitattributes` file to remove unnecesarry files from the ZIP file.
 * Repositories should have the topic `datenstrom-yellow`, others topics are optional.
+* Avoid collection personal data, if unsure prioritise data protection and collect less data.
 * Keep extensions relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have more than one extension per repository.
 
