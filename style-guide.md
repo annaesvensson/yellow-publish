@@ -20,7 +20,7 @@ You should use the following guidelines for your code:
 * One space is used around parentheses and compound logical operations,  
   e.g. `if ($name=="example" && ($type=="block" || $type=="inline"))`.
 * Start each source file with link to a website, that contains license and contact information,  
-  e.g. `// Core extension, https://github.com/annaesvensson/yellow-core`.
+  e.g. `// Datenstrom Yellow, https://datenstrom.se/yellow/`.
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
 * Spend time on maintainability and refactoring, neglected design is expensive design.
@@ -46,10 +46,10 @@ You should use the following guidelines for your documentation:
   `system/extensions/yellow-system.ini` = file with system settings  
   `system/extensions/yellow-language.ini` = file with language settings  
   `system/extensions/yellow-user.ini` = file with user settings
-* Use HTML to add a screenshot suitable for GitHub, Codeberg and other platforms,  
+* Use HTML to add a screenshot suitable for Codeberg, GitHub and other platforms,  
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
-* Use HTML at the beginning of a line to add additional link targets to a page,  
-  e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
+* Use HTML at the beginning of a line to add an additional link target to a page,  
+  e.g. `<a id="settings-files"></a>`.
 * Check spelling, British English is the reference language for documentation.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
 * Review the entire documentation from the perspective of the user.
